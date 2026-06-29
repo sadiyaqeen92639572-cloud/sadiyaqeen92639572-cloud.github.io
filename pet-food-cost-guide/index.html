@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pet Food Cost Per Month Calculator — Dog & Cat Food Budget Guide (2026)</title>
+<meta name="description" content="Free pet food cost calculator. Enter your pet's weight, food brand, and bag size to see exact cost per day, per month, and per year. Compare dog food and cat food budgets instantly.">
+<meta name="keywords" content="pet food cost calculator, dog food cost per month, cat food monthly cost, pet food budget calculator, cost per pound dog food, how much does dog food cost per month">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/pet-food-cost-guide/">
+<meta property="og:title" content="Pet Food Monthly Cost Calculator — How Much Does Your Pet Food Really Cost?">
+<meta property="og:description" content="Enter your pet's weight and food brand to calculate exact cost per day and per month. Free pet food budget calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/pet-food-cost-guide/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pet Food Monthly Cost Calculator">
+<meta name="twitter:description" content="Calculate exactly how much your dog or cat food costs per day and per month.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Pet Food Monthly Cost Calculator",
+      "description": "Free calculator to estimate pet food cost per day, per month, and per year based on pet weight and food brand.",
+      "url": "https://sadiyaqeen92639572-cloud.github.io/pet-food-cost-guide/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does dog food cost per month on average?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Monthly dog food costs vary widely by size and brand. A small dog (10-20 lbs) eating budget dry food (Pedigree, Purina ONE) costs $15-$30/month. A large dog (60-80 lbs) eating mid-range food costs $45-$80/month. Large dogs on premium grain-free food can cost $120-$200/month. The biggest cost driver is $/lb of food × daily consumption." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much dry dog food should I feed per day?",
+          "acceptedAnswer": { "@type": "Answer", "text": "General guidelines: dogs under 10 lbs need 1/4 to 3/4 cup/day; 10-25 lbs need 3/4 to 1.5 cups/day; 25-50 lbs need 1.5 to 2.75 cups/day; 50-75 lbs need 2.75 to 3.75 cups/day; over 75 lbs need 3.75 to 5 cups/day. Always follow the feeding guide on your specific bag — caloric density varies significantly between brands. Active dogs and puppies need more." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good price per pound for dog food?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Budget dry dog food (Pedigree, Kibbles n Bits) runs $0.60-$1.20/lb. Mid-range brands (Purina Pro Plan, Blue Buffalo) cost $1.50-$2.50/lb. Premium or grain-free formulas (Orijen, Merrick, Taste of the Wild) cost $3.00-$5.00/lb. The sweet spot for value plus quality is $1.50-$2.50/lb with real meat as the first ingredient." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does cat food cost per month?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An average indoor cat eating dry food costs $10-$25/month on budget to mid-range food. Cats on wet food only cost $25-$60/month (wet food is 5-10x more expensive per calorie than dry). Mixed feeding (mostly dry + some wet) typically costs $20-$40/month. High-protein or grain-free cat food adds 20-40% to the budget." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it cheaper to buy large bags of dog food?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Usually yes — larger bags have a lower price per pound. A 4.4 lb bag of Purina Pro Plan might cost $0.95/oz, while a 30 lb bag costs $0.65/oz — a 32% savings. However, large bags can go stale before your pet finishes them, which wastes money. Use airtight containers and buy sizes your pet can finish within 6 weeks of opening." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I compare pet food prices per pound?",
+          "acceptedAnswer": { "@type": "Answer", "text": "PawPerPound.com tracks 500+ dog and cat food products with real-time price-per-pound data. You can filter by brand, protein source, life stage, and dietary type (grain-free, limited ingredient, etc.) to find the best value for your specific pet's needs." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --brand: #7c3aed;
+    --brand-light: #ede9fe;
+    --brand-dark: #4c1d95;
+    --success: #16a34a;
+    --success-light: #dcfce7;
+    --warning: #d97706;
+    --warning-light: #fef3c7;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --radius: 12px;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+  a { color: var(--brand); }
+  .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+  header { background: var(--brand); color: white; padding: 48px 20px 40px; text-align: center; }
+  header h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+  header p { font-size: 1.05rem; opacity: 0.9; max-width: 560px; margin: 0 auto; }
+
+  .tool-card { background: var(--white); border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin: -24px auto 40px; max-width: 740px; padding: 32px; position: relative; z-index: 10; }
+  .tool-card h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 20px; text-align: center; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
+  .field-row { display: flex; flex-direction: column; gap: 5px; }
+  .field-row label { font-size: 0.8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .field-row input, .field-row select { border: 1.5px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 0.95rem; width: 100%; outline: none; transition: border-color 0.15s; }
+  .field-row input:focus, .field-row select:focus { border-color: var(--brand); }
+  .field-row.full { grid-column: 1 / -1; }
+  .calc-btn { width: 100%; background: var(--brand); color: white; border: none; border-radius: 10px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 18px; transition: background 0.15s; }
+  .calc-btn:hover { background: #6d28d9; }
+
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; display: none; }
+  .results-grid.show { display: grid; }
+  @media (max-width: 480px) { .results-grid { grid-template-columns: 1fr; } }
+  .result-chip { border-radius: 10px; padding: 16px; text-align: center; border: 2px solid; }
+  .result-chip.day { border-color: var(--brand); background: var(--brand-light); }
+  .result-chip.month { border-color: var(--success); background: var(--success-light); }
+  .result-chip.year { border-color: var(--warning); background: var(--warning-light); }
+  .result-chip .period { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 4px; }
+  .result-chip .amount { font-size: 1.8rem; font-weight: 800; }
+  .result-chip .detail { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .results-footer { margin-top: 16px; padding: 14px; background: #f3f4f6; border-radius: 8px; font-size: 0.85rem; color: var(--muted); display: none; }
+  .results-footer.show { display: block; }
+
+  .content { padding: 20px 0 60px; }
+  .content h2 { font-size: 1.4rem; font-weight: 800; margin: 40px 0 14px; }
+  .content h3 { font-size: 1.05rem; font-weight: 700; margin: 26px 0 10px; }
+  .content p { margin-bottom: 14px; color: #374151; }
+  .content ul { margin: 0 0 14px 22px; }
+  .content li { margin-bottom: 8px; color: #374151; }
+  .price-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; }
+  .price-table th { background: var(--brand); color: white; padding: 10px 14px; text-align: left; }
+  .price-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
+  .price-table tr:nth-child(even) td { background: #f3f4f6; }
+  .best-value td { background: var(--success-light) !important; font-weight: 600; }
+  .tip-box { background: var(--brand-light); border-left: 4px solid var(--brand); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 20px 0; font-size: 0.95rem; }
+  .tip-box strong { color: var(--brand-dark); }
+  .cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; text-align: center; margin: 40px 0; }
+  .cta-box h3 { font-size: 1.25rem; margin-bottom: 10px; }
+  .cta-box p { opacity: 0.8; margin-bottom: 20px; font-size: 0.95rem; }
+  .cta-btn { display: inline-block; background: var(--brand); color: white; border-radius: 8px; padding: 13px 28px; font-weight: 700; text-decoration: none; font-size: 1rem; }
+  .cta-btn:hover { background: #6d28d9; color: white; }
+  .faq-section { margin: 40px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 18px 0; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); }
+  .faq-q::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--muted); }
+  .faq-q.open::after { transform: rotate(45deg); display: inline-block; }
+  .faq-a { display: none; padding: 0 0 16px; color: #374151; font-size: 0.95rem; line-height: 1.7; }
+  .faq-a.show { display: block; }
+  footer { background: #1f2937; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.85rem; }
+  footer a { color: #a78bfa; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>🐾 Pet Food Monthly Cost Calculator</h1>
+    <p>Find out exactly how much you spend on pet food per day, per month, and per year — based on your pet's weight and the food you buy.</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="tool-card">
+    <h2>Calculate Your Pet Food Budget</h2>
+    <div class="form-grid">
+      <div class="field-row">
+        <label>Pet Type</label>
+        <select id="petType" onchange="updateDefaults()">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <label>Pet Weight (lbs)</label>
+        <input type="number" id="petWeight" placeholder="30" min="1" max="200" value="30" />
+      </div>
+      <div class="field-row">
+        <label>Food Price ($)</label>
+        <input type="number" id="bagPrice" placeholder="29.99" step="0.01" min="0" value="29.99" />
+      </div>
+      <div class="field-row">
+        <label>Bag Size (lbs)</label>
+        <input type="number" id="bagWeight" placeholder="18" step="0.1" min="0.1" value="18" />
+      </div>
+      <div class="field-row">
+        <label>Activity Level</label>
+        <select id="activity">
+          <option value="low">Low (senior / indoor)</option>
+          <option value="normal" selected>Normal (average adult)</option>
+          <option value="high">High (active / working)</option>
+          <option value="puppy">Puppy / Kitten</option>
+        </select>
+      </div>
+      <div class="field-row">
+        <label>Feeding Type</label>
+        <select id="feedType">
+          <option value="dry" selected>Dry food only</option>
+          <option value="wet">Wet food only</option>
+          <option value="mixed">Mixed (75% dry / 25% wet)</option>
+        </select>
+      </div>
+    </div>
+    <button class="calc-btn" onclick="calculate()">Calculate Monthly Cost →</button>
+
+    <div class="results-grid" id="resultsGrid">
+      <div class="result-chip day">
+        <div class="period">Per Day</div>
+        <div class="amount" id="costDay">—</div>
+        <div class="detail" id="detailDay"></div>
+      </div>
+      <div class="result-chip month">
+        <div class="period">Per Month</div>
+        <div class="amount" id="costMonth">—</div>
+        <div class="detail" id="detailMonth"></div>
+      </div>
+      <div class="result-chip year">
+        <div class="period">Per Year</div>
+        <div class="amount" id="costYear">—</div>
+        <div class="detail" id="detailYear"></div>
+      </div>
+    </div>
+    <div class="results-footer" id="resultsFooter"></div>
+  </div>
+
+  <div class="content">
+    <h2>How Much Does Pet Food Actually Cost?</h2>
+    <p>Most pet owners dramatically underestimate annual pet food costs — not because the daily cost is high, but because it compounds over 365 days. A large dog eating mid-range food at $0.12/oz can cost <strong>over $700/year</strong> just in kibble.</p>
+    <p>The formula is simple: <strong>daily food consumption (oz) × price per oz × 365</strong>. But daily consumption varies by body weight, activity level, and food caloric density — which is why a calculator beats rough estimates.</p>
+
+    <h2>Price Per Pound Benchmarks by Brand Tier</h2>
+    <table class="price-table">
+      <thead><tr><th>Tier</th><th>Brands</th><th>$/lb Range</th><th>30-lb Dog/Month</th></tr></thead>
+      <tbody>
+        <tr><td>Budget</td><td>Pedigree, Kibbles 'n Bits, Purina Dog Chow</td><td>$0.60–$1.20/lb</td><td>$18–$36</td></tr>
+        <tr class="best-value"><td>Mid-Range ✓</td><td>Purina Pro Plan, Blue Buffalo, Hill's Science Diet</td><td>$1.50–$2.50/lb</td><td>$45–$75</td></tr>
+        <tr><td>Premium</td><td>Orijen, Merrick, Taste of the Wild</td><td>$3.00–$5.00/lb</td><td>$90–$150</td></tr>
+        <tr><td>Prescription</td><td>Hill's Prescription, Royal Canin Vet</td><td>$4.00–$8.00/lb</td><td>$120–$240</td></tr>
+      </tbody>
+    </table>
+    <p>The mid-range tier ($1.50–$2.50/lb) is the sweet spot: real meat as the first ingredient, no artificial dyes or fillers, AAFCO complete nutrition — without the premium markup of "super-premium" brands that often trade on marketing more than nutrition science.</p>
+
+    <h2>Dog Feeding Guidelines by Weight</h2>
+    <table class="price-table">
+      <thead><tr><th>Dog Weight</th><th>Cups/Day (avg)</th><th>Oz/Day (approx)</th><th>Bags/Year (18 lb)</th></tr></thead>
+      <tbody>
+        <tr><td>5–10 lbs</td><td>1/3–1 cup</td><td>1.5–3 oz</td><td>3–6 bags</td></tr>
+        <tr><td>10–25 lbs</td><td>3/4–1.5 cups</td><td>2.5–5 oz</td><td>5–10 bags</td></tr>
+        <tr><td>25–50 lbs</td><td>1.5–2.75 cups</td><td>5–9 oz</td><td>10–18 bags</td></tr>
+        <tr><td>50–75 lbs</td><td>2.75–3.75 cups</td><td>9–12 oz</td><td>18–25 bags</td></tr>
+        <tr><td>75–100 lbs</td><td>3.75–5 cups</td><td>12–16 oz</td><td>25–33 bags</td></tr>
+      </tbody>
+    </table>
+
+    <h2>How to Reduce Pet Food Costs Without Sacrificing Quality</h2>
+    <ul>
+      <li><strong>Buy the largest bag that fits your storage</strong> — price per pound drops significantly at 18–30 lb sizes vs. small bags</li>
+      <li><strong>Store properly</strong> — use airtight containers, buy sizes your pet finishes within 6 weeks of opening</li>
+      <li><strong>Compare price per pound, not package price</strong> — a $45 bag isn't always better value than a $30 bag</li>
+      <li><strong>Rotate brands strategically</strong> — when your regular brand goes on sale, stock up; brands on sale can beat bulk pricing</li>
+      <li><strong>Use autoship discounts</strong> — Walmart+ and Chewy autoship offer 5–35% discounts on regular orders</li>
+    </ul>
+
+    <div class="tip-box">
+      <strong>Key insight:</strong> Switching a 50 lb dog from budget food ($0.80/lb) to mid-range food ($1.80/lb) costs roughly $30 more per month. But it typically eliminates the 2-3 vet visits/year for digestive issues and skin problems associated with low-quality ingredients — often saving money long-term.
+    </div>
+
+    <h2>Compare Pet Food Price Per Pound — Live Data</h2>
+    <p>Manually comparing pet food prices across hundreds of products is time-consuming. A tracker that shows real-time price-per-pound for dry food, wet food, and treats — sortable by brand, protein source, life stage, and dietary type — makes the decision in seconds.</p>
+
+    <div class="cta-box">
+      <h3>🐾 Using the Calculator vs. Using a Full Tracker</h3>
+      <p>The calculator above tells you what your current food costs per month. But it doesn't help you find a better option — one with the same protein quality at 30% less per pound, or a grain-free formula that's actually affordable for a large breed dog.</p>
+      <p>That's the gap <a href="https://pawperpound.com" style="color:#c4b5fd" target="_blank" rel="noopener">pawperpound.com</a> fills. It tracks 500+ dog and cat food products by price per pound, updated with current Walmart pricing. Here's how to use it for your specific situation:</p>
+      <ul style="text-align:left;margin:16px 0;line-height:2;font-size:0.93rem;opacity:0.9">
+        <li><strong>Switching brands without sacrificing protein quality:</strong> Filter to your dog's size class → sort by $/lb → look at the "First ingredient" column. Find the cheapest option with real meat (chicken, beef, salmon) as ingredient #1 — not corn or poultry by-product meal.</li>
+        <li><strong>Finding affordable grain-free for sensitive stomachs:</strong> Toggle "Grain-Free" filter → sort $/lb ascending. Grain-free doesn't have to mean premium-priced — several mid-tier options land at $1.80–$2.20/lb.</li>
+        <li><strong>Comparing wet food value vs. dry:</strong> Wet food always looks expensive per oz. The tracker normalizes to caloric equivalent so you can compare wet and dry on even footing — useful if your vet recommends adding wet to a dry diet.</li>
+        <li><strong>Large-breed budgeting:</strong> Filter by 25–40 lb bag sizes (lowest $/lb tier) → sort by price per pound → run your monthly cost estimate above with the winning product. Often saves $20–40/month vs. buying the same brand in smaller bags.</li>
+        <li><strong>Senior and puppy formula comparison:</strong> Life stage filters show only formulas appropriate for your pet's current needs, so you're not comparing an adult maintenance food against a puppy formula on price alone.</li>
+      </ul>
+      <p style="font-size:0.88rem;opacity:0.75">Database covers dry food, wet food, toppers, and treats across all major brands at Walmart. Prices update automatically — what you see reflects current shelf pricing, not catalog estimates.</p>
+      <a href="https://pawperpound.com" class="cta-btn" target="_blank" rel="noopener">Compare Pet Food $/lb →</a>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <div class="faq-item"><button class="faq-q">How much does dog food cost per month on average?</button><div class="faq-a">Monthly costs vary by size and brand. A small dog (10-20 lbs) on budget dry food costs $15–$30/month. A large dog (60-80 lbs) on mid-range food costs $45–$80/month. Large dogs on premium grain-free food can cost $120–$200/month.</div></div>
+      <div class="faq-item"><button class="faq-q">How much dry dog food should I feed per day?</button><div class="faq-a">General guidelines: under 10 lbs = 1/4–3/4 cup/day; 10–25 lbs = 3/4–1.5 cups; 25–50 lbs = 1.5–2.75 cups; 50–75 lbs = 2.75–3.75 cups; over 75 lbs = 3.75–5 cups. Always follow the guide on your specific bag — caloric density varies significantly between brands.</div></div>
+      <div class="faq-item"><button class="faq-q">What is a good price per pound for dog food?</button><div class="faq-a">Budget food runs $0.60–$1.20/lb. Mid-range (Purina Pro Plan, Blue Buffalo) costs $1.50–$2.50/lb. Premium or grain-free costs $3.00–$5.00/lb. The sweet spot is $1.50–$2.50/lb with real meat as the first ingredient.</div></div>
+      <div class="faq-item"><button class="faq-q">How much does cat food cost per month?</button><div class="faq-a">A cat on dry food only costs $10–$25/month on budget to mid-range food. Wet food only costs $25–$60/month. Mixed feeding typically costs $20–$40/month.</div></div>
+      <div class="faq-item"><button class="faq-q">Is it cheaper to buy large bags of dog food?</button><div class="faq-a">Usually yes — larger bags have lower price per pound. A 30 lb bag vs. a 4 lb bag of the same food often saves 25–35% per pound. Use airtight containers and buy sizes your pet finishes within 6 weeks of opening.</div></div>
+      <div class="faq-item"><button class="faq-q">Where can I compare pet food prices per pound?</button><div class="faq-a">PawPerPound.com tracks 500+ dog and cat food products with real-time price-per-pound data. Filter by brand, protein source, life stage, and dietary type to find the best value for your pet.</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Pet Food Cost Calculator — Free tool for smart pet owners. Compare 500+ products at <a href="https://pawperpound.com" target="_blank" rel="noopener">pawperpound.com</a>.</p>
+</footer>
+
+<script>
+// Daily food intake estimate in oz based on weight, activity, pet type
+function getDailyOz(weightLbs, petType, activity) {
+  let base;
+  if (petType === 'cat') {
+    base = Math.max(1, weightLbs * 0.18); // ~0.18 oz dry per lb body weight
+    if (activity === 'high' || activity === 'puppy') base *= 1.3;
+    if (activity === 'low') base *= 0.8;
+  } else {
+    // Dog: roughly 1 oz dry food per 1 lb body weight up to 10 lbs, then declining ratio
+    if (weightLbs <= 10) base = weightLbs * 0.75;
+    else if (weightLbs <= 25) base = 7.5 + (weightLbs - 10) * 0.45;
+    else if (weightLbs <= 50) base = 14.25 + (weightLbs - 25) * 0.35;
+    else if (weightLbs <= 75) base = 23 + (weightLbs - 50) * 0.28;
+    else base = 30 + (weightLbs - 75) * 0.22;
+    if (activity === 'high') base *= 1.25;
+    if (activity === 'puppy') base *= 1.4;
+    if (activity === 'low') base *= 0.85;
+  }
+  return base;
+}
+
+function calculate() {
+  const petType  = document.getElementById('petType').value;
+  const weight   = parseFloat(document.getElementById('petWeight').value);
+  const bagPrice = parseFloat(document.getElementById('bagPrice').value);
+  const bagLbs   = parseFloat(document.getElementById('bagWeight').value);
+  const activity = document.getElementById('activity').value;
+  const feedType = document.getElementById('feedType').value;
+
+  if (!weight || !bagPrice || !bagLbs) { alert('Please fill in all fields.'); return; }
+
+  const pricePerLb = bagPrice / bagLbs;
+  const pricePerOz = pricePerLb / 16;
+  const dailyOz = getDailyOz(weight, petType, activity);
+
+  let dailyCostDry = dailyOz * pricePerOz;
+  let dailyCost = dailyCostDry;
+  let feedNote = '';
+
+  if (feedType === 'wet') {
+    dailyCost = dailyCostDry * 5.5; // wet food ~5.5x more per calorie than dry
+    feedNote = 'Wet food estimate (5.5× dry cost per calorie equivalent)';
+  } else if (feedType === 'mixed') {
+    dailyCost = dailyCostDry * 0.75 + dailyCostDry * 0.25 * 5.5;
+    feedNote = 'Mixed feeding: 75% dry + 25% wet equivalent';
+  }
+
+  const monthlyCost = dailyCost * 30.44;
+  const yearlyCost  = dailyCost * 365;
+  const bagsPerYear = (dailyOz * 365) / (bagLbs * 16);
+
+  document.getElementById('costDay').textContent   = '$' + dailyCost.toFixed(2);
+  document.getElementById('costMonth').textContent = '$' + monthlyCost.toFixed(0);
+  document.getElementById('costYear').textContent  = '$' + yearlyCost.toFixed(0);
+  document.getElementById('detailDay').textContent   = dailyOz.toFixed(1) + ' oz/day consumed';
+  document.getElementById('detailMonth').textContent = (monthlyCost / bagPrice).toFixed(1) + ' bags/month';
+  document.getElementById('detailYear').textContent  = bagsPerYear.toFixed(1) + ' bags/year';
+
+  const footer = document.getElementById('resultsFooter');
+  footer.innerHTML = `<strong>$${pricePerLb.toFixed(2)}/lb</strong> · $${pricePerOz.toFixed(3)}/oz · ${feedNote || 'Dry food calculation'}. Estimates based on average feeding guidelines; adjust for your pet's actual intake.`;
+
+  document.getElementById('resultsGrid').classList.add('show');
+  footer.classList.add('show');
+  document.getElementById('resultsGrid').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function updateDefaults() {
+  const petType = document.getElementById('petType').value;
+  if (petType === 'cat') {
+    document.getElementById('petWeight').value = 10;
+    document.getElementById('bagWeight').value = 7;
+    document.getElementById('bagPrice').value = 14.99;
+  } else {
+    document.getElementById('petWeight').value = 30;
+    document.getElementById('bagWeight').value = 18;
+    document.getElementById('bagPrice').value = 29.99;
+  }
+}
+
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('show');
+  });
+});
+</script>
+</body>
+</html>

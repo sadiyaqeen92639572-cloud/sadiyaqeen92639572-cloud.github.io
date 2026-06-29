@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Per Unit Calculator — Compare Any 2 Products Instantly (2026)</title>
+<meta name="description" content="Free price per unit calculator. Compare cost per ounce, per pound, or per unit for any 2 products. Stop overpaying at Walmart, Costco, or any grocery store.">
+<meta name="keywords" content="price per unit calculator, cost per ounce calculator, price comparison grocery, unit price calculator, price per pound calculator">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/price-per-unit-guide/">
+<meta property="og:title" content="Price Per Unit Calculator — Compare Any 2 Products">
+<meta property="og:description" content="Free interactive calculator. Enter price + size for 2 products, see which is actually cheaper per unit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/price-per-unit-guide/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Price Per Unit Calculator">
+<meta name="twitter:description" content="Compare cost per ounce or pound for any 2 products instantly.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Price Per Unit Calculator",
+      "description": "Free calculator to compare price per unit (oz, lb, count) between two products.",
+      "url": "https://sadiyaqeen92639572-cloud.github.io/price-per-unit-guide/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is price per unit and why does it matter?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Price per unit (also called unit price) is the cost of one standardized unit of a product — per ounce, per pound, per count, or per ml. It strips away packaging tricks and lets you compare the true cost of two products regardless of size. A 32 oz bottle for $3.99 is cheaper per ounce than a 20 oz bottle for $2.79, but most shoppers miss this without calculating." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate price per ounce?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Divide the total price by the number of ounces. Example: $4.99 ÷ 28 oz = $0.178 per ounce. Then do the same for the competing product and compare. Our calculator above does this automatically for any unit." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Walmart show unit prices on shelf tags?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, Walmart shelf tags legally must display unit price in most US states. However the unit used can differ between similar products (one shows per oz, another per lb), making direct comparison confusing. That's why a calculator that converts everything to the same base unit is more reliable." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is buying in bulk always cheaper per unit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not always. Bulk items are usually cheaper per unit, but not universally. Store brands in smaller sizes sometimes beat bulk name brands. Sale prices on regular sizes can undercut bulk pricing. Always run the numbers — our calculator makes it a 10-second check." }
+        },
+        {
+          "@type": "Question",
+          "name": "What units can I compare with this calculator?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can compare per ounce (oz), per pound (lb), per fluid ounce (fl oz), per liter, per milliliter, per count/unit, per gram, and per kilogram. The calculator normalizes both products to the same base unit automatically." }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I find live unit prices for Walmart products?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The Unit Price Tracker at unitpricetracker.com tracks real-time price-per-unit data for hundreds of products across categories at Walmart, updated automatically. It lets you filter, sort, and identify the best value without doing manual math." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --brand: #2563eb;
+    --brand-light: #dbeafe;
+    --success: #16a34a;
+    --success-light: #dcfce7;
+    --warning: #d97706;
+    --warning-light: #fef3c7;
+    --danger: #dc2626;
+    --text: #111827;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --radius: 12px;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+  a { color: var(--brand); }
+  .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+  /* HEADER */
+  header { background: var(--brand); color: white; padding: 48px 20px 40px; text-align: center; }
+  header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+  header p { font-size: 1.05rem; opacity: 0.9; max-width: 560px; margin: 0 auto; }
+
+  /* TOOL */
+  .tool-card { background: var(--white); border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin: -24px auto 40px; max-width: 740px; padding: 32px; position: relative; z-index: 10; }
+  .tool-card h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 24px; color: var(--text); text-align: center; }
+  .products-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  @media (max-width: 540px) { .products-grid { grid-template-columns: 1fr; } }
+  .product-box { border: 2px solid var(--border); border-radius: 10px; padding: 18px; }
+  .product-box h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 14px; }
+  .product-box.winner { border-color: var(--success); background: var(--success-light); }
+  .field-row { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
+  .field-row label { font-size: 0.8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .field-row input, .field-row select { border: 1.5px solid var(--border); border-radius: 8px; padding: 9px 12px; font-size: 0.95rem; width: 100%; outline: none; transition: border-color 0.15s; }
+  .field-row input:focus, .field-row select:focus { border-color: var(--brand); }
+  .price-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .calc-btn { width: 100%; background: var(--brand); color: white; border: none; border-radius: 10px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.15s; margin-top: 8px; }
+  .calc-btn:hover { background: #1d4ed8; }
+  .result-box { margin-top: 24px; border-radius: 10px; padding: 20px 24px; display: none; }
+  .result-box.show { display: block; }
+  .result-box.winner-a { background: var(--success-light); border: 2px solid var(--success); }
+  .result-box.winner-b { background: var(--success-light); border: 2px solid var(--success); }
+  .result-box.tie { background: var(--warning-light); border: 2px solid var(--warning); }
+  .result-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+  .result-detail { font-size: 0.9rem; color: var(--muted); }
+  .unit-prices { display: flex; gap: 20px; margin-top: 12px; flex-wrap: wrap; }
+  .unit-price-chip { background: white; border-radius: 8px; padding: 8px 14px; font-size: 0.85rem; font-weight: 600; border: 1.5px solid var(--border); }
+  .savings-badge { display: inline-block; background: var(--success); color: white; border-radius: 20px; padding: 4px 12px; font-size: 0.8rem; font-weight: 700; margin-top: 10px; }
+
+  /* CONTENT */
+  .content { padding: 20px 0 60px; }
+  .content h2 { font-size: 1.45rem; font-weight: 800; margin: 40px 0 16px; color: var(--text); }
+  .content h3 { font-size: 1.1rem; font-weight: 700; margin: 28px 0 10px; color: var(--text); }
+  .content p { margin-bottom: 16px; color: #374151; }
+  .content ul, .content ol { margin: 0 0 16px 24px; }
+  .content li { margin-bottom: 8px; color: #374151; }
+  .tip-box { background: var(--brand-light); border-left: 4px solid var(--brand); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 20px 0; }
+  .tip-box strong { color: var(--brand); }
+  .example-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+  .example-table th { background: var(--brand); color: white; padding: 10px 14px; text-align: left; }
+  .example-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); }
+  .example-table tr:nth-child(even) td { background: #f3f4f6; }
+  .winner-row td { background: var(--success-light) !important; font-weight: 600; }
+  .cta-box { background: var(--text); color: white; border-radius: var(--radius); padding: 32px; text-align: center; margin: 40px 0; }
+  .cta-box h3 { font-size: 1.3rem; margin-bottom: 10px; }
+  .cta-box p { opacity: 0.8; margin-bottom: 20px; font-size: 0.95rem; }
+  .cta-btn { display: inline-block; background: var(--brand); color: white; border-radius: 8px; padding: 13px 28px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: background 0.15s; }
+  .cta-btn:hover { background: #1d4ed8; color: white; }
+
+  /* FAQ */
+  .faq-section { margin: 40px 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 18px 0; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); }
+  .faq-q::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--muted); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-q.open::after { transform: rotate(45deg); }
+  .faq-a { display: none; padding: 0 0 16px; color: #374151; font-size: 0.95rem; line-height: 1.7; }
+  .faq-a.show { display: block; }
+
+  footer { background: #1f2937; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.85rem; }
+  footer a { color: #60a5fa; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Price Per Unit Calculator</h1>
+    <p>Compare the real cost of any two products — per ounce, pound, or count. Stop guessing which size is actually cheaper.</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="tool-card">
+    <h2>⚖️ Compare Two Products</h2>
+    <div class="products-grid">
+      <div class="product-box" id="boxA">
+        <h3>Product A</h3>
+        <div class="field-row">
+          <label>Product Name</label>
+          <input type="text" id="nameA" placeholder="e.g. Tide 64 oz" />
+        </div>
+        <div class="price-fields">
+          <div class="field-row">
+            <label>Price ($)</label>
+            <input type="number" id="priceA" placeholder="9.97" step="0.01" min="0" />
+          </div>
+          <div class="field-row">
+            <label>Size</label>
+            <input type="number" id="sizeA" placeholder="64" step="0.1" min="0" />
+          </div>
+        </div>
+        <div class="field-row">
+          <label>Unit</label>
+          <select id="unitA">
+            <option value="oz">oz (ounces)</option>
+            <option value="lb">lb (pounds)</option>
+            <option value="fl_oz">fl oz (fluid ounces)</option>
+            <option value="ml">ml (milliliters)</option>
+            <option value="l">L (liters)</option>
+            <option value="g">g (grams)</option>
+            <option value="kg">kg (kilograms)</option>
+            <option value="ct">count / units</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-box" id="boxB">
+        <h3>Product B</h3>
+        <div class="field-row">
+          <label>Product Name</label>
+          <input type="text" id="nameB" placeholder="e.g. Tide 100 oz" />
+        </div>
+        <div class="price-fields">
+          <div class="field-row">
+            <label>Price ($)</label>
+            <input type="number" id="priceB" placeholder="14.97" step="0.01" min="0" />
+          </div>
+          <div class="field-row">
+            <label>Size</label>
+            <input type="number" id="sizeB" placeholder="100" step="0.1" min="0" />
+          </div>
+        </div>
+        <div class="field-row">
+          <label>Unit</label>
+          <select id="unitB">
+            <option value="oz">oz (ounces)</option>
+            <option value="lb">lb (pounds)</option>
+            <option value="fl_oz">fl oz (fluid ounces)</option>
+            <option value="ml">ml (milliliters)</option>
+            <option value="l">L (liters)</option>
+            <option value="g">g (grams)</option>
+            <option value="kg">kg (kilograms)</option>
+            <option value="ct">count / units</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="compare()">Compare Unit Prices →</button>
+
+    <div class="result-box" id="result"></div>
+  </div>
+
+  <div class="content">
+    <h2>What Is Price Per Unit — And Why It Tricks You</h2>
+    <p>Retailers have known for decades that the human brain is bad at comparing value when sizes are different. A 20 oz bottle of shampoo for $3.49 versus a 28 oz bottle for $4.79 — most shoppers just see "$3.49 is cheaper." It's not. The 28 oz bottle costs <strong>$0.171/oz</strong> versus <strong>$0.175/oz</strong> — you'd save money buying the bigger one.</p>
+    <p>This is why price-per-unit (also called <em>unit price</em>) is the single most useful number in grocery shopping. It strips away the packaging and tells you the real cost of what you're getting.</p>
+
+    <h2>How to Calculate Price Per Unit (Formula)</h2>
+    <p>The formula is simple:</p>
+    <div class="tip-box">
+      <strong>Unit Price = Total Price ÷ Total Quantity</strong><br>
+      Example: $4.79 ÷ 28 oz = <strong>$0.171 per oz</strong>
+    </div>
+    <p>The tricky part is when two products use different units — one listed per oz, another per lb. You need to convert to the same base before comparing. Our calculator handles this automatically.</p>
+
+    <h3>Real Example: Peanut Butter at Walmart</h3>
+    <table class="example-table">
+      <thead><tr><th>Product</th><th>Price</th><th>Size</th><th>Price/oz</th><th>Price/lb</th></tr></thead>
+      <tbody>
+        <tr><td>Jif 16 oz</td><td>$3.24</td><td>16 oz</td><td>$0.203</td><td>$3.24</td></tr>
+        <tr><td>Jif 40 oz</td><td>$6.98</td><td>40 oz</td><td>$0.175</td><td>$2.79</td></tr>
+        <tr class="winner-row"><td>Great Value 64 oz ✓</td><td>$9.48</td><td>64 oz</td><td>$0.148</td><td>$2.37</td></tr>
+      </tbody>
+    </table>
+    <p>The 64 oz store brand saves <strong>$0.055/oz</strong> over the small Jif — that's 27% cheaper per ounce. Over a year of buying peanut butter, that's real money.</p>
+
+    <h2>When Bulk Is NOT Cheaper</h2>
+    <p>Bigger isn't always better value. Here are three situations where the smaller size wins:</p>
+    <ul>
+      <li><strong>Sale prices</strong> — a sale on the small size can beat the everyday bulk price</li>
+      <li><strong>Store brands vs. name brand bulk</strong> — Great Value 32 oz often beats Tide 100 oz per oz</li>
+      <li><strong>Products with expiry</strong> — if you can't use it before it expires, the "cheaper" bulk option wastes money</li>
+      <li><strong>Club store comparison</strong> — Costco bulk items are sometimes priced higher per unit than Walmart sale prices</li>
+    </ul>
+
+    <h2>Unit Conversion Reference</h2>
+    <table class="example-table">
+      <thead><tr><th>From</th><th>To oz</th><th>To lb</th><th>To ml</th></tr></thead>
+      <tbody>
+        <tr><td>1 pound (lb)</td><td>16 oz</td><td>1 lb</td><td>—</td></tr>
+        <tr><td>1 liter (L)</td><td>33.8 fl oz</td><td>—</td><td>1000 ml</td></tr>
+        <tr><td>1 kilogram (kg)</td><td>35.3 oz</td><td>2.205 lb</td><td>—</td></tr>
+        <tr><td>1 gallon</td><td>128 fl oz</td><td>—</td><td>3785 ml</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Track Unit Prices Across Hundreds of Products</h2>
+    <p>Manually calculating unit prices works for a one-time purchase decision. But if you want to monitor price-per-unit trends over time, spot when a product suddenly gets cheaper, or compare dozens of brands at once — that requires a tracker.</p>
+
+    <div class="cta-box">
+      <h3>When This Calculator Isn't Enough</h3>
+      <p>The calculator above is great for comparing two products you're already holding. But what about finding the cheapest laundry detergent per ounce across 40 options before you even leave home? Or tracking whether the unit price on your go-to olive oil has crept up 15% over three months?</p>
+      <p>That's what <a href="https://unitpricetracker.com" style="color:#93c5fd" target="_blank" rel="noopener">unitpricetracker.com</a> is built for. Here's how to use it effectively:</p>
+      <ul style="text-align:left;margin:16px 0;line-height:2;font-size:0.93rem;opacity:0.9">
+        <li><strong>Before a shopping trip:</strong> Open the tracker, filter by category (cleaning, cooking oil, cereals), sort by $/oz ascending — your shopping list writes itself.</li>
+        <li><strong>To catch stealth price hikes:</strong> Unit prices update automatically. If your usual brand's $/oz jumps, the tracker flags it before you pay more at the shelf.</li>
+        <li><strong>To compare store brand vs. name brand at scale:</strong> Filter to any category, toggle "Great Value / Equate only" to see if the store brand is actually cheaper per unit — often it isn't on sale weeks.</li>
+        <li><strong>For bulk buying decisions:</strong> Sort by unit price, then look at the size column. The product with the lowest $/oz in a large enough size that you'll finish it = your buy.</li>
+      </ul>
+      <p style="font-size:0.88rem;opacity:0.75">The tracker covers hundreds of products across grocery, cleaning, personal care, and pantry staples at Walmart — updated automatically so the data you see reflects current shelf prices, not last month's.</p>
+      <a href="https://unitpricetracker.com" class="cta-btn" target="_blank" rel="noopener">Open Unit Price Tracker →</a>
+    </div>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section" id="faq">
+      <div class="faq-item"><button class="faq-q">What is price per unit and why does it matter?</button><div class="faq-a">Price per unit is the cost of one standardized unit of a product — per ounce, per pound, per count. It strips away packaging tricks and lets you compare the true cost of two products regardless of size. A 32 oz bottle for $3.99 is cheaper per ounce than a 20 oz bottle for $2.79, but most shoppers miss this without calculating.</div></div>
+      <div class="faq-item"><button class="faq-q">How do I calculate price per ounce?</button><div class="faq-a">Divide the total price by the number of ounces. Example: $4.99 ÷ 28 oz = $0.178 per ounce. Then do the same for the competing product and compare. The calculator above does this automatically for any unit.</div></div>
+      <div class="faq-item"><button class="faq-q">Does Walmart show unit prices on shelf tags?</button><div class="faq-a">Yes, Walmart shelf tags display unit price in most US states. However the unit used can differ between similar products, making direct comparison confusing. A calculator that normalizes to the same base unit is more reliable.</div></div>
+      <div class="faq-item"><button class="faq-q">Is buying in bulk always cheaper per unit?</button><div class="faq-a">Not always. Store brands in smaller sizes sometimes beat bulk name brands. Sale prices on regular sizes can undercut bulk pricing. Always run the numbers — this calculator makes it a 10-second check.</div></div>
+      <div class="faq-item"><button class="faq-q">What units can I compare with this calculator?</button><div class="faq-a">You can compare oz, lb, fl oz, L, ml, g, kg, and count. The calculator converts both products to oz or the smaller unit automatically before comparing.</div></div>
+      <div class="faq-item"><button class="faq-q">Where can I find live unit prices for Walmart products?</button><div class="faq-a">The Unit Price Tracker at unitpricetracker.com tracks real-time price-per-unit data for hundreds of products across categories at Walmart, updated automatically.</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Price Per Unit Calculator — Free tool for smarter grocery shopping. Live product data at <a href="https://unitpricetracker.com" target="_blank" rel="noopener">unitpricetracker.com</a>.</p>
+</footer>
+
+<script>
+const TO_OZ = { oz: 1, lb: 16, fl_oz: 1, ml: 0.0338, l: 33.814, g: 0.0353, kg: 35.274, ct: 1 };
+const LABELS = { oz: '/oz', lb: '/lb', fl_oz: '/fl oz', ml: '/ml', l: '/L', g: '/g', kg: '/kg', ct: '/unit' };
+
+function compare() {
+  const priceA = parseFloat(document.getElementById('priceA').value);
+  const sizeA  = parseFloat(document.getElementById('sizeA').value);
+  const unitA  = document.getElementById('unitA').value;
+  const nameA  = document.getElementById('nameA').value || 'Product A';
+
+  const priceB = parseFloat(document.getElementById('priceB').value);
+  const sizeB  = parseFloat(document.getElementById('sizeB').value);
+  const unitB  = document.getElementById('unitB').value;
+  const nameB  = document.getElementById('nameB').value || 'Product B';
+
+  if (!priceA || !sizeA || !priceB || !sizeB) {
+    alert('Please fill in price and size for both products.');
+    return;
+  }
+
+  const ppuA_base = priceA / (sizeA * TO_OZ[unitA]);
+  const ppuB_base = priceB / (sizeB * TO_OZ[unitB]);
+  const ppuA_native = priceA / sizeA;
+  const ppuB_native = priceB / sizeB;
+
+  const result = document.getElementById('result');
+  result.className = 'result-box show';
+
+  let html = '';
+  if (Math.abs(ppuA_base - ppuB_base) < 0.0001) {
+    result.classList.add('tie');
+    html = `<div class="result-title">🤝 It's a Tie</div><p class="result-detail">Both products cost the same per unit.</p>`;
+  } else {
+    const winner = ppuA_base < ppuB_base ? 'A' : 'B';
+    const winName = winner === 'A' ? nameA : nameB;
+    const loseName = winner === 'A' ? nameB : nameA;
+    const winPPU = winner === 'A' ? ppuA_base : ppuB_base;
+    const losePPU = winner === 'A' ? ppuB_base : ppuA_base;
+    const savings = ((losePPU - winPPU) / losePPU * 100).toFixed(1);
+    result.classList.add(winner === 'A' ? 'winner-a' : 'winner-b');
+    html = `
+      <div class="result-title">✅ ${winName} is cheaper per unit</div>
+      <p class="result-detail">You save <strong>${savings}%</strong> per unit compared to ${loseName}.</p>
+      <span class="savings-badge">Save ${savings}% per unit</span>`;
+    if (winner === 'A') document.getElementById('boxA').classList.add('winner');
+    else document.getElementById('boxB').classList.add('winner');
+  }
+
+  html += `<div class="unit-prices">
+    <div class="unit-price-chip">${nameA}: $${ppuA_native.toFixed(4)}${LABELS[unitA]}</div>
+    <div class="unit-price-chip">${nameB}: $${ppuB_native.toFixed(4)}${LABELS[unitB]}</div>
+  </div>`;
+
+  result.innerHTML = html;
+  result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const ans = btn.nextElementSibling;
+    btn.classList.toggle('open');
+    ans.classList.toggle('show');
+  });
+});
+</script>
+</body>
+</html>
