@@ -520,8 +520,7 @@
     try {
       const solar = Solar.fromYmd(y, m, d);
       const lunar = solar.getLunar();
-      const bazi = lunar.getEightCharacters();
-      const dayStem = bazi.getDayGan();
+      const dayStem = lunar.getDayGan();
 
       const dm = DAY_MASTERS[dayStem];
       if (!dm) { alert('Could not calculate Day Master. Please try another date.'); return; }
