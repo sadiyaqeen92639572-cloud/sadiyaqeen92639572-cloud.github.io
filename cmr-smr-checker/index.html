@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<title>CMR vs SMR Hard Drive Checker — Is Your Drive RAID Safe? (2026)</title>
+<meta name="description" content="Instantly check if your hard drive is CMR or SMR. Type any drive name or model number — get a RAID safety verdict in seconds. Free CMR/SMR lookup tool.">
+<meta name="keywords" content="CMR vs SMR hard drive, is my hard drive CMR or SMR, CMR checker, SMR RAID safe, WD Red CMR SMR, NAS drive checker, CMR hard drive list">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/cmr-smr-checker/">
+<meta property="og:title" content="CMR vs SMR Hard Drive Checker — Is Your Drive RAID Safe?">
+<meta property="og:description" content="Type any drive name or model number. Get instant CMR/SMR verdict + RAID safety rating. Free tool.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/cmr-smr-checker/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "CMR vs SMR Hard Drive Checker",
+      "url": "https://sadiyaqeen92639572-cloud.github.io/cmr-smr-checker/",
+      "description": "Instantly check if any hard drive is CMR or SMR. Enter a drive name or model number to get a RAID safety verdict.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between CMR and SMR hard drives?",
+          "acceptedAnswer": { "@type": "Answer", "text": "CMR (Conventional Magnetic Recording) writes data in non-overlapping tracks — fast, reliable, RAID-safe. SMR (Shingled Magnetic Recording) overlaps tracks like roof shingles to increase density, but requires rewriting entire track bands on updates — causing extreme slowdowns under sustained write load and RAID rebuild failures." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are SMR hard drives safe for NAS use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Synology, QNAP, and Western Digital themselves warn against SMR in NAS and RAID arrays. SMR drives cause RAID rebuild failures, degraded mode timeouts, and extreme slowdowns under parity writes. Always use CMR drives in NAS systems." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the WD Red CMR or SMR?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on the model. WD Red Plus (all capacities) = CMR. WD Red (without 'Plus') 2TB–6TB manufactured after 2019 = SMR. WD Red 8TB and above = CMR. Western Digital was criticized in 2020 for silently shipping SMR drives in WD Red NAS products without disclosing the technology change." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Seagate Barracuda models are SMR?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Seagate Barracuda 2TB, 3TB, 4TB, 5TB, and 6TB (3.5-inch) are SMR. Barracuda 8TB and above are CMR. The Barracuda Pro is always CMR. IronWolf and IronWolf Pro (all capacities) are always CMR and NAS-certified." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use SMR drives in RAID 5 or RAID 6?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. SMR drives frequently fail RAID rebuild because NAS systems mark drives as failed after a write timeout (typically 8 seconds). SMR drives can take minutes to complete a single write operation during sustained load. This causes cascading RAID failures. Use only CMR drives for RAID 5, RAID 6, or any parity RAID." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I identify CMR vs SMR from a model number?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For Western Digital: model numbers ending in EFRX, EFPX, EFBX, EFGX = CMR (WD Red Plus). Ending in EFAX or EFZX = SMR (WD Red). For Seagate IronWolf: all ST[X]000VN models are CMR. Seagate Barracuda ST[X]000DM004/DM003 = SMR. Exos X-series = always CMR. Use the checker above to look up any drive instantly." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I put an SMR drive in a NAS RAID array?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The NAS may appear to work normally at first, but under heavy write loads or during RAID rebuild after a drive failure, SMR drives will stall for extended periods. Most NAS firmware will interpret the stall as a drive failure and drop the drive from the array — causing potential data loss, especially in RAID 5 with multiple drives affected simultaneously." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "CMR vs SMR Checker", "item": "https://sadiyaqeen92639572-cloud.github.io/cmr-smr-checker/" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to Check if a Hard Drive is CMR or SMR",
+      "description": "Use this tool to instantly identify whether any hard drive uses CMR or SMR recording technology.",
+      "totalTime": "PT1M",
+      "tool": [{ "@type": "HowToTool", "name": "CMR vs SMR Hard Drive Checker" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter drive name or model", "text": "Type the drive name (e.g. 'WD Red 4TB') or model number (e.g. 'WD40EFAX') into the search box." },
+        { "@type": "HowToStep", "position": 2, "name": "Get instant verdict", "text": "The checker returns CMR or SMR classification with a RAID safety rating in under one second." },
+        { "@type": "HowToStep", "position": 3, "name": "Read the explanation", "text": "Each result explains why the drive is classified CMR or SMR and whether it is safe for NAS/RAID use." },
+        { "@type": "HowToStep", "position": 4, "name": "Compare alternatives", "text": "If your drive is SMR, use cmrcheck.com to find CMR alternatives sorted by $/TB for your capacity requirement." }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --brand: #1e40af;
+  --brand-light: #dbeafe;
+  --cmr: #16a34a;
+  --cmr-bg: #dcfce7;
+  --smr: #dc2626;
+  --smr-bg: #fee2e2;
+  --unknown: #d97706;
+  --unknown-bg: #fef3c7;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 15px; }
+a { color: var(--brand); }
+
+header { background: var(--brand); color: white; padding: 48px 20px 56px; text-align: center; }
+header h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: .5rem; }
+header p { opacity: .88; font-size: .95rem; max-width: 560px; margin: 0 auto; }
+
+.tool-card {
+  background: white; border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,.1);
+  margin: -32px auto 40px; max-width: 680px;
+  padding: 32px; position: relative; z-index: 10;
+}
+.tool-card h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: var(--brand); }
+
+.search-row { display: flex; gap: .6rem; }
+#driveInput {
+  flex: 1; padding: .75rem 1rem; border: 2px solid var(--border);
+  border-radius: 8px; font-size: 1rem; outline: none;
+  transition: border-color .15s;
+}
+#driveInput:focus { border-color: var(--brand); }
+#checkBtn {
+  padding: .75rem 1.4rem; background: var(--brand); color: white;
+  border: none; border-radius: 8px; font-size: .95rem; font-weight: 700;
+  cursor: pointer; white-space: nowrap; transition: filter .15s;
+}
+#checkBtn:hover { filter: brightness(1.12); }
+
+.hint { font-size: .78rem; color: var(--muted); margin-top: .5rem; }
+
+#result { margin-top: 1.5rem; display: none; }
+
+.verdict-box {
+  border-radius: 10px; padding: 1.25rem 1.5rem;
+  border: 2px solid; margin-bottom: 1rem;
+}
+.verdict-box.cmr  { background: var(--cmr-bg);     border-color: var(--cmr);     }
+.verdict-box.smr  { background: var(--smr-bg);     border-color: var(--smr);     }
+.verdict-box.unknown { background: var(--unknown-bg); border-color: var(--unknown); }
+
+.verdict-label { font-size: 1.5rem; font-weight: 800; margin-bottom: .3rem; }
+.verdict-box.cmr  .verdict-label { color: var(--cmr); }
+.verdict-box.smr  .verdict-label { color: var(--smr); }
+.verdict-box.unknown .verdict-label { color: var(--unknown); }
+
+.verdict-sub { font-size: .88rem; color: var(--text); }
+.raid-badge {
+  display: inline-block; margin-top: .75rem; padding: .3rem .85rem;
+  border-radius: 20px; font-size: .78rem; font-weight: 700;
+}
+.raid-safe    { background: var(--cmr); color: white; }
+.raid-unsafe  { background: var(--smr); color: white; }
+.raid-caution { background: var(--unknown); color: white; }
+
+.match-title { font-size: .82rem; color: var(--muted); margin-bottom: .35rem; }
+.match-name  { font-weight: 600; font-size: .95rem; }
+
+.suggestions { margin-top: 1rem; }
+.suggestions p { font-size: .82rem; color: var(--muted); margin-bottom: .4rem; }
+.sug-list { display: flex; flex-wrap: wrap; gap: .4rem; }
+.sug-btn {
+  padding: .3rem .7rem; border-radius: 20px; border: 1px solid var(--border);
+  background: white; font-size: .78rem; cursor: pointer; color: var(--text);
+  transition: border-color .15s;
+}
+.sug-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+.content { max-width: 760px; margin: 0 auto; padding: 0 20px 60px; }
+
+h2.section { font-size: 1.25rem; font-weight: 700; margin: 2rem 0 1rem; border-left: 4px solid var(--brand); padding-left: .75rem; }
+
+p { margin-bottom: .9rem; color: #374151; }
+ul, ol { padding-left: 1.4rem; margin-bottom: 1rem; }
+li { margin-bottom: .4rem; color: #374151; }
+
+table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: .88rem; }
+th { background: var(--brand); color: white; padding: .6rem .8rem; text-align: left; }
+td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8fafc; }
+.tag-cmr { color: var(--cmr); font-weight: 700; }
+.tag-smr { color: var(--smr); font-weight: 700; }
+.tag-mixed { color: var(--unknown); font-weight: 700; }
+
+.cta-box {
+  background: #111827; color: white; border-radius: var(--radius);
+  padding: 2rem 2rem 2rem; margin: 2rem 0;
+}
+.cta-box h3 { color: white; font-size: 1.1rem; margin-bottom: .75rem; }
+.cta-box p { color: rgba(255,255,255,.88); }
+.cta-box ul { color: white; margin: .75rem 0 1.25rem; }
+.cta-box li { color: rgba(255,255,255,.88) !important; margin-bottom: .5rem; }
+.cta-btn {
+  display: inline-block; background: #6366f1; color: white;
+  padding: .7rem 1.5rem; border-radius: 8px; font-weight: 700;
+  font-size: .9rem; text-decoration: none; transition: filter .15s;
+}
+.cta-btn:hover { filter: brightness(1.15); color: white; }
+
+.faq { margin: 2rem 0; }
+.faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: .6rem; overflow: hidden; }
+.faq-q {
+  padding: .9rem 1rem; font-weight: 600; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  background: white; font-size: .9rem;
+}
+.faq-q:hover { background: var(--brand-light); }
+.faq-a { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height .25s, padding .25s; font-size: .88rem; color: #374151; }
+.faq-item.open .faq-a { max-height: 300px; padding: .75rem 1rem; }
+.faq-arrow { transition: transform .2s; flex-shrink: 0; }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+footer { background: #1f2937; color: rgba(255,255,255,.6); text-align: center; padding: 1.5rem; font-size: .78rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>CMR vs SMR Hard Drive Checker</h1>
+  <p>Type any drive name or model number — get an instant CMR/SMR verdict and RAID safety rating.</p>
+</header>
+
+<div class="tool-card">
+  <h2>🔍 Check Your Drive</h2>
+  <div class="search-row">
+    <input type="text" id="driveInput" placeholder="e.g. WD Red 4TB, WD40EFAX, IronWolf 8TB…" autocomplete="off">
+    <button id="checkBtn" onclick="checkDrive()">Check</button>
+  </div>
+  <p class="hint">Supports drive names, model numbers, and brand+capacity combos</p>
+
+  <div id="result"></div>
+
+  <div class="suggestions">
+    <p>Try these examples:</p>
+    <div class="sug-list">
+      <button class="sug-btn" onclick="setAndCheck('WD Red 4TB')">WD Red 4TB</button>
+      <button class="sug-btn" onclick="setAndCheck('WD Red Plus 8TB')">WD Red Plus 8TB</button>
+      <button class="sug-btn" onclick="setAndCheck('IronWolf 12TB')">IronWolf 12TB</button>
+      <button class="sug-btn" onclick="setAndCheck('Barracuda 4TB')">Barracuda 4TB</button>
+      <button class="sug-btn" onclick="setAndCheck('Seagate Exos 16TB')">Seagate Exos 16TB</button>
+      <button class="sug-btn" onclick="setAndCheck('WD40EFAX')">WD40EFAX</button>
+      <button class="sug-btn" onclick="setAndCheck('Toshiba N300')">Toshiba N300</button>
+      <button class="sug-btn" onclick="setAndCheck('WD Blue 2TB')">WD Blue 2TB</button>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <h2 class="section">CMR vs SMR: The Complete Reference Table</h2>
+  <p>The table below covers the most common hard drive families sold on Amazon. Capacity ranges matter — the same brand and line can be CMR at one capacity and SMR at another.</p>
+
+  <table>
+    <thead><tr><th>Drive Family</th><th>Capacities</th><th>Technology</th><th>NAS / RAID Safe</th></tr></thead>
+    <tbody>
+      <tr><td>WD Red Plus</td><td>1TB – 14TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>WD Red (non-Plus)</td><td>2TB – 6TB (post-2019)</td><td class="tag-smr">SMR</td><td>❌ No</td></tr>
+      <tr><td>WD Red (non-Plus)</td><td>8TB+</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>WD Gold</td><td>1TB – 26TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>WD Black</td><td>500GB – 8TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>WD Blue</td><td>1TB – 6TB (3.5")</td><td class="tag-cmr">CMR</td><td>✅ Desktop</td></tr>
+      <tr><td>WD Green</td><td>All</td><td class="tag-smr">SMR</td><td>❌ No</td></tr>
+      <tr><td>Seagate IronWolf</td><td>1TB – 20TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>Seagate IronWolf Pro</td><td>2TB – 24TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>Seagate Exos X-Series</td><td>8TB – 24TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>Seagate Barracuda</td><td>2TB – 6TB</td><td class="tag-smr">SMR</td><td>❌ No</td></tr>
+      <tr><td>Seagate Barracuda</td><td>8TB+</td><td class="tag-cmr">CMR</td><td>✅ Desktop</td></tr>
+      <tr><td>Seagate Barracuda Pro</td><td>All</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>Seagate SkyHawk</td><td>1TB – 20TB</td><td class="tag-cmr">CMR</td><td>✅ Surveillance</td></tr>
+      <tr><td>Toshiba N300</td><td>4TB – 20TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>Toshiba X300</td><td>4TB – 20TB</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+      <tr><td>HGST Ultrastar</td><td>All</td><td class="tag-cmr">CMR</td><td>✅ Yes</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cta-box">
+    <h3>Need to find a CMR drive at the best $/TB right now?</h3>
+    <p>The reference table above tells you what's safe — but it doesn't tell you which specific listing on Amazon has the lowest price per terabyte today. Prices shift daily, and the cheapest CMR 8TB drive this week isn't necessarily the same one as last week.</p>
+    <p style="margin-top:.75rem">That's exactly what <a href="https://cmrcheck.com" style="color:#a5b4fc;font-weight:700">cmrcheck.com</a> tracks automatically:</p>
+    <ul style="color:white">
+      <li><strong>CMR/SMR labeled</strong> — every listing is tagged at a glance, no research needed</li>
+      <li><strong>$/TB sorted</strong> — best value CMR drive always at the top</li>
+      <li><strong>RAID Safe badge</strong> — visual flag on every drive safe for NAS and parity RAID</li>
+      <li><strong>Renewed / Third-Party flagged</strong> — know if a deal is new vs refurbished</li>
+      <li><strong>Updated weekly</strong> — prices pulled fresh from Amazon every Monday</li>
+    </ul>
+    <p>Whether you're building a Synology NAS, Unraid server, or a TrueNAS array — filter by CMR, sort by $/TB, and you have your shortlist in 30 seconds.</p>
+    <a href="https://cmrcheck.com" class="cta-btn">Browse CMR Drives at cmrcheck.com →</a>
+  </div>
+
+  <h2 class="section">Why the WD Red Scandal Changed Everything</h2>
+  <p>In April 2020, Blocks & Files revealed that Western Digital had silently switched WD Red 2TB–6TB drives from CMR to SMR — without changing the product name, packaging, or Amazon listing. NAS users buying replacement drives were unknowingly installing SMR drives into RAID arrays that previously ran CMR.</p>
+  <p>The consequences were severe: RAID rebuilds that previously took hours began taking days, then timing out. NAS units marked drives as failed mid-rebuild. Data loss followed. Western Digital eventually acknowledged the change and introduced the "WD Red Plus" branding for CMR variants — but the confusion persists because old WD Red stock still circulates on Amazon.</p>
+  <p><strong>The lesson:</strong> never assume. Always verify CMR vs SMR before installing a drive in a NAS or RAID array. The checker above and the drive table are built for exactly this.</p>
+
+  <h2 class="section">Model Number Decoder: WD</h2>
+  <p>Western Digital encodes recording technology in the model number suffix:</p>
+  <table>
+    <thead><tr><th>Suffix</th><th>Series</th><th>Technology</th></tr></thead>
+    <tbody>
+      <tr><td>EFRX, EFPX, EFBX, EFGX</td><td>WD Red Plus</td><td class="tag-cmr">CMR</td></tr>
+      <tr><td>EFAX, EFZX</td><td>WD Red (original)</td><td class="tag-smr">SMR</td></tr>
+      <tr><td>FRYZ, KRYZ</td><td>WD Gold</td><td class="tag-cmr">CMR</td></tr>
+      <tr><td>EZEX, EZAZ (1-4TB)</td><td>WD Blue</td><td class="tag-mixed">Mixed</td></tr>
+      <tr><td>PURP, PURX</td><td>WD Purple</td><td class="tag-cmr">CMR</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section">Frequently Asked Questions</h2>
+  <div class="faq" id="faq"></div>
+
+</div>
+
+<footer>
+  <p>CMR vs SMR Hard Drive Checker — free tool, no account required. Data updated 2026. For live Amazon pricing with CMR labels, visit <strong>cmrcheck.com</strong>.</p>
+</footer>
+
+<script>
+const DB = [
+  // WD Red Plus — CMR
+  { match: /wd red plus/i, tech: 'CMR', name: 'WD Red Plus', raid: true, note: 'WD Red Plus is always CMR. Safe for NAS, Synology, QNAP, Unraid, and all parity RAID configurations.' },
+  // WD Red (non-Plus) — SMR for 2-6TB, CMR for 8TB+
+  { match: /wd red\b(?!\s*plus)/i, tech: 'SMR_MIXED', name: 'WD Red (original)', raid: false,
+    note: 'WD Red (without "Plus") 2TB–6TB = SMR. 8TB and above = CMR. Check your specific capacity. WD silently switched to SMR in 2019 without changing the product name — always verify before NAS install.',
+    capLogic: (tb) => tb >= 8 ? 'CMR' : 'SMR'
+  },
+  // WD Gold
+  { match: /wd gold|western digital gold/i, tech: 'CMR', name: 'WD Gold', raid: true, note: 'WD Gold is enterprise-class CMR. All capacities are RAID-safe.' },
+  // WD Black
+  { match: /wd.?black|wd_black/i, tech: 'CMR', name: 'WD Black', raid: true, note: 'WD Black is always CMR, optimized for performance workloads.' },
+  // WD Blue
+  { match: /wd blue/i, tech: 'CMR', name: 'WD Blue (3.5")', raid: true, note: 'WD Blue 3.5-inch drives are CMR. Suitable for desktop use and light NAS workloads.' },
+  // WD Green — SMR
+  { match: /wd green/i, tech: 'SMR', name: 'WD Green', raid: false, note: 'WD Green is SMR. Not suitable for NAS or RAID.' },
+  // WD Purple
+  { match: /wd purple/i, tech: 'CMR', name: 'WD Purple', raid: true, note: 'WD Purple (surveillance) is CMR. Optimized for DVR/CCTV, safe in surveillance RAID arrays.' },
+  // Seagate IronWolf Pro
+  { match: /ironwolf pro/i, tech: 'CMR', name: 'Seagate IronWolf Pro', raid: true, note: 'IronWolf Pro is enterprise CMR with 5-year warranty. Recommended for 24/7 NAS and large arrays.' },
+  // Seagate IronWolf
+  { match: /ironwolf/i, tech: 'CMR', name: 'Seagate IronWolf', raid: true, note: 'Seagate IronWolf (all capacities) is CMR and NAS-certified. Safe for Synology, QNAP, Unraid, TrueNAS.' },
+  // Seagate Exos
+  { match: /exos/i, tech: 'CMR', name: 'Seagate Exos', raid: true, note: 'Seagate Exos X-series is enterprise CMR with the lowest $/TB in CMR class. Excellent for large Unraid and TrueNAS builds.' },
+  // Seagate Barracuda Pro
+  { match: /barracuda pro/i, tech: 'CMR', name: 'Seagate Barracuda Pro', raid: true, note: 'Barracuda Pro is always CMR, 7200 RPM. Safe for RAID and demanding desktop workloads.' },
+  // Seagate Barracuda — mixed by capacity
+  { match: /barracuda/i, tech: 'SMR_MIXED', name: 'Seagate Barracuda', raid: false,
+    note: 'Seagate Barracuda 2TB–6TB = SMR. 8TB+ = CMR. The SMR variants are desktop drives — do not use in NAS or parity RAID.',
+    capLogic: (tb) => tb >= 8 ? 'CMR' : 'SMR'
+  },
+  // Seagate SkyHawk
+  { match: /skyhawk/i, tech: 'CMR', name: 'Seagate SkyHawk', raid: true, note: 'Seagate SkyHawk (all capacities) is CMR, optimized for surveillance DVR/NVR systems.' },
+  // Toshiba N300
+  { match: /n300/i, tech: 'CMR', name: 'Toshiba N300', raid: true, note: 'Toshiba N300 is CMR, NAS-certified with vibration compensation sensors. Direct competitor to IronWolf.' },
+  // Toshiba X300
+  { match: /x300/i, tech: 'CMR', name: 'Toshiba X300', raid: true, note: 'Toshiba X300 is CMR, optimized for high-performance desktop and creative workloads.' },
+  // Toshiba MG (enterprise)
+  { match: /toshiba mg\d/i, tech: 'CMR', name: 'Toshiba MG Series', raid: true, note: 'Toshiba MG enterprise series is CMR. All capacities are data-center grade and RAID-safe.' },
+  // HGST Ultrastar
+  { match: /ultrastar/i, tech: 'CMR', name: 'HGST Ultrastar', raid: true, note: 'HGST Ultrastar is always CMR. Enterprise-class reliability with some of the lowest annualized failure rates in the industry.' },
+  // Model numbers — WD
+  { match: /WD\d+EFRX|WD\d+EFPX|WD\d+EFBX|WD\d+EFGX/i, tech: 'CMR', name: 'WD Red Plus (model)', raid: true, note: 'Model suffix EFRX/EFPX/EFBX/EFGX = WD Red Plus CMR. Safe for NAS and RAID.' },
+  { match: /WD\d+EFAX|WD\d+EFZX/i, tech: 'SMR', name: 'WD Red SMR (model)', raid: false, note: 'Model suffix EFAX/EFZX = WD Red original SMR variant. Not safe for NAS or RAID.' },
+  { match: /WD\d+FRYZ|WD\d+KRYZ/i, tech: 'CMR', name: 'WD Gold (model)', raid: true, note: 'Model suffix FRYZ/KRYZ = WD Gold enterprise CMR.' },
+  { match: /ST\d+VN\d+/i, tech: 'CMR', name: 'Seagate IronWolf (model)', raid: true, note: 'Seagate ST[X]000VN model pattern = IronWolf NAS, always CMR.' },
+  { match: /ST\d+NE\d+/i, tech: 'CMR', name: 'Seagate IronWolf Pro (model)', raid: true, note: 'Seagate ST[X]000NE model pattern = IronWolf Pro enterprise CMR.' },
+  { match: /ST\d+NM\d+/i, tech: 'CMR', name: 'Seagate Exos (model)', raid: true, note: 'Seagate ST[X]000NM model pattern = Exos enterprise CMR.' },
+];
+
+function parseCapTB(input) {
+  const m = input.match(/(\d+(?:\.\d+)?)\s*tb/i);
+  if (m) return parseFloat(m[1]);
+  const g = input.match(/(\d+(?:\.\d+)?)\s*gb/i);
+  if (g) return parseFloat(g[1]) / 1000;
+  return 0;
+}
+
+function checkDrive() {
+  const raw = document.getElementById('driveInput').value.trim();
+  if (!raw) return;
+  const tb = parseCapTB(raw);
+
+  let match = null;
+  for (const entry of DB) {
+    if (entry.match.test(raw)) { match = entry; break; }
+  }
+
+  const el = document.getElementById('result');
+  el.style.display = 'block';
+
+  if (!match) {
+    el.innerHTML = `
+      <div class="verdict-box unknown">
+        <div class="verdict-label">❓ Unknown Drive</div>
+        <div class="verdict-sub">No match found for "<strong>${escHtml(raw)}</strong>". Try the brand + series name (e.g. "WD Red Plus") or a full model number (e.g. "ST8000VN004").</div>
+        <span class="raid-badge raid-caution">⚠ Cannot determine</span>
+      </div>`;
+    return;
+  }
+
+  let tech = match.tech;
+  let note = match.note;
+  let isRaid = match.raid;
+
+  if (tech === 'SMR_MIXED' && match.capLogic && tb > 0) {
+    tech = match.capLogic(tb);
+    isRaid = tech === 'CMR';
+    if (tech === 'CMR') {
+      note = `At ${tb}TB, this drive is <strong>CMR</strong>. ${match.name} is SMR at 2–6TB but CMR at 8TB and above.`;
+    } else {
+      note = `At ${tb}TB, this drive is <strong>SMR</strong>. ${match.name} only becomes CMR at 8TB+. Not safe for NAS or RAID at this capacity.`;
+    }
+  } else if (tech === 'SMR_MIXED') {
+    tech = 'MIXED';
+  }
+
+  const cls = tech === 'CMR' ? 'cmr' : tech === 'SMR' ? 'smr' : 'unknown';
+  const icon = tech === 'CMR' ? '✅ CMR — Conventional Magnetic Recording' : tech === 'SMR' ? '⛔ SMR — Shingled Magnetic Recording' : '⚠ Mixed (capacity-dependent)';
+  const raidHtml = isRaid
+    ? '<span class="raid-badge raid-safe">✅ RAID Safe</span> <span class="raid-badge raid-safe">✅ NAS Safe</span>'
+    : tech === 'MIXED'
+    ? '<span class="raid-badge raid-caution">⚠ Depends on capacity — specify TB above</span>'
+    : '<span class="raid-badge raid-unsafe">❌ Not RAID Safe</span> <span class="raid-badge raid-unsafe">❌ Avoid in NAS</span>';
+
+  el.innerHTML = `
+    <div class="match-title">Matched: <span class="match-name">${escHtml(match.name)}</span></div>
+    <div class="verdict-box ${cls}">
+      <div class="verdict-label">${icon}</div>
+      <div class="verdict-sub">${note}</div>
+      ${raidHtml}
+    </div>`;
+}
+
+function setAndCheck(val) {
+  document.getElementById('driveInput').value = val;
+  checkDrive();
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+document.getElementById('driveInput').addEventListener('keydown', e => { if (e.key === 'Enter') checkDrive(); });
+
+// FAQ
+const faqs = [
+  ['What is CMR and why does it matter for NAS?', 'CMR (Conventional Magnetic Recording) writes data in non-overlapping tracks, enabling fast random writes and reliable sustained performance. NAS and RAID systems need CMR because they perform continuous large writes during parity calculations and RAID rebuilds. SMR drives stall under these workloads, causing timeouts that NAS firmware interprets as drive failure.'],
+  ['Which WD Red drives are SMR?', 'WD Red (without "Plus") 2TB, 3TB, 4TB, 5TB, and 6TB manufactured after 2019 are SMR. WD Red Plus (all capacities) is CMR. WD Red 8TB and above is also CMR. Western Digital added the "Plus" branding in 2020 to distinguish CMR variants after the SMR controversy.'],
+  ['Is Seagate Barracuda SMR or CMR?', 'Both, depending on capacity. Barracuda 2TB, 3TB, 4TB, 5TB, and 6TB = SMR. Barracuda 8TB and above = CMR. Barracuda Pro (all capacities) = CMR. For desktop use, SMR Barracuda drives are fine. For NAS or RAID, avoid the SMR capacities.'],
+  ['Can I mix CMR and SMR drives in a RAID array?', 'Technically possible but strongly inadvisable. The SMR drive will become the bottleneck for every write operation across the array. During RAID rebuild, the SMR drive will stall — potentially causing the NAS to mark it as failed and creating a multi-drive failure scenario.'],
+  ['How do I find CMR drives with the best price per TB?', 'The CMR/SMR label is only half the equation — price per terabyte matters just as much. cmrcheck.com tracks live Amazon prices for 100+ hard drives, labels every listing CMR or SMR, and sorts by $/TB so the best value CMR drive is always at the top.'],
+  ['Does drive RPM (5400 vs 7200) indicate CMR or SMR?', 'No. RPM does not determine recording technology. SMR drives are often 5400–5900 RPM, but some are 7200 RPM. CMR drives include both 5400 and 7200 RPM variants. Always check the recording technology directly rather than inferring from RPM.'],
+  ['Are 2.5-inch laptop drives CMR or SMR?', 'Mixed. Most 2.5-inch laptop drives under 2TB are CMR. Higher-capacity 2.5-inch drives (2TB+) are often SMR due to physical platter size constraints. For NAS use, always verify — but 2.5-inch drives are generally not recommended for NAS due to lower durability ratings compared to 3.5-inch NAS-class drives.'],
+];
+
+const faqEl = document.getElementById('faq');
+faqs.forEach(([q, a]) => {
+  const div = document.createElement('div');
+  div.className = 'faq-item';
+  div.innerHTML = `<div class="faq-q">${q}<span class="faq-arrow">▼</span></div><div class="faq-a"><p>${a}</p></div>`;
+  div.querySelector('.faq-q').onclick = () => div.classList.toggle('open');
+  faqEl.appendChild(div);
+});
+</script>
+
+</body>
+</html>
