@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/calcul-pension-alimentaire/">
 <meta property="og:locale" content="fr_BE">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg">
 
 <script type="application/ld+json">
 {
@@ -392,6 +393,52 @@ Pension indexée = Pension d'origine × (Indice du mois actuel / Indice du mois 
     </ul>
     <p>Un avocat spécialisé en droit de la famille belge peut vous aider à fixer un montant juste, homologuer un accord amiable ou introduire une procédure judiciaire.</p>
     <a href="https://calculateur-pension-alimentaire.be/" class="cta-btn">Être mis en contact avec un avocat →</a>
+  </div>
+
+  <h2 class="section-title">Comment fonctionne ce calculateur — Formules &amp; Méthode</h2>
+  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:28px 28px 20px;margin:0 0 40px;font-size:0.9rem;line-height:1.8;">
+    <p style="margin-bottom:16px;color:#64748b;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;">Source : méthode Renard + Statbel (indice santé lissé) · Calcul déterministe — aucune IA</p>
+
+    <h3 style="font-size:1rem;margin:0 0 12px;">Constantes officielles 2026</h3>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:24px;font-size:0.88rem;">
+      <tr><th style="background:#1a1a2e;color:white;padding:8px 12px;text-align:left;">Paramètre</th><th style="background:#1a1a2e;color:white;padding:8px 12px;text-align:left;">Valeur</th><th style="background:#1a1a2e;color:white;padding:8px 12px;text-align:left;">Source</th></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Barème Renard — 1 enfant</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">18 %</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Méthode Renard (magistrat G. Renard)</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Barème Renard — 2 enfants</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">27 %</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Méthode Renard</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Barème Renard — 3 enfants</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">36 %</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Méthode Renard</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Barème Renard — 4 enfants</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">43 %</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Méthode Renard</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Barème Renard — 5 enfants</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">48 %</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Méthode Renard</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Indice santé lissé 2026</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">137,3</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Statbel (statbel.fgov.be)</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Déductibilité fiscale débiteur</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">80 %</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">CIR92 art. 104 (Code des impôts sur les revenus)</td></tr>
+      <tr><td style="padding:8px 12px;">Imposition créancier</td><td style="padding:8px 12px;font-weight:700;">80 % imposable</td><td style="padding:8px 12px;">CIR92 art. 90, 3°</td></tr>
+    </table>
+
+    <h3 style="font-size:1rem;margin:0 0 12px;">Algorithme de calcul</h3>
+    <div style="background:#1e3a5f;color:#e2e8f0;border-radius:8px;padding:18px 20px;font-family:'Courier New',monospace;font-size:0.83rem;line-height:2;margin-bottom:20px;">
+      <span style="color:#86efac;">— Étape 1 : Coût total d'entretien —</span><br>
+      <span style="color:#7dd3fc;">revenu_total</span>    = revenu_net_A + revenu_net_B<br>
+      <span style="color:#7dd3fc;">pct_renard</span>      = BAREME[nb_enfants]  <span style="color:#94a3b8;">← [0, 0.18, 0.27, 0.36, 0.43, 0.48]</span><br>
+      <span style="color:#7dd3fc;">cout_total</span>      = revenu_total × pct_renard<br>
+      <br>
+      <span style="color:#86efac;">— Étape 2 : Part de chaque parent —</span><br>
+      <span style="color:#7dd3fc;">part_A</span>          = (revenu_A / revenu_total) × cout_total<br>
+      <span style="color:#7dd3fc;">part_B</span>          = (revenu_B / revenu_total) × cout_total<br>
+      <br>
+      <span style="color:#86efac;">— Étape 3 : Pension alimentaire (résidence principale) —</span><br>
+      <span style="color:#7dd3fc;">pension</span>         = |part_A − part_B| / 2 × 2  <span style="color:#94a3b8;">← parent le moins chargé verse la différence</span><br>
+      <span style="color:#7dd3fc;">pension</span>         = part_parent_sans_garde − part_parent_avec_garde<br>
+      <br>
+      <span style="color:#86efac;">— Étape 4 : Hébergement alterné (50/50) —</span><br>
+      <span style="color:#7dd3fc;">pension_alt</span>     = max(0, |part_A − part_B| / 2)<br>
+      <br>
+      <span style="color:#86efac;">— Étape 5 : Indexation annuelle —</span><br>
+      <span style="color:#7dd3fc;">pension_indexee</span> = pension_origine × (137.3 / INDICE_ANNEE_FIXATION)<br>
+      <br>
+      <span style="color:#86efac;">— Étape 6 : Impact fiscal —</span><br>
+      <span style="color:#7dd3fc;">deductible</span>      = pension_annuelle × 0.80  <span style="color:#94a3b8;">← déductible pour le débiteur (CIR92 art.104)</span><br>
+      <span style="color:#7dd3fc;">economie_impot</span>  = deductible × taux_marginal_debiteur<br>
+      <span style="color:#7dd3fc;">imposable_creancier</span> = pension_annuelle × 0.80  <span style="color:#94a3b8;">← imposable chez le créancier (CIR92 art.90)</span>
+    </div>
+    <p style="font-size:0.78rem;color:#94a3b8;margin:0;">Calcul déterministe basé sur la méthode Renard et les barèmes officiels. L'indice de référence est celui du mois de fixation de la pension. Pour un calcul personnalisé tenant compte de revenus variables, de frais extraordinaires ou d'une situation fiscale complexe, consultez <a href="https://calculateur-pension-alimentaire.be/" target="_blank" rel="noopener" style="color:#94a3b8;">calculateur-pension-alimentaire.be</a>.</p>
   </div>
 
   <h2 class="section-title">Questions fréquentes</h2>
