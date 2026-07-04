@@ -402,6 +402,55 @@
     <a href="https://fourpillarscalculator.com/" class="cta-btn">Calculate Your Full Bazi Chart →</a>
   </div>
 
+  <h2 class="section-title">How This Calculator Works — Algorithm &amp; Method</h2>
+  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:28px 28px 20px;margin:0 0 40px;font-size:0.9rem;line-height:1.8;">
+    <p style="margin-bottom:16px;color:#64748b;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;">Library: lunar-javascript (astronomy-based) · Deterministic calculation — no AI interpolation</p>
+
+    <h3 style="font-size:1rem;margin:0 0 12px;">Core Structures</h3>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:24px;font-size:0.88rem;">
+      <tr><th style="background:#1a1a2e;color:white;padding:8px 12px;text-align:left;">Structure</th><th style="background:#1a1a2e;color:white;padding:8px 12px;text-align:left;">Count</th><th style="background:#1a1a2e;color:white;padding:8px 12px;text-align:left;">Values</th></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Heavenly Stems (天干 Tiāngān)</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">10</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">甲乙丙丁戊己庚辛壬癸 (Jiǎ Yǐ Bǐng Dīng Wù Jǐ Gēng Xīn Rén Guǐ)</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Earthly Branches (地支 Dìzhī)</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">12</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">子丑寅卯辰巳午未申酉戌亥 (Rat→Pig)</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Jiazi Cycle (甲子 cycle)</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">60 days/years</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">LCM(10, 12) = 60 — one full stem+branch rotation</td></tr>
+      <tr><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Five Elements (五行 Wǔxíng)</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;font-weight:700;">5</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0;">Wood 木 · Fire 火 · Earth 土 · Metal 金 · Water 水</td></tr>
+      <tr><td style="padding:8px 12px;">Polarity (阴阳 Yīnyáng)</td><td style="padding:8px 12px;font-weight:700;">2</td><td style="padding:8px 12px;">Yang (odd stems 1,3,5,7,9) · Yin (even stems 2,4,6,8,10)</td></tr>
+    </table>
+
+    <h3 style="font-size:1rem;margin:0 0 12px;">Day Master Calculation Algorithm</h3>
+    <div style="background:#1e3a5f;color:#e2e8f0;border-radius:8px;padding:18px 20px;font-family:'Courier New',monospace;font-size:0.83rem;line-height:2;margin-bottom:20px;">
+      <span style="color:#86efac;">— Step 1: Convert Gregorian date to Chinese solar calendar —</span><br>
+      <span style="color:#7dd3fc;">solar</span>    = Solar.fromYmd(year, month, day)  <span style="color:#94a3b8;">← lunar-javascript library</span><br>
+      <span style="color:#7dd3fc;">lunar</span>    = solar.getLunar()  <span style="color:#94a3b8;">← accounts for solar terms (节气)</span><br>
+      <br>
+      <span style="color:#86efac;">— Step 2: Extract Day Heavenly Stem —</span><br>
+      <span style="color:#7dd3fc;">day_gan</span>  = lunar.getDayGan()  <span style="color:#94a3b8;">← one of: 甲乙丙丁戊己庚辛壬癸</span><br>
+      <br>
+      <span style="color:#86efac;">— Step 3: Map stem → element + polarity —</span><br>
+      <span style="color:#7dd3fc;">stem_index</span>  = indexOf(day_gan) in STEMS[0..9]<br>
+      <span style="color:#7dd3fc;">element</span>     = ELEMENTS[floor(stem_index / 2)]  <span style="color:#94a3b8;">← pairs: Jiǎ/Yǐ=Wood, Bǐng/Dīng=Fire...</span><br>
+      <span style="color:#7dd3fc;">polarity</span>    = (stem_index % 2 == 0) ? "Yang" : "Yin"<br>
+      <br>
+      <span style="color:#86efac;">— Step 4: Day Master = Day Stem —</span><br>
+      <span style="color:#7dd3fc;">day_master</span>  = day_gan  <span style="color:#94a3b8;">← the core identity pillar in Bazi</span>
+    </div>
+
+    <h3 style="font-size:1rem;margin:0 0 10px;">Stem → Element → Polarity Mapping</h3>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:16px;font-size:0.82rem;">
+      <tr><th style="background:#1a1a2e;color:white;padding:6px 10px;">Stem</th><th style="background:#1a1a2e;color:white;padding:6px 10px;">Pinyin</th><th style="background:#1a1a2e;color:white;padding:6px 10px;">Element</th><th style="background:#1a1a2e;color:white;padding:6px 10px;">Polarity</th></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">甲</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Jiǎ</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Wood 木</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yang</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">乙</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yǐ</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Wood 木</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yin</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">丙</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Bǐng</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Fire 火</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yang</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">丁</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Dīng</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Fire 火</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yin</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">戊</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Wù</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Earth 土</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yang</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">己</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Jǐ</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Earth 土</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yin</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">庚</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Gēng</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Metal 金</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yang</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">辛</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Xīn</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Metal 金</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yin</td></tr>
+      <tr><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">壬</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Rén</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Water 水</td><td style="padding:6px 10px;border-bottom:1px solid #e2e8f0;">Yang</td></tr>
+      <tr><td style="padding:6px 10px;">癸</td><td style="padding:6px 10px;">Guǐ</td><td style="padding:6px 10px;">Water 水</td><td style="padding:6px 10px;">Yin</td></tr>
+    </table>
+    <p style="font-size:0.78rem;color:#94a3b8;margin:0;">Calculation uses the <strong>lunar-javascript</strong> library for accurate solar term boundary detection. Day Stem may vary by ±1 day for births near midnight or at solar term crossings. For the full 4-pillar chart (Year · Month · Day · Hour) with Ten Gods, strength score, Useful God, and 10-year luck cycles, visit <a href="https://fourpillarscalculator.com/" target="_blank" rel="noopener" style="color:#94a3b8;">fourpillarscalculator.com</a>.</p>
+  </div>
+
   <h2 class="section-title">Frequently Asked Questions</h2>
 
   <div class="faq-item">
