@@ -164,6 +164,22 @@
   .faq-a.show { display: block; }
   footer { background: #1f2937; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.85rem; }
   footer a { color: #a78bfa; }
+  .eeat-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin: 32px 0; }
+  .eeat-title { font-size: 1.2rem; font-weight: 800; color: var(--text); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--brand-light); padding-bottom: 12px; }
+  .eeat-title svg { color: var(--brand); flex-shrink: 0; }
+  .eeat-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; }
+  @media (max-width: 640px) { .eeat-grid { grid-template-columns: 1fr; gap: 20px; } }
+  .eeat-author-card { display: flex; gap: 14px; align-items: flex-start; }
+  .eeat-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--brand); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; }
+  .eeat-author-info h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .eeat-author-subtitle { font-size: 0.76rem; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+  .eeat-author-info p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .eeat-compliance { display: flex; flex-direction: column; gap: 14px; }
+  .eeat-compliance-item { display: flex; gap: 10px; align-items: flex-start; }
+  .eeat-compliance-icon { color: var(--brand); flex-shrink: 0; margin-top: 3px; }
+  .eeat-compliance-text h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .eeat-compliance-text p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-bottom: 0; }
+  .eeat-compliance-text a { color: var(--brand); text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -296,6 +312,46 @@
       </ul>
       <p style="font-size:0.88rem;opacity:0.75">Database covers dry food, wet food, toppers, and treats across all major brands at Walmart. Prices update automatically — what you see reflects current shelf pricing, not catalog estimates.</p>
       <a href="https://pawperpound.com" class="cta-btn" target="_blank" rel="noopener">Compare Pet Food $/lb →</a>
+    </div>
+
+    <div class="eeat-section">
+      <h2 class="eeat-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        Transparency &amp; Methodology
+      </h2>
+      <div class="eeat-grid">
+        <div class="eeat-author-card">
+          <div class="eeat-avatar">PC</div>
+          <div class="eeat-author-info">
+            <h3>Pet Food Cost Calculator</h3>
+            <div class="eeat-author-subtitle">Independent, Open-Source Tool</div>
+            <p>A simple client-side calculator estimating monthly feeding cost from weight, food price and feeding guidelines. Not affiliated with any pet food brand or manufacturer.</p>
+          </div>
+        </div>
+        <div class="eeat-compliance">
+          <div class="eeat-compliance-item">
+            <svg class="eeat-compliance-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            <div class="eeat-compliance-text">
+              <h4>Methodology &amp; Standards Referenced</h4>
+              <p>Cost estimates use standard feeding-guideline formulas, not a per-pet metabolic calculation. Ingredient-order claims ("real meat first") follow <a href="https://www.aafco.org/" target="_blank" rel="noopener">AAFCO</a> labeling rules. For choosing a food based on nutritional adequacy, see the <a href="https://wsava.org/global-guidelines/global-nutrition-guidelines/" target="_blank" rel="noopener">WSAVA Global Nutrition Guidelines</a>.</p>
+            </div>
+          </div>
+          <div class="eeat-compliance-item">
+            <svg class="eeat-compliance-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <div class="eeat-compliance-text">
+              <h4>Not Veterinary Advice</h4>
+              <p>This tool does not provide veterinary advice and has no clinical review process. Always consult a licensed veterinarian for your pet's actual dietary needs. US pet food is regulated by the <a href="https://www.fda.gov/animal-veterinary/animal-foods-feeds/pet-food" target="_blank" rel="noopener">FDA</a>.</p>
+            </div>
+          </div>
+          <div class="eeat-compliance-item">
+            <svg class="eeat-compliance-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            <div class="eeat-compliance-text">
+              <h4>Open Source</h4>
+              <p>This calculator runs entirely in your browser — no data sent to a server. Inspect the code on <a href="https://github.com/sadiyaqeen92639572-cloud/sadiyaqeen92639572-cloud.github.io/tree/main/pet-food-cost-guide" target="_blank" rel="noopener">GitHub</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <h2>Frequently Asked Questions</h2>
