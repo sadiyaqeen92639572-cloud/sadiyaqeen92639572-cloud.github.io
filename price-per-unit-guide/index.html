@@ -171,6 +171,14 @@
 
   footer { background: #1f2937; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.85rem; }
   footer a { color: #60a5fa; }
+
+  /* EEAT */
+  .eeat-section { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin: 40px 0; }
+  .eeat-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; color: var(--text); display: flex; align-items: center; gap: 8px; }
+  .eeat-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .eeat-compliance-item { border-left: 3px solid var(--brand); padding: 4px 0 4px 14px; font-size: 0.9rem; color: #374151; }
+  .eeat-compliance-item strong { color: var(--text); }
+  .eeat-compliance-item a { font-weight: 600; }
 </style>
 </head>
 <body>
@@ -313,6 +321,16 @@
       </ul>
       <p style="font-size:0.88rem;opacity:0.75">The tracker covers hundreds of products across grocery, cleaning, personal care, and pantry staples at Walmart — updated automatically so the data you see reflects current shelf prices, not last month's.</p>
       <a href="https://unitpricetracker.com" class="cta-btn" target="_blank" rel="noopener">Open Unit Price Tracker →</a>
+    </div>
+
+    <div class="eeat-section">
+      <div class="eeat-title">🛡️ Editorial Standards & Sources</div>
+      <p style="font-size:0.85rem;color:var(--muted);margin-bottom:14px">This is an independent, open-source calculator. It performs simple division (price ÷ size) — not a certified weights-and-measures device. For legally binding unit pricing, always check the shelf tag or ask store staff.</p>
+      <div class="eeat-grid">
+        <div class="eeat-compliance-item"><strong>Unit pricing standard:</strong> Formula and terminology follow <a href="https://www.nist.gov/pml/owm/nist-handbook-130-current-edition" target="_blank" rel="noopener noreferrer">NIST Handbook 130, Section IV.C — Uniform Unit Pricing Regulation</a>, the model standard used by US state weights-and-measures agencies.</div>
+        <div class="eeat-compliance-item"><strong>Which states require shelf unit pricing:</strong> See NIST's <a href="https://www.nist.gov/pml/owm/national-legal-metrology/us-retail-pricing-laws-and-regulations" target="_blank" rel="noopener noreferrer">Guide to U.S. Retail Pricing Laws and Regulations</a> — about 10 states/jurisdictions mandate it, including New York under <a href="https://www.nysenate.gov/legislation/laws/AGM/214-H" target="_blank" rel="noopener noreferrer">NY Agriculture & Markets Law § 214-H</a>.</div>
+        <div class="eeat-compliance-item"><strong>Source code:</strong> This page's calculator logic is plain client-side JavaScript, viewable via your browser's "View Source" — no hidden data collection or server-side processing.</div>
+      </div>
     </div>
 
     <h2>Frequently Asked Questions</h2>
