@@ -143,6 +143,13 @@
   footer { background: #111827; color: #9ca3af; text-align: center; padding: 32px 20px; font-size: 0.82rem; }
   footer p { color: #9ca3af; }
   footer a { color: #d1d5db; }
+
+  .eeat-section { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin: 0 0 40px; }
+  .eeat-title { font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .eeat-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .eeat-compliance-item { border-left: 3px solid var(--brand); padding: 4px 0 4px 14px; font-size: 0.9rem; color: #374151; }
+  .eeat-compliance-item strong { color: var(--text); }
+  .eeat-compliance-item a { font-weight: 600; }
 </style>
 </head>
 <body>
@@ -250,6 +257,18 @@
       <span style="color:#7dd3fc;">option_optimale</span> = max(net_pfu, net_bareme)
     </div>
     <p style="font-size:0.78rem;color:#94a3b8;margin:0;">Calcul déterministe basé sur les taux officiels 2026. Pour arbitrer le mix salaire/dividendes optimal selon votre chiffre d'affaires et votre statut juridique, consultez <a href="https://calculateur-statuts-juridiques.fr/" target="_blank" rel="noopener" style="color:#94a3b8;">calculateur-statuts-juridiques.fr</a>.</p>
+  </div>
+
+  <div class="eeat-section">
+    <div class="eeat-title">🛡️ Fiabilité & sources</div>
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:14px">Cet outil est un calculateur indépendant, open-source. C'est une simulation basée sur des taux officiels — pas un avis fiscal personnalisé. Pour une situation précise, consultez un expert-comptable ou votre centre des impôts.</p>
+    <div class="eeat-grid">
+      <div class="eeat-compliance-item"><strong>Taux PFU et prélèvements sociaux :</strong> <a href="https://www.impots.gouv.fr/particulier/questions/jai-des-valeurs-mobilieres-comment-sont-elles-imposees" target="_blank" rel="noopener noreferrer">impots.gouv.fr — Comment sont imposées les valeurs mobilières</a></div>
+      <div class="eeat-compliance-item"><strong>Abattement 40% (option barème) :</strong> <a href="https://www.impots.gouv.fr/particulier/questions/mes-valeurs-mobilieres-ouvrent-elles-droit-abattement" target="_blank" rel="noopener noreferrer">impots.gouv.fr — Abattement sur valeurs mobilières</a></div>
+      <div class="eeat-compliance-item"><strong>Hausse CSG à 18,6% au 1er janvier 2026 :</strong> <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000053226384" target="_blank" rel="noopener noreferrer">Légifrance — LOI n° 2025-1403 du 30 déc. 2025 (PLFSS 2026), art. 12</a></div>
+      <div class="eeat-compliance-item"><strong>Fiche synthèse revenus de placement :</strong> <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F34913/1_7" target="_blank" rel="noopener noreferrer">service-public.gouv.fr — F34913</a></div>
+      <div class="eeat-compliance-item"><strong>Code source :</strong> Calcul déterministe en JavaScript client, visible via "Afficher le code source" de votre navigateur — aucune collecte de données.</div>
+    </div>
   </div>
 
   <h2 class="section-title">Questions fréquentes</h2>
