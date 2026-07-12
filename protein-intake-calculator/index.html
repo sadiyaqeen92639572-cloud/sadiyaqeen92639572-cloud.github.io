@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Protein Intake Calculator — How Much Protein Do You Need? (2026)</title>
+<meta name="description" content="Free daily protein intake calculator. Enter your weight and goal — sedentary, active, muscle building, cutting — for an instant gram target and meal split.">
+<meta name="keywords" content="protein intake calculator, how much protein do I need, daily protein calculator, protein needs by weight, protein for muscle building, protein for weight loss, grams of protein per day">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/protein-intake-calculator/">
+<meta property="og:title" content="Daily Protein Intake Calculator — How Much Protein Do You Need?">
+<meta property="og:description" content="Enter your weight and goal for an instant daily protein gram target, calories, and per-meal split.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/protein-intake-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Daily Protein Intake Calculator",
+      "url": "https://sadiyaqeen92639572-cloud.github.io/protein-intake-calculator/",
+      "description": "Free tool to calculate daily protein needs in grams based on body weight and fitness goal — sedentary, active, muscle building, cutting, or endurance.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to calculate your daily protein intake",
+      "description": "Use body weight and activity/fitness goal to estimate daily protein needs in grams.",
+      "totalTime": "PT1M",
+      "tool": [{ "@type": "HowToTool", "name": "Protein Intake Calculator" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter your body weight", "text": "Input your weight in kg or lbs using the unit toggle." },
+        { "@type": "HowToStep", "position": 2, "name": "Select your goal", "text": "Choose sedentary, active/general fitness, muscle building, cutting/fat loss, or endurance training." },
+        { "@type": "HowToStep", "position": 3, "name": "Get your gram target", "text": "The calculator instantly shows your daily protein target in grams, calories from protein, and a suggested per-meal split." },
+        { "@type": "HowToStep", "position": 4, "name": "Spread intake across meals", "text": "Divide your daily target across 3-4 meals for better absorption and muscle protein synthesis throughout the day." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much protein do I need per day?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on body weight and goal. General population guidelines start around 0.8g per kg of body weight (the RDA minimum), while people who are active, building muscle, or in a calorie deficit commonly aim for 1.2-2.2g per kg — a 70kg person's range would be roughly 56g to 154g per day." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need more protein when losing weight?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Many people aim higher during a calorie deficit — often cited in the 1.8-2.4g per kg range — since adequate protein helps preserve lean muscle mass while losing fat. This calculator uses 2.2g/kg as a common cutting target." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much protein do I need to build muscle?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Sports nutrition research commonly cites a range of about 1.6-2.2g per kg of body weight for muscle building, with diminishing returns above that range for most people. This calculator uses 1.8g/kg as a middle-of-range muscle building target." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it bad to eat too much protein?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For most healthy adults, higher protein intakes within commonly studied ranges (up to roughly 2.2-2.5g/kg) are not associated with harm. People with existing kidney conditions should follow their doctor's specific guidance rather than general calculators." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I spread protein across meals or eat it all at once?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Spreading protein across 3-4 meals (roughly 20-40g per meal) is commonly recommended over consuming it all in one sitting, since the body can only use a limited amount for muscle protein synthesis at a time." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this calculator account for body fat percentage?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No — it uses total body weight, which is the simpler and more commonly used approach in general guidelines. Lean body mass-based calculations exist and can be more precise for people with higher body fat percentages, but require a body fat measurement this tool doesn't ask for." }
+        },
+        {
+          "@type": "Question",
+          "name": "What foods have the most protein per calorie?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Whole foods like cottage cheese, Greek yogurt, chicken breast, egg whites, and white fish tend to offer the most protein per calorie compared to fattier meats or processed protein snacks — useful when trying to hit a gram target without a large calorie surplus." }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Protein Intake Calculator", "item": "https://sadiyaqeen92639572-cloud.github.io/protein-intake-calculator/" }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root {
+  --brand: #c2410c;
+  --brand-light: #fff7ed;
+  --brand-mid: #ea580c;
+  --success: #15803d;
+  --success-light: #dcfce7;
+  --warn: #b45309;
+  --warn-light: #fef3c7;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+nav { background: #7c2d12; padding: 10px 20px; }
+nav a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.85rem; margin-right: 16px; }
+nav a:hover { color: #fff; }
+
+header { background: linear-gradient(135deg, var(--brand) 0%, #7c2d12 100%); color: white; padding: 48px 20px 56px; text-align: center; }
+header h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+header p { color: rgba(255,255,255,0.9); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
+.tool-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  margin: -32px auto 40px;
+  max-width: 720px;
+  padding: 32px;
+  position: relative;
+  z-index: 10;
+}
+.tool-card h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; color: var(--text); }
+
+.input-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; margin-bottom: 20px; }
+@media (max-width: 560px) { .input-row { grid-template-columns: 1fr; } }
+
+label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; }
+select, input[type=number] {
+  width: 100%; padding: 10px 12px; border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 0.95rem; color: var(--text);
+  background: white; transition: border-color 0.15s;
+}
+select:focus, input[type=number]:focus { outline: none; border-color: var(--brand); }
+
+.unit-toggle { display: flex; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+.unit-btn { flex: 1; padding: 10px; border: none; background: white; cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--muted); transition: all 0.15s; }
+.unit-btn.active { background: var(--brand); color: white; }
+
+.check-btn {
+  padding: 11px 28px; background: var(--brand); color: white; border: none;
+  border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background 0.2s; white-space: nowrap;
+}
+.check-btn:hover { background: var(--brand-mid); }
+
+.result-box { border-radius: 10px; padding: 20px 24px; margin-top: 4px; display: none; }
+.result-box.show { display: block; }
+.result-box.safe { background: var(--success-light); border: 1.5px solid #86efac; }
+.result-doneness { font-size: 1.6rem; font-weight: 800; margin-bottom: 6px; }
+.result-safe { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+.result-tip { font-size: 0.85rem; color: var(--muted); }
+.result-split { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.split-pill { background: white; border: 1.5px solid #86efac; border-radius: 20px; padding: 6px 14px; font-size: 0.82rem; font-weight: 600; color: #15803d; }
+
+.content { max-width: 780px; margin: 0 auto; padding: 0 20px 60px; }
+.content h2 { font-size: 1.35rem; font-weight: 700; margin: 40px 0 14px; }
+.content h3 { font-size: 1.05rem; font-weight: 700; margin: 24px 0 10px; color: #374151; }
+.content p { color: #374151; margin-bottom: 12px; font-size: 0.97rem; }
+.content ul, .content ol { padding-left: 1.4rem; margin-bottom: 14px; }
+.content li { color: #374151; margin-bottom: 6px; font-size: 0.95rem; }
+
+.temp-table { width: 100%; border-collapse: collapse; margin: 16px 0 28px; font-size: 0.88rem; }
+.temp-table th { background: var(--brand); color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+.temp-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
+.temp-table tr:nth-child(even) td { background: #fafafa; }
+
+.geo-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 28px; margin: 32px 0; }
+.geo-box p.source { color: #64748b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .5px; font-weight: 600; margin-bottom: 16px; }
+.geo-code { background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 18px 20px; font-family: 'Courier New', monospace; font-size: 0.82rem; line-height: 2; overflow-x: auto; }
+
+.cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; margin: 40px 0; }
+.cta-box h2 { font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 12px; }
+.cta-box p { color: white; margin-bottom: 12px; font-size: 0.95rem; }
+.cta-box ul { padding-left: 1.4rem; margin-bottom: 16px; }
+.cta-box li { color: rgba(255,255,255,0.88) !important; margin-bottom: 8px; font-size: 0.92rem; }
+.cta-btn { display: inline-block; background: var(--brand); color: white; padding: 13px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.97rem; transition: background 0.2s; }
+.cta-btn:hover { background: var(--brand-mid); }
+
+.faq-item { border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+.faq-q { padding: 14px 18px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; background: white; }
+.faq-q:hover { background: var(--brand-light); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s; padding: 0 18px; background: white; }
+.faq-a p { color: #374151; font-size: 0.92rem; }
+.faq-item.open .faq-a { max-height: 260px; padding: 12px 18px 16px; }
+.faq-arrow { font-size: 0.75rem; transition: transform 0.3s; color: var(--muted); }
+.faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+footer { background: #111827; color: #9ca3af; padding: 28px 20px; text-align: center; font-size: 0.82rem; }
+footer p { color: #9ca3af; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://sadiyaqeen92639572-cloud.github.io/">← All Tools</a>
+  <a href="#calculator">Calculator</a>
+  <a href="#guidelines">Guidelines Table</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<header>
+  <h1>Daily Protein Intake Calculator</h1>
+  <p>Enter your weight and goal for an instant daily protein target in grams, calories, and a per-meal split.</p>
+</header>
+
+<div class="tool-card" id="calculator">
+  <h2>🥩 How Much Protein Do You Need?</h2>
+  <div class="input-row">
+    <div>
+      <label>Body weight</label>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <input type="number" id="weightInput" placeholder="e.g. 70" min="1" max="400" style="flex:1;">
+        <div class="unit-toggle">
+          <button class="unit-btn active" id="btnKg" onclick="setUnit('kg')">kg</button>
+          <button class="unit-btn" id="btnLb" onclick="setUnit('lb')">lb</button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="goalType">Goal</label>
+      <select id="goalType">
+        <option value="sedentary">Sedentary / general health</option>
+        <option value="active">Active / general fitness</option>
+        <option value="muscle" selected>Muscle building</option>
+        <option value="cutting">Cutting / fat loss</option>
+        <option value="endurance">Endurance training</option>
+      </select>
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <button class="check-btn" onclick="calcProtein()">Calculate →</button>
+    </div>
+  </div>
+  <div id="result" class="result-box"></div>
+</div>
+
+<div class="content">
+
+  <h2 id="guidelines">Protein Intake Guidelines by Goal — Reference Table</h2>
+  <p>Ranges below are commonly cited in sports nutrition literature. Individual needs vary — these are general starting points, not personalized medical advice.</p>
+
+  <table class="temp-table">
+    <thead>
+      <tr><th>Goal</th><th>g per kg body weight</th><th>g per lb body weight</th><th>Example (70kg / 154lb)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sedentary / general health</td><td>0.8g/kg</td><td>0.36g/lb</td><td>56g/day</td></tr>
+      <tr><td>Active / general fitness</td><td>1.2g/kg</td><td>0.55g/lb</td><td>84g/day</td></tr>
+      <tr><td>Muscle building</td><td>1.8g/kg</td><td>0.82g/lb</td><td>126g/day</td></tr>
+      <tr><td>Cutting / fat loss</td><td>2.2g/kg</td><td>1.0g/lb</td><td>154g/day</td></tr>
+      <tr><td>Endurance training</td><td>1.4g/kg</td><td>0.64g/lb</td><td>98g/day</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Why Body Weight Alone Doesn't Tell the Whole Story</h2>
+  <p>Two people at the same body weight can have very different protein needs depending on activity level, muscle mass, and whether they're trying to gain, maintain, or lose weight. That's why this calculator asks for a goal, not just a weight — a sedentary person and a person lifting weights four times a week at the same bodyweight can have gram targets more than double apart.</p>
+  <p>Cutting/fat loss targets skew higher than muscle-building targets in many general guidelines, which can seem counterintuitive — the reasoning is that adequate protein helps preserve lean muscle mass while eating in a calorie deficit, so the body pulls less from muscle tissue for energy.</p>
+
+  <h3>Spreading Protein Across the Day</h3>
+  <ul>
+    <li><strong>3-4 meals</strong> is a commonly cited sweet spot rather than one or two large protein hits</li>
+    <li><strong>20-40g per meal</strong> is often enough to support muscle protein synthesis per sitting</li>
+    <li><strong>Post-workout window</strong> is commonly prioritized, though total daily intake matters more than exact timing</li>
+  </ul>
+
+  <div class="geo-box">
+    <p class="source">Method: general sports nutrition ranges (ISSN-cited literature) · Deterministic calculation — no AI, no arbitrary estimate</p>
+
+    <h3>Constants Used in This Calculator</h3>
+    <table class="temp-table" style="margin-bottom:20px;">
+      <tr><th>Goal</th><th>Factor (g/kg)</th><th>Basis</th></tr>
+      <tr><td>Sedentary</td><td>0.8</td><td>General population RDA minimum</td></tr>
+      <tr><td>Active / fitness</td><td>1.2</td><td>Lower end of commonly cited active-adult range</td></tr>
+      <tr><td>Muscle building</td><td>1.8</td><td>Mid-range of commonly cited 1.6-2.2g/kg muscle-building literature</td></tr>
+      <tr><td>Cutting / fat loss</td><td>2.2</td><td>Upper end of commonly cited 1.8-2.4g/kg deficit-preservation range</td></tr>
+      <tr><td>Endurance</td><td>1.4</td><td>Commonly cited endurance-athlete range</td></tr>
+      <tr><td>Calories per gram protein</td><td>4 kcal</td><td>Standard Atwater factor</td></tr>
+    </table>
+
+    <h3>Calculation Formula</h3>
+    <div class="geo-code">
+<span style="color:#86efac;">— Unit conversion —</span><br>
+<span style="color:#7dd3fc;">weight_kg</span> = unit === 'lb' ? weight / 2.2046 : weight<br>
+<br>
+<span style="color:#86efac;">— Daily protein target —</span><br>
+<span style="color:#7dd3fc;">daily_grams</span> = weight_kg × goal_factor<br>
+<span style="color:#7dd3fc;">daily_calories</span> = daily_grams × 4<br>
+<br>
+<span style="color:#86efac;">— Per-meal split (3 meals) —</span><br>
+<span style="color:#7dd3fc;">grams_per_meal</span> = daily_grams / 3
+    </div>
+    <p style="font-size:0.78rem;color:#94a3b8;margin-top:12px;">General guideline only — not personalized medical or nutrition advice. Consult a registered dietitian for guidance specific to a medical condition.</p>
+  </div>
+
+  <div class="cta-box">
+    <h2>From a Gram Target to an Actual Plate</h2>
+    <p>This calculator gives a number. It doesn't tell you what to actually cook to hit it — and hitting 126-154g of protein a day from whole food takes more planning than most people expect, especially without leaning on protein powder for half the total.</p>
+    <p><a href="https://realproteinkitchen.com" style="color:#fdba74;font-weight:700;">RealProteinKitchen.com</a> is built around exactly that gap — whole-food, high-protein recipes (cottage cheese, eggs, Greek yogurt, chicken) with the protein grams per serving listed on every page, no powder required. A few ways it lines up with the numbers above:</p>
+    <ul>
+      <li><strong>Hitting a sedentary/active target (56-84g/day)</strong>: a cottage cheese pancakes breakfast (24g) plus a protein smoothie bowl (26g) already covers most of a lower-range day</li>
+      <li><strong>Hitting a muscle-building target (~126g/day)</strong>: the site's Bulking Meal Prep Bowl alone is 45g per serving — three balanced meals gets there without needing a shake</li>
+      <li><strong>Hitting a cutting target (~154g/day)</strong>: the Air Fryer Chicken and Vegetables (38g) and Sheet Pan Salmon (36g) recipes are both high-protein, comparatively lower-calorie mains suited to a deficit</li>
+      <li><strong>Post-workout meals</strong>: a dedicated Post Workout Protein Shake and Recovery Smoothie recipe, both built from real food instead of a scoop of powder</li>
+      <li><strong>Meal prepping toward a weekly total</strong>: several recipes are designed as 5-container meal preps, making a weekly gram target easier to plan than assembling it meal-by-meal each day</li>
+    </ul>
+    <p>Every recipe lists total protein per serving up front, so it's straightforward to combine a few and land close to whatever target this calculator gives you.</p>
+    <br>
+    <a href="https://realproteinkitchen.com" class="cta-btn">Browse High-Protein Recipes →</a>
+  </div>
+
+  <h2 id="faq">Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How much protein do I need per day? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a"><p>It depends on body weight and goal. General guidelines start around 0.8g per kg of body weight (the RDA minimum), while active people, those building muscle, or in a calorie deficit commonly aim for 1.2-2.2g per kg.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Do I need more protein when losing weight? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a"><p>Many people aim higher during a calorie deficit — often cited in the 1.8-2.4g per kg range — since adequate protein helps preserve lean muscle mass while losing fat.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How much protein do I need to build muscle? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a"><p>Sports nutrition literature commonly cites roughly 1.6-2.2g per kg of body weight for muscle building, with diminishing returns for most people above that range.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is it bad to eat too much protein? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a"><p>For most healthy adults, intakes within commonly studied ranges (up to roughly 2.2-2.5g/kg) aren't associated with harm. People with kidney conditions should follow their doctor's specific guidance instead of a general calculator.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Should I spread protein across meals or eat it all at once? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a"><p>Spreading protein across 3-4 meals (roughly 20-40g per meal) is commonly recommended over one large sitting, since the body can only use a limited amount for muscle protein synthesis at a time.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Does this calculator account for body fat percentage? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a"><p>No — it uses total body weight, the simpler and more commonly used approach in general guidelines. Lean-mass-based calculations exist and can be more precise but require a body fat measurement this tool doesn't ask for.</p></div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What foods have the most protein per calorie? <span class="faq-arrow">▼</span></div>
+    <div class="faq-a"><p>Whole foods like cottage cheese, Greek yogurt, chicken breast, egg whites, and white fish tend to offer the most protein per calorie compared to fattier meats or processed protein snacks.</p></div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Daily Protein Intake Calculator — general sports nutrition guidelines, not personalized medical advice.</p>
+  <p style="margin-top:8px;">Part of the <a href="https://sadiyaqeen92639572-cloud.github.io/" style="color:#6b7280;">Free Tools</a> collection.</p>
+</footer>
+
+<script>
+const GOALS = {
+  sedentary: { factor: 0.8, label: 'Sedentary / General Health' },
+  active:    { factor: 1.2, label: 'Active / General Fitness' },
+  muscle:    { factor: 1.8, label: 'Muscle Building' },
+  cutting:   { factor: 2.2, label: 'Cutting / Fat Loss' },
+  endurance: { factor: 1.4, label: 'Endurance Training' }
+};
+
+let currentUnit = 'kg';
+
+function setUnit(u) {
+  currentUnit = u;
+  document.getElementById('btnKg').classList.toggle('active', u === 'kg');
+  document.getElementById('btnLb').classList.toggle('active', u === 'lb');
+  document.getElementById('weightInput').placeholder = u === 'kg' ? 'e.g. 70' : 'e.g. 154';
+}
+
+function calcProtein() {
+  const raw = parseFloat(document.getElementById('weightInput').value);
+  const goalKey = document.getElementById('goalType').value;
+  const result = document.getElementById('result');
+
+  if (isNaN(raw) || raw <= 0) {
+    result.className = 'result-box show';
+    result.style.background = '#fef3c7';
+    result.style.border = '1.5px solid #fcd34d';
+    result.innerHTML = '<div class="result-doneness">⚠️ Enter your body weight</div>';
+    return;
+  }
+
+  const weightKg = currentUnit === 'lb' ? raw / 2.2046 : raw;
+  const goal = GOALS[goalKey];
+  const dailyGrams = weightKg * goal.factor;
+  const dailyCalories = dailyGrams * 4;
+  const perMeal = dailyGrams / 3;
+  const perMeal4 = dailyGrams / 4;
+
+  result.className = 'result-box safe show';
+  result.style.background = '';
+  result.style.border = '';
+  result.innerHTML = `
+    <div class="result-doneness">${dailyGrams.toFixed(0)}g protein/day</div>
+    <div class="result-safe">${goal.label} · ${dailyCalories.toFixed(0)} calories from protein</div>
+    <div class="result-tip">Based on ${weightKg.toFixed(1)}kg body weight at ${goal.factor}g/kg</div>
+    <div class="result-split">
+      <span class="split-pill">${perMeal.toFixed(0)}g × 3 meals</span>
+      <span class="split-pill">${perMeal4.toFixed(0)}g × 4 meals</span>
+    </div>
+  `;
+}
+
+document.getElementById('weightInput').addEventListener('keydown', e => { if (e.key === 'Enter') calcProtein(); });
+
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
