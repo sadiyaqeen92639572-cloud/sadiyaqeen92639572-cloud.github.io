@@ -204,6 +204,7 @@ footer p { color: #9ca3af; }
   <a href="#calculator">Calculator</a>
   <a href="#guidelines">Guidelines Table</a>
   <a href="#faq">FAQ</a>
+  <a href="#sources">Sources</a>
 </nav>
 
 <header>
@@ -245,7 +246,7 @@ footer p { color: #9ca3af; }
 <div class="content">
 
   <h2 id="guidelines">Protein Intake Guidelines by Goal — Reference Table</h2>
-  <p>Ranges below are commonly cited in sports nutrition literature. Individual needs vary — these are general starting points, not personalized medical advice.</p>
+  <p>Ranges below combine the <a href="https://www.ncbi.nlm.nih.gov/books/NBK234929/" target="_blank" rel="noopener">NIH/NCBI Recommended Dietary Allowance</a> with the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/" target="_blank" rel="noopener">International Society of Sports Nutrition (ISSN) Position Stand on Protein and Exercise</a> (see full <a href="#sources">Sources</a> below). Individual needs vary — these are general starting points, not personalized medical advice.</p>
 
   <table class="temp-table">
     <thead>
@@ -262,7 +263,7 @@ footer p { color: #9ca3af; }
 
   <h2>Why Body Weight Alone Doesn't Tell the Whole Story</h2>
   <p>Two people at the same body weight can have very different protein needs depending on activity level, muscle mass, and whether they're trying to gain, maintain, or lose weight. That's why this calculator asks for a goal, not just a weight — a sedentary person and a person lifting weights four times a week at the same bodyweight can have gram targets more than double apart.</p>
-  <p>Cutting/fat loss targets skew higher than muscle-building targets in many general guidelines, which can seem counterintuitive — the reasoning is that adequate protein helps preserve lean muscle mass while eating in a calorie deficit, so the body pulls less from muscle tissue for energy.</p>
+  <p>Cutting/fat loss targets skew higher than muscle-building targets, which can seem counterintuitive — the <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10552824/" target="_blank" rel="noopener">reasoning documented in the research</a> is that adequate protein helps preserve lean muscle mass while eating in a calorie deficit, so the body pulls less from muscle tissue for energy.</p>
 
   <h3>Spreading Protein Across the Day</h3>
   <ul>
@@ -272,16 +273,16 @@ footer p { color: #9ca3af; }
   </ul>
 
   <div class="geo-box">
-    <p class="source">Method: general sports nutrition ranges (ISSN-cited literature) · Deterministic calculation — no AI, no arbitrary estimate</p>
+    <p class="source">Method: NIH RDA + ISSN Position Stand on Protein and Exercise (see Sources below) · Deterministic calculation — no AI, no arbitrary estimate</p>
 
     <h3>Constants Used in This Calculator</h3>
     <table class="temp-table" style="margin-bottom:20px;">
       <tr><th>Goal</th><th>Factor (g/kg)</th><th>Basis</th></tr>
-      <tr><td>Sedentary</td><td>0.8</td><td>General population RDA minimum</td></tr>
-      <tr><td>Active / fitness</td><td>1.2</td><td>Lower end of commonly cited active-adult range</td></tr>
-      <tr><td>Muscle building</td><td>1.8</td><td>Mid-range of commonly cited 1.6-2.2g/kg muscle-building literature</td></tr>
-      <tr><td>Cutting / fat loss</td><td>2.2</td><td>Upper end of commonly cited 1.8-2.4g/kg deficit-preservation range</td></tr>
-      <tr><td>Endurance</td><td>1.4</td><td>Commonly cited endurance-athlete range</td></tr>
+      <tr><td>Sedentary</td><td>0.8</td><td>NIH/NCBI RDA minimum, unchanged since 1943</td></tr>
+      <tr><td>Active / fitness</td><td>1.2</td><td>Between the RDA floor and the ISSN exercising-adult range (1.4-2.0)</td></tr>
+      <tr><td>Muscle building</td><td>1.8</td><td>Within ISSN Position Stand's 1.4-2.0g/kg range for muscle mass maintenance/gain</td></tr>
+      <tr><td>Cutting / fat loss</td><td>2.2</td><td>Between the PMC deficit review's 1.2-1.7g/kg (recreational) and ISSN's 2.3-3.1g/kg (resistance-trained, max retention)</td></tr>
+      <tr><td>Endurance</td><td>1.4</td><td>Floor of the ISSN Position Stand's 1.4-2.0g/kg exercising-adult range</td></tr>
       <tr><td>Calories per gram protein</td><td>4 kcal</td><td>Standard Atwater factor</td></tr>
     </table>
 
@@ -320,33 +321,42 @@ footer p { color: #9ca3af; }
 
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">How much protein do I need per day? <span class="faq-arrow">▼</span></div>
-    <div class="faq-a"><p>It depends on body weight and goal. General guidelines start around 0.8g per kg of body weight (the RDA minimum), while active people, those building muscle, or in a calorie deficit commonly aim for 1.2-2.2g per kg.</p></div>
+    <div class="faq-a"><p>The <a href="https://www.ncbi.nlm.nih.gov/books/NBK234929/" target="_blank" rel="noopener">U.S. RDA, set by the Food and Nutrition Board</a>, is 0.8g per kg of body weight — a figure that has stayed unchanged for more than 70 years and represents the minimum to avoid nitrogen loss, not an optimal target. The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/" target="_blank" rel="noopener">International Society of Sports Nutrition (ISSN) Position Stand</a> recommends 1.4-2.0g/kg for people who exercise regularly.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">Do I need more protein when losing weight? <span class="faq-arrow">▼</span></div>
-    <div class="faq-a"><p>Many people aim higher during a calorie deficit — often cited in the 1.8-2.4g per kg range — since adequate protein helps preserve lean muscle mass while losing fat.</p></div>
+    <div class="faq-a"><p>A <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10552824/" target="_blank" rel="noopener">peer-reviewed review on very low-calorie diets</a> found 1.2-1.7g/kg effectively maintains fat-free mass and strength during energy restriction for recreational exercisers. The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/" target="_blank" rel="noopener">ISSN Position Stand</a> goes further for resistance-trained individuals, citing 2.3-3.1g/kg to maximize lean mass retention during a calorie deficit — this calculator uses 2.2g/kg as a middle-ground target for general (non-elite) cutting.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">How much protein do I need to build muscle? <span class="faq-arrow">▼</span></div>
-    <div class="faq-a"><p>Sports nutrition literature commonly cites roughly 1.6-2.2g per kg of body weight for muscle building, with diminishing returns for most people above that range.</p></div>
+    <div class="faq-a"><p>The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/" target="_blank" rel="noopener">ISSN Position Stand on Protein and Exercise</a> states 1.4-2.0g per kg of body weight per day is sufficient for building and maintaining muscle mass in most exercising individuals, distributed in doses of roughly 20-40g every 3-4 hours.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">Is it bad to eat too much protein? <span class="faq-arrow">▼</span></div>
-    <div class="faq-a"><p>For most healthy adults, intakes within commonly studied ranges (up to roughly 2.2-2.5g/kg) aren't associated with harm. People with kidney conditions should follow their doctor's specific guidance instead of a general calculator.</p></div>
+    <div class="faq-a"><p>The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/" target="_blank" rel="noopener">ISSN Position Stand</a> notes evidence that even intakes above 3.0g/kg/day have shown positive body-composition effects in resistance-trained individuals without reported harm in healthy adults. People with existing kidney conditions should follow their doctor's guidance rather than a general calculator.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">Should I spread protein across meals or eat it all at once? <span class="faq-arrow">▼</span></div>
-    <div class="faq-a"><p>Spreading protein across 3-4 meals (roughly 20-40g per meal) is commonly recommended over one large sitting, since the body can only use a limited amount for muscle protein synthesis at a time.</p></div>
+    <div class="faq-a"><p>The <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/" target="_blank" rel="noopener">ISSN Position Stand</a> specifically recommends doses of roughly 20-40g of high-quality protein spread every 3-4 hours across the day, rather than concentrating intake into one or two meals.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">Does this calculator account for body fat percentage? <span class="faq-arrow">▼</span></div>
-    <div class="faq-a"><p>No — it uses total body weight, the simpler and more commonly used approach in general guidelines. Lean-mass-based calculations exist and can be more precise but require a body fat measurement this tool doesn't ask for.</p></div>
+    <div class="faq-a"><p>No — it uses total body weight, the simpler approach used in the RDA and most general guidelines. Lean-mass-based calculations exist and can be more precise for people with higher body fat percentages, but require a body fat measurement this tool doesn't ask for.</p></div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="toggleFaq(this)">What foods have the most protein per calorie? <span class="faq-arrow">▼</span></div>
     <div class="faq-a"><p>Whole foods like cottage cheese, Greek yogurt, chicken breast, egg whites, and white fish tend to offer the most protein per calorie compared to fattier meats or processed protein snacks.</p></div>
   </div>
 
+</div>
+
+<div class="content" style="padding-top:0;">
+  <h3 id="sources">Sources</h3>
+  <ul style="font-size:0.88rem;">
+    <li>Jäger R, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/" target="_blank" rel="noopener">International Society of Sports Nutrition Position Stand: protein and exercise</a>. <em>J Int Soc Sports Nutr</em>. 2017.</li>
+    <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK234929/" target="_blank" rel="noopener">Recommended Dietary Allowances, 10th Edition — Protein summary</a>. National Academies Press / NCBI Bookshelf.</li>
+    <li>Ashtary-Larky D, et al. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10552824/" target="_blank" rel="noopener">The impact and utility of very low-calorie diets: the role of exercise and protein in preserving skeletal muscle mass</a>. <em>Nutrients</em>, via PMC.</li>
+  </ul>
 </div>
 
 <footer>
