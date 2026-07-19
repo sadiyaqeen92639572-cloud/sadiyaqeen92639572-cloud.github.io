@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Etsy OAuth Callback</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 640px; margin: 60px auto; padding: 0 20px; color: #222; }
+  h1 { font-size: 20px; }
+  .field { margin: 16px 0; }
+  label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888; margin-bottom: 4px; }
+  code, textarea { display: block; width: 100%; padding: 10px; background: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; font-size: 13px; word-break: break-all; box-sizing: border-box; }
+  textarea { height: 60px; font-family: monospace; resize: vertical; }
+  .empty { color: #b33; }
+</style>
+</head>
+<body>
+  <h1>Etsy OAuth Callback</h1>
+  <p>Copy the values below back into the token-exchange script. This page does not send data anywhere — everything stays in your browser.</p>
+
+  <div class="field">
+    <label>code</label>
+    <textarea id="code" readonly></textarea>
+  </div>
+  <div class="field">
+    <label>state</label>
+    <textarea id="state" readonly></textarea>
+  </div>
+  <div class="field">
+    <label>full query string</label>
+    <textarea id="raw" readonly></textarea>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code') || '';
+    const state = params.get('state') || '';
+    document.getElementById('code').value = code;
+    document.getElementById('state').value = state;
+    document.getElementById('raw').value = window.location.search;
+    if (!code) document.getElementById('code').classList.add('empty');
+  </script>
+</body>
+</html>
