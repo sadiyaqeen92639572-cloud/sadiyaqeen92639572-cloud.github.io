@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net 30 Due Date Checker — Quick Invoice Due Date Calculator (2026)</title>
+<meta name="description" content="Free Net 30 due date checker — enter your invoice date and instantly see your payment due date. Supports Net 15/30/45/60/90.">
+<meta name="keywords" content="net 30 due date checker, net 30 calculator, invoice due date calculator, net 30 payment terms, when is my invoice due, net 30 days from invoice date">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/net-30-due-date-checker/">
+<meta property="og:title" content="Net 30 Due Date Checker — Quick Invoice Due Date Calculator">
+<meta property="og:description" content="Enter your invoice date, get your Net 30/60/90 due date instantly. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/net-30-due-date-checker/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Net 30 Due Date Checker",
+      "description": "Free quick calculator that converts an invoice date plus a Net payment term (15/30/45/60/90) into an exact due date.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I calculate a Net 30 due date?", "acceptedAnswer": { "@type": "Answer", "text": "Add 30 calendar days to your invoice date. Enter your invoice date above and pick Net 30 for the exact due date." } },
+        { "@type": "Question", "name": "What does Net 30 mean?", "acceptedAnswer": { "@type": "Answer", "text": "Net 30 means the full invoice amount is due 30 days after the invoice date (or delivery date/end of month, depending on the agreement)." } },
+        { "@type": "Question", "name": "Is Net 30 calendar days or business days?", "acceptedAnswer": { "@type": "Answer", "text": "Net 30 defaults to calendar days unless your contract specifies business days." } },
+        { "@type": "Question", "name": "What is the difference between Net 30 and Net 60?", "acceptedAnswer": { "@type": "Answer", "text": "Net 60 gives the buyer twice the payment window of Net 30 — 60 days instead of 30 from the start date." } },
+        { "@type": "Question", "name": "Does this checker handle Net 15, 45, 60, and 90 too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — pick any of the standard Net terms from the dropdown to get your due date." } },
+        { "@type": "Question", "name": "What if my invoice due date falls on a weekend?", "acceptedAnswer": { "@type": "Answer", "text": "Most Net terms use calendar days, so the due date can land on a weekend — payment is typically still expected by the next business day. Confirm with your vendor if unsure." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Net 30 Due Date Checker", "item": "https://sadiyaqeen92639572-cloud.github.io/net-30-due-date-checker/" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to check your Net 30 invoice due date",
+      "description": "Enter your invoice date and payment term to get the exact due date.",
+      "totalTime": "PT1M",
+      "tool": [{ "@type": "HowToTool", "name": "Net 30 Due Date Checker" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter invoice date", "text": "Pick the date on the invoice." },
+        { "@type": "HowToStep", "position": 2, "name": "Pick your term", "text": "Choose Net 15, 30, 45, 60, or 90." },
+        { "@type": "HowToStep", "position": 3, "name": "Read your due date", "text": "The calculator instantly shows the exact due date." },
+        { "@type": "HowToStep", "position": 4, "name": "Confirm the start-date basis", "text": "If your agreement uses delivery date or end-of-month instead of invoice date, adjust accordingly using the full calculator linked below." }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --brand: #2563eb;
+  --brand-light: #dbeafe;
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, sans-serif; color: var(--text); margin: 0; background: #fff; line-height: 1.6; }
+header { background: var(--brand); color: white; padding: 48px 20px 40px; text-align: center; }
+header p { color: rgba(255,255,255,.9); max-width: 640px; margin: 8px auto 0; }
+header h1 { margin: 0; font-size: 1.9rem; }
+.wrap { max-width: 740px; margin: 0 auto; padding: 0 20px 60px; }
+.tool-card { background: white; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin: -24px auto 40px; max-width: 740px; padding: 32px; position: relative; z-index: 10; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; font-weight: 600; margin-bottom: 14px; }
+input, select { padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; }
+button.submit-btn { background: var(--brand); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; }
+#result { display: none; margin-top: 18px; padding: 18px; background: var(--success-light); border-radius: var(--radius); text-align: center; }
+#result .due-date { font-size: 1.6rem; font-weight: 800; color: var(--success); }
+h2 { font-size: 1.35rem; margin-top: 40px; }
+h3 { font-size: 1.05rem; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 12px 0; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+.formula-section { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 24px; }
+.formula-code { background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 16px 18px; font-family: 'Courier New', monospace; font-size: .82rem; line-height: 1.9; margin: 12px 0; }
+.cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; margin: 40px 0; }
+.cta-box p { color: white; }
+.cta-box li { color: rgba(255,255,255,0.88) !important; }
+.cta-box ul { color: white; }
+.cta-box a.btn { display: inline-block; background: var(--brand); color: white; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 16px; }
+.cta-box a.inline { color: #93c5fd; font-weight: 600; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+.faq-item h3 { margin: 0 0 6px; }
+.faq-item p { margin: 0; color: var(--muted); }
+footer { text-align: center; color: var(--muted); font-size: .82rem; padding: 24px; border-top: 1px solid var(--border); }
+footer p { color: #9ca3af; }
+@media (max-width: 640px) {
+  header h1 { font-size: 1.4rem; }
+  .tool-card { margin: -18px 16px 32px; padding: 22px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Net 30 Due Date Checker</h1>
+  <p>Enter your invoice date, get your exact payment due date — Net 15/30/45/60/90 supported</p>
+</header>
+
+<div class="tool-card">
+  <label>Invoice date
+    <input type="date" id="invoiceDate" onchange="calc()">
+  </label>
+  <label>Payment term
+    <select id="term" onchange="calc()">
+      <option value="15">Net 15</option>
+      <option value="30" selected>Net 30</option>
+      <option value="45">Net 45</option>
+      <option value="60">Net 60</option>
+      <option value="90">Net 90</option>
+    </select>
+  </label>
+  <button class="submit-btn" onclick="calc()">Check Due Date</button>
+  <div id="result">
+    <div class="due-date" id="r-due"></div>
+    <div id="r-remaining" style="color:var(--muted);font-size:.9rem;margin-top:4px;"></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h2>How This Checker Works</h2>
+<p>This tool answers the single most common invoice question: "if my invoice is dated X, when is it due under Net 30?" It adds your chosen term (15/30/45/60/90 days) directly to your invoice date and returns the exact calendar due date — no spreadsheet, no manual counting.</p>
+
+<div class="formula-section">
+<p style="color:#64748b;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;">Calculation: deterministic date arithmetic — no AI, no estimation</p>
+<h3>Formula</h3>
+<div class="formula-code">
+due_date = invoice_date + term_days<br>
+term_days ∈ {15, 30, 45, 60, 90}
+</div>
+<p style="font-size:.8rem;color:#94a3b8;">Uses calendar days from the invoice date, the most common default. If your agreement uses delivery date, end-of-month, or business-day counting instead, see the full calculator linked below.</p>
+</div>
+
+<h2>Net 30 Quick Reference</h2>
+<table>
+<tr><th>Term</th><th>Days added</th><th>Typical use</th></tr>
+<tr><td>Net 15</td><td>15</td><td>Short-cycle vendors, tighter cash flow needs</td></tr>
+<tr><td>Net 30</td><td>30</td><td>Most common B2B default</td></tr>
+<tr><td>Net 45</td><td>45</td><td>Mid-size contracts, moderate buyer leverage</td></tr>
+<tr><td>Net 60</td><td>60</td><td>Larger enterprise/vendor agreements</td></tr>
+<tr><td>Net 90</td><td>90</td><td>Extended terms, strong buyer negotiating position</td></tr>
+</table>
+
+<div class="cta-box">
+<h2 style="color:white;">Need More Than a Single Due Date?</h2>
+<p>This checker handles the one-off question fast — invoice date in, due date out. But real invoicing work usually needs more: which start date actually applies (invoice date, delivery date, or end-of-month), whether your contract counts calendar or business days, and what an early-payment discount is worth if your vendor offers one. That's exactly the gap <a class="inline" href="https://paymenttermscalculator.com/">PaymentTermsCalculator.com</a> fills — a free, full-featured Net 30/60/90 calculator built specifically around the ambiguity most calculators ignore.</p>
+<p>Concrete ways people use the full calculator beyond a single due date:</p>
+<ul>
+<li><strong>Contract start-date disputes:</strong> pick invoice date, delivery date, or end-of-month (EOM 30) basis to see how each one changes your actual due date — useful when a vendor and buyer disagree on when the clock started.</li>
+<li><strong>Business-day contracts:</strong> toggle to business-day counting when your PO explicitly excludes weekends, instead of manually skipping Saturdays and Sundays.</li>
+<li><strong>Early payment discounts:</strong> model a 2/10 Net 30 arrangement — enter your invoice amount and see the exact discount deadline and dollar savings if you pay early.</li>
+<li><strong>Comparing payment terms before negotiating:</strong> run Net 30 vs Net 60 vs Net 90 side by side to see the real cash-flow difference before agreeing to a vendor's proposed terms.</li>
+<li><strong>Accounts receivable review:</strong> use the site's DSO (Days Sales Outstanding) calculator to check whether your actual collection times are drifting past your stated terms.</li>
+</ul>
+<p>The full calculator covers Net 15/30/45/60/90, an invoice-due-date tool for any custom term, a Net 60-specific calculator, and a DSO calculator — all free, no signup.</p>
+<a class="btn" href="https://paymenttermscalculator.com/">Open the Full Payment Terms Calculator →</a>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>How do I calculate a Net 30 due date?</h3><p>Add 30 calendar days to your invoice date. Enter your invoice date above and pick Net 30 for the exact due date.</p></div>
+<div class="faq-item"><h3>What does Net 30 mean?</h3><p>Net 30 means the full invoice amount is due 30 days after the invoice date (or delivery date/end of month, depending on the agreement).</p></div>
+<div class="faq-item"><h3>Is Net 30 calendar days or business days?</h3><p>Net 30 defaults to calendar days unless your contract specifies business days.</p></div>
+<div class="faq-item"><h3>What is the difference between Net 30 and Net 60?</h3><p>Net 60 gives the buyer twice the payment window of Net 30 — 60 days instead of 30 from the start date.</p></div>
+<div class="faq-item"><h3>Does this checker handle Net 15, 45, 60, and 90 too?</h3><p>Yes — pick any of the standard Net terms from the dropdown to get your due date.</p></div>
+<div class="faq-item"><h3>What if my invoice due date falls on a weekend?</h3><p>Most Net terms use calendar days, so the due date can land on a weekend — payment is typically still expected by the next business day. Confirm with your vendor if unsure.</p></div>
+
+</div>
+
+<footer>
+<p>Free tool. Client-side calculation only — no data is stored or transmitted.</p>
+</footer>
+
+<script>
+function calc() {
+  const invDateStr = document.getElementById('invoiceDate').value;
+  if (!invDateStr) return;
+  const term = parseInt(document.getElementById('term').value);
+  const [y,m,d] = invDateStr.split('-').map(Number);
+  const inv = new Date(Date.UTC(y, m-1, d));
+  const due = new Date(inv.getTime());
+  due.setUTCDate(due.getUTCDate() + term);
+  const opts = { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
+  document.getElementById('r-due').textContent = due.toLocaleDateString('en-US', opts);
+  const today = new Date(Date.UTC(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()));
+  const daysLeft = Math.round((due - today) / 86400000);
+  document.getElementById('r-remaining').textContent = daysLeft >= 0 ? `${daysLeft} days from today` : `${Math.abs(daysLeft)} days overdue`;
+  document.getElementById('result').style.display = 'block';
+}
+document.getElementById('invoiceDate').value = new Date().toISOString().slice(0,10);
+</script>
+</body>
+</html>
