@@ -1,0 +1,268 @@
+<title>Idle Game Offline Earnings Calculator — How Much Gold Did You Miss? (2026)</title>
+<meta name="description" content="Calculate exactly how much gold or gems your idle game earned while you were away. Enter your hourly rate, offline cap, and hours away — get an instant estimate. Free.">
+<meta name="keywords" content="idle game offline earnings calculator, offline earnings idle game, idle miner offline gold, gold mining game calculator, idle game away time calculator, offline progress calculator">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/idle-game-offline-earnings-calculator/">
+<meta property="og:title" content="Idle Game Offline Earnings Calculator — How Much Gold Did You Miss?">
+<meta property="og:description" content="Enter your hourly rate and hours away — instantly see how much your idle miner earned offline, capped correctly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/idle-game-offline-earnings-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<style>
+:root {
+  --brand: #d97706;
+  --brand-light: #fef3c7;
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+p { color: #374151; }
+header { background: var(--brand); color: white; padding: 48px 20px 40px; text-align: center; }
+header h1 { margin: 0 0 12px; font-size: 1.9rem; }
+header p { color: rgba(255,255,255,.9); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+.tool-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin: -24px auto 40px;
+  max-width: 740px;
+  padding: 32px;
+  position: relative;
+  z-index: 10;
+}
+.tool-card label { display: block; font-weight: 700; font-size: 0.85rem; margin: 16px 0 6px; }
+.tool-card input, .tool-card select {
+  width: 100%; padding: 12px 14px; border: 2px solid var(--border); border-radius: 8px;
+  font-size: 1rem; font-family: inherit;
+}
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 480px) { .grid2 { grid-template-columns: 1fr; } }
+button.calc {
+  margin-top: 24px; width: 100%; background: var(--brand); color: white; border: none;
+  padding: 14px; border-radius: 8px; font-size: 1.05rem; font-weight: 800; cursor: pointer;
+}
+button.calc:hover { background: #b45309; }
+.result {
+  margin-top: 20px; padding: 20px; border-radius: 10px; background: var(--success-light);
+  border: 2px solid var(--success); display: none;
+}
+.result.show { display: block; }
+.result .big { font-size: 2rem; font-weight: 900; color: var(--success); }
+.result .capnote { color: #92400e; font-weight: 700; margin-top: 6px; font-size: 0.9rem; }
+.content { max-width: 740px; margin: 0 auto; padding: 0 20px 60px; }
+.content h2 { font-size: 1.4rem; margin-top: 40px; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+th, td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; }
+th { background: var(--bg); }
+.formula-box {
+  background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 18px 20px;
+  font-family: 'Courier New', monospace; font-size: 0.85rem; line-height: 2; overflow-x: auto;
+}
+.formula-box .v { color: #7dd3fc; }
+.formula-box .c { color: #94a3b8; }
+.formula-box .h { color: #86efac; }
+.cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; margin: 40px 0; }
+.cta-box p { color: white; }
+.cta-box li { color: rgba(255,255,255,0.88) !important; }
+.cta-box ul { color: white; }
+.cta-box a.inline { color: #fbbf24; font-weight: 700; }
+.cta-btn {
+  display: inline-block; margin-top: 16px; background: var(--brand); color: white;
+  padding: 14px 26px; border-radius: 8px; font-weight: 800; text-decoration: none;
+}
+details { border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin: 10px 0; background: white; }
+summary { font-weight: 700; cursor: pointer; }
+footer { text-align: center; padding: 30px 20px; background: #111827; }
+footer p { color: #9ca3af; font-size: 0.85rem; }
+</style>
+
+<header>
+  <h1>⏳ Idle Game Offline Earnings Calculator</h1>
+  <p>Find out exactly how much gold, gems, or coins your idle game earned while you were away — capped correctly, no guessing.</p>
+</header>
+
+<div class="tool-card">
+  <div class="grid2">
+    <div>
+      <label for="rate">Earnings per hour</label>
+      <input type="number" id="rate" placeholder="e.g. 500" min="0" step="any">
+    </div>
+    <div>
+      <label for="hours">Hours you were away</label>
+      <input type="number" id="hours" placeholder="e.g. 14" min="0" step="any">
+    </div>
+  </div>
+  <div class="grid2">
+    <div>
+      <label for="cap">Offline cap (hours)</label>
+      <input type="number" id="cap" placeholder="e.g. 8" min="0" step="any">
+    </div>
+    <div>
+      <label for="boost">Double-earnings boost?</label>
+      <select id="boost">
+        <option value="1">No boost</option>
+        <option value="2">2x (watched an ad / used a boost)</option>
+      </select>
+    </div>
+  </div>
+  <button class="calc" onclick="calc()">Calculate my offline earnings</button>
+  <div class="result" id="result">
+    <div>You earned approximately</div>
+    <div class="big" id="bigNum">0</div>
+    <div id="capnote" class="capnote"></div>
+  </div>
+</div>
+
+<div class="content">
+  <h2>Why idle games cap offline earnings</h2>
+  <p>Every idle/incremental game — mining games, tycoon games, farm sims — pays you for time
+  spent away, but almost none of them pay you for the <em>full</em> time away. There's always
+  a cap (commonly 2–24 hours) so a player who quits for a week doesn't return to a fully-solved
+  game. This calculator applies that cap correctly, which is the part most players get wrong
+  when estimating by hand: multiplying rate × hours-away without capping first massively
+  overstates what you'll actually receive.</p>
+
+  <h2>How this calculator works — Formula &amp; Method</h2>
+  <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:28px 28px 20px;margin:0 0 40px;">
+    <p style="color:#64748b;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;">
+      Calculation method — deterministic, no AI, no estimation
+    </p>
+    <h3>Variables</h3>
+    <table>
+      <tr><th>Variable</th><th>Meaning</th></tr>
+      <tr><td>rate</td><td>Earnings your idle producer generates per hour, while active</td></tr>
+      <tr><td>hoursAway</td><td>Real time elapsed since you last opened the game</td></tr>
+      <tr><td>cap</td><td>Maximum hours the game will actually pay out for (set by the game's own rules)</td></tr>
+      <tr><td>boost</td><td>Multiplier from a reward-ad or premium "double offline earnings" perk</td></tr>
+    </table>
+    <h3>Formula</h3>
+    <div class="formula-box">
+      <span class="h">— offline earnings —</span><br>
+      <span class="c">// time actually paid never exceeds the cap</span><br>
+      <span class="v">effectiveHours</span> = min(hoursAway, cap)<br>
+      <span class="v">baseEarnings</span> = rate × effectiveHours<br>
+      <span class="v">finalEarnings</span> = baseEarnings × boost
+    </div>
+    <p style="font-size:0.78rem;color:#94a3b8;margin:16px 0 0;">
+      Deterministic calculation based on the standard idle-game offline-earnings pattern used
+      across the genre. Your specific game's exact cap and rate are set by its own rules — check
+      its shop/settings screen to confirm both numbers before relying on this estimate.
+    </p>
+  </div>
+
+  <h2>Typical offline caps by game type</h2>
+  <table>
+    <tr><th>Game type</th><th>Typical cap</th><th>Why</th></tr>
+    <tr><td>Mobile idle miners/tycoons</td><td>2–4 hours (free), 8–24h (with boost/VIP)</td><td>Pushes ad-watching and premium purchases</td></tr>
+    <tr><td>Browser idle games</td><td>4–12 hours</td><td>Balances casual replay against server load</td></tr>
+    <tr><td>Kid-friendly / casual mining games</td><td>6–8 hours</td><td>Matches a natural "away at school/asleep" gap</td></tr>
+  </table>
+
+  <div class="cta-box">
+    <p><strong>Want to see offline earnings actually working, live, instead of just estimating them?</strong></p>
+    <p>This calculator gives you the math on paper. But most idle games either hide the offline
+    formula entirely or bury it in a settings menu you have to dig for. <a class="inline" href="https://goldmininggame.com" target="_blank" rel="noopener">DiggyDiggy Gold</a>
+    is a free browser gold-mining idle game built the opposite way — the moment you come back,
+    it shows you a "Your Mining Buddy collected this much gold while you were away" screen with
+    the real number, capped and calculated exactly like the formula above.</p>
+    <ul>
+      <li><strong>Testing a cap theory:</strong> leave the tab closed overnight, come back, and compare what the game shows you against what this calculator predicts using its stated cap.</li>
+      <li><strong>Picking your next pickaxe:</strong> a higher-tier pickaxe raises your active tap earnings, but it's your Mining Buddy hire that raises the hourly rate this offline formula actually uses — upgrade the Buddy first if offline time matters more to you than active play.</li>
+      <li><strong>Kids and shared devices:</strong> since the game is tap-to-play with zero reading required, a young player can check back once or twice a day and still watch offline gold pile up in between — no idle-game jargon to parse.</li>
+      <li><strong>Comparing before/after an upgrade:</strong> note your hourly rate before buying gear, plug both rates into this calculator with the same hours-away, and see the real difference an upgrade makes to your offline haul.</li>
+      <li><strong>Planning a longer break:</strong> if you know you'll be away longer than the game's cap, there's no benefit to waiting past the cap — check back once you hit it instead of hoarding uncollected time that isn't actually accruing.</li>
+    </ul>
+    <p>DiggyDiggy Gold is a free, ad-supported browser idle mining game — tap to mine, hire a
+    Buddy for passive income, unlock new mines, and collect real offline earnings using the
+    exact capped-rate mechanic this calculator demonstrates.</p>
+    <a class="cta-btn" href="https://goldmininggame.com" target="_blank" rel="noopener">Play DiggyDiggy Gold free →</a>
+  </div>
+
+  <h2>FAQ</h2>
+  <details><summary>Why did I earn less than rate × hours away?</summary><p>Because of the offline cap. Every idle game stops paying out past a maximum number of hours (commonly 2–24h) — being away longer than the cap doesn't earn you more, it just means the extra time above the cap was never counted.</p></details>
+  <details><summary>How do I find my game's actual offline cap?</summary><p>Check the game's shop, settings, or help/info screen — most idle games state it directly (e.g. "earn offline for up to 8 hours"). If it's not listed, leaving the app closed for a long stretch and comparing the payout to a shorter stretch will reveal the cap experimentally.</p></details>
+  <details><summary>Does a rewarded ad actually double offline earnings, or just show a bigger number?</summary><p>In legitimate implementations it's a real multiplier applied after the cap — effectiveHours × rate × 2, not just a bigger label. Confirm by comparing your in-game currency total before and after watching.</p></details>
+  <details><summary>Is offline income the same as idle/passive income while the app is open?</summary><p>They usually use the same hourly rate, but offline income is capped and only calculated once (on return), while in-app passive income accrues continuously with no cap while you're actively playing.</p></details>
+  <details><summary>Why do idle games cap offline earnings instead of paying full time away?</summary><p>Uncapped offline earnings would let a player who quits for a week return to a fully-progressed, unbeatable economy — the cap keeps the loop meaningful for players who check in regularly.</p></details>
+  <details><summary>Does upgrading my pickaxe/tool increase offline earnings too?</summary><p>Only if that upgrade increases your passive/hourly rate specifically — in many games (including DiggyDiggy Gold) the active-tap tool and the passive-income hire are separate upgrades, so check which one actually raises the "per hour" number before buying for offline gains.</p></details>
+  <details><summary>Can I stack the offline cap by playing on two devices?</summary><p>No — offline earnings are tied to your save/account's last-active timestamp, not the device, so switching devices doesn't reset or extend the cap window.</p></details>
+</div>
+
+<footer>
+  <p>Free calculator tool. Not affiliated with any specific game publisher — offline earnings caps vary by title, confirm your game's exact rate and cap in its own settings.</p>
+</footer>
+
+<script>
+function calc() {
+  const rate = parseFloat(document.getElementById('rate').value) || 0;
+  const hours = parseFloat(document.getElementById('hours').value) || 0;
+  const cap = parseFloat(document.getElementById('cap').value) || 0;
+  const boost = parseFloat(document.getElementById('boost').value) || 1;
+
+  const effectiveHours = cap > 0 ? Math.min(hours, cap) : hours;
+  const earnings = rate * effectiveHours * boost;
+
+  document.getElementById('bigNum').textContent = Math.round(earnings).toLocaleString();
+  const note = document.getElementById('capnote');
+  if (cap > 0 && hours > cap) {
+    note.textContent = `Capped at ${cap}h — you were away ${hours}h, but only ${cap}h counted.`;
+  } else {
+    note.textContent = '';
+  }
+  document.getElementById('result').classList.add('show');
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Idle Game Offline Earnings Calculator",
+      "description": "Free calculator to estimate offline/idle earnings in idle games, applying the standard capped-rate formula used across the genre.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Why did I earn less than rate × hours away?", "acceptedAnswer": { "@type": "Answer", "text": "Because of the offline cap. Every idle game stops paying out past a maximum number of hours (commonly 2–24h) — being away longer than the cap doesn't earn you more." } },
+        { "@type": "Question", "name": "How do I find my game's actual offline cap?", "acceptedAnswer": { "@type": "Answer", "text": "Check the game's shop, settings, or help screen — most idle games state it directly. If not listed, compare payouts across different away-durations to find it experimentally." } },
+        { "@type": "Question", "name": "Does a rewarded ad actually double offline earnings?", "acceptedAnswer": { "@type": "Answer", "text": "In legitimate implementations it's a real multiplier applied after the cap, not just a bigger displayed number — confirm by checking your currency total before and after." } },
+        { "@type": "Question", "name": "Is offline income the same as idle income while the app is open?", "acceptedAnswer": { "@type": "Answer", "text": "They usually share the same hourly rate, but offline income is capped and calculated once on return, while in-app passive income accrues continuously without a cap." } },
+        { "@type": "Question", "name": "Why do idle games cap offline earnings?", "acceptedAnswer": { "@type": "Answer", "text": "To prevent a player who quits for a long stretch from returning to a fully-progressed, unbeatable economy — the cap keeps the loop meaningful for regular players." } },
+        { "@type": "Question", "name": "Does upgrading my tool increase offline earnings?", "acceptedAnswer": { "@type": "Answer", "text": "Only if it raises your passive/hourly rate specifically — active-tap upgrades and passive-income upgrades are often separate systems." } },
+        { "@type": "Question", "name": "Can I stack the offline cap by playing on two devices?", "acceptedAnswer": { "@type": "Answer", "text": "No — the cap is tied to your save's last-active timestamp, not the device, so switching devices doesn't extend it." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Idle Game Offline Earnings Calculator", "item": "https://sadiyaqeen92639572-cloud.github.io/idle-game-offline-earnings-calculator/" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to calculate idle game offline earnings",
+      "description": "Estimate how much gold or currency your idle game earned while you were away, correctly applying its offline cap.",
+      "totalTime": "PT1M",
+      "tool": [{ "@type": "HowToTool", "name": "Idle Game Offline Earnings Calculator" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter hourly rate", "text": "Type your producer's earnings-per-hour, found in the game's stats or shop screen." },
+        { "@type": "HowToStep", "position": 2, "name": "Enter hours away", "text": "Enter the real number of hours since you last opened the game." },
+        { "@type": "HowToStep", "position": 3, "name": "Enter the offline cap", "text": "Enter the maximum hours your game pays out for, found in its settings/help screen." },
+        { "@type": "HowToStep", "position": 4, "name": "Get your estimate", "text": "Tap Calculate to see the capped earnings estimate, with a note if your away-time exceeded the cap." }
+      ]
+    }
+  ]
+}
+</script>
