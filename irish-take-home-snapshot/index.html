@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irish Take-Home Pay Snapshot — Free Salary Estimate (2026)</title>
+<meta name="description" content="Enter your gross Irish salary and get an instant take-home pay snapshot: PAYE, USC and PRSI estimated in seconds. Free, no signup.">
+<meta name="keywords" content="irish take home pay, salary calculator ireland, net salary ireland, paye usc prsi calculator, take home pay snapshot ireland">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/irish-take-home-snapshot/">
+<meta property="og:title" content="Irish Take-Home Pay Snapshot — Free Salary Estimate">
+<meta property="og:description" content="Instant take-home pay snapshot for Ireland: PAYE, USC, PRSI. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/irish-take-home-snapshot/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Irish Take-Home Pay Snapshot",
+      "description": "Free instant snapshot of Irish take-home pay: PAYE, USC and PRSI Class A estimated from gross annual salary.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How accurate is this snapshot?", "acceptedAnswer": { "@type": "Answer", "text": "It's a fast estimate for a single person on the standard tax credit, PAYE Class A PRSI. It doesn't account for marital status, tax credits beyond the standard personal/PAYE credit, pension contributions, or the mid-year PRSI rate change on 1 October 2026 — for those, use a full calculator." } },
+        { "@type": "Question", "name": "What is PRSI Class A?", "acceptedAnswer": { "@type": "Answer", "text": "PRSI Class A applies to most employees in the private sector. The employee rate is 4.20% of gross pay up to 30 September 2026, rising to 4.35% from 1 October 2026, with no PRSI charged below €352/week." } },
+        { "@type": "Question", "name": "What is USC?", "acceptedAnswer": { "@type": "Answer", "text": "Universal Social Charge is a separate tax on gross income, charged in four bands: 0.5% up to €12,012, 2% up to €28,700, 3% up to €70,044, and 8% above that, for 2026." } },
+        { "@type": "Question", "name": "Does this include tax credits?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the standard single person's personal tax credit and PAYE tax credit are applied. Additional credits (e.g. married, dependent, medical) are not included in this quick snapshot." } },
+        { "@type": "Question", "name": "Why does the PRSI rate change matter?", "acceptedAnswer": { "@type": "Answer", "text": "Ireland's employee PRSI rate rises from 4.20% to 4.35% on 1 October 2026. A payslip calculated in September will differ slightly from one calculated in November on the same gross salary — a full calculator that lets you set the pay date accounts for this automatically." } },
+        { "@type": "Question", "name": "Is this free and do I need an account?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free, no signup, no email. The result appears instantly in your browser and nothing is stored or transmitted." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Irish Take-Home Pay Snapshot", "item": "https://sadiyaqeen92639572-cloud.github.io/irish-take-home-snapshot/" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to snapshot your Irish take-home pay",
+      "description": "Estimate net salary in Ireland in 2 steps",
+      "totalTime": "PT1M",
+      "tool": [{ "@type": "HowToTool", "name": "Irish Take-Home Pay Snapshot" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter gross annual salary", "text": "Type your gross annual salary in euro." },
+        { "@type": "HowToStep", "position": 2, "name": "View the snapshot", "text": "The tool instantly shows estimated annual net pay after PAYE, USC and PRSI." }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --brand: #1e5a37; --brand-dark: #123a23; --brand-light: #dcfce7;
+    --gold: #f59e0b; --success: #16a34a; --success-light: #dcfce7;
+    --text: #111827; --muted: #6b7280; --border: #e5e7eb; --bg: #f8fafc; --radius: 12px;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.65; }
+  header { background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%); color: white; padding: 48px 20px 40px; text-align: center; }
+  header .flag { font-size: 2rem; margin-bottom: 10px; display: block; }
+  header h1 { font-size: clamp(1.3rem, 4vw, 1.9rem); font-weight: 800; margin-bottom: 10px; }
+  header p { color: rgba(255,255,255,.9); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+  .container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+  .tool-card {
+    background: white; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin: -24px auto 40px; max-width: 700px; padding: 32px; position: relative; z-index: 10;
+  }
+  .form-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 0.9rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+  input[type=number] { border: 2px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 1rem; width: 100%; }
+  input[type=number]:focus { outline: none; border-color: var(--brand); }
+  .calc-btn { width: 100%; margin-top: 20px; padding: 15px; background: var(--brand); color: white; border: none; border-radius: 10px; font-size: 1.02rem; font-weight: 700; cursor: pointer; }
+  .calc-btn:hover { background: var(--brand-dark); }
+  .result { margin-top: 22px; display: none; }
+  .result-hero { background: linear-gradient(135deg, #1e5a37 0%, #2b7a4b 100%); color: white; border-radius: 10px; padding: 22px; text-align: center; }
+  .result-hero .r-label { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; opacity: .8; margin-bottom: 4px; }
+  .result-hero .r-amount { font-size: 2.1rem; font-weight: 900; }
+  .result-hero .r-sub { font-size: 0.92rem; opacity: .85; margin-top: 4px; }
+  .breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .breakdown div { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 0.85rem; }
+  .breakdown div b { display: block; font-size: 1rem; color: var(--brand-dark); }
+  .content { padding-bottom: 60px; }
+  h2.section-title { font-size: 1.25rem; font-weight: 800; margin: 44px 0 16px; color: var(--text); }
+  p { color: #374151; margin-bottom: 14px; }
+  a { color: var(--brand); }
+  .formula-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px 24px 16px; margin: 0 0 32px; }
+  .formula-source { color: #64748b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .5px; font-weight: 600; margin-bottom: 16px; }
+  .formula-code { background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 16px 18px; font-family: 'Courier New', monospace; font-size: 0.82rem; line-height: 2; overflow-x: auto; }
+  .formula-code .v { color: #7dd3fc; }
+  .formula-code .c { color: #94a3b8; }
+  .cta-box { background: #123a23; color: white; border-radius: var(--radius); padding: 34px 30px; margin: 48px 0; }
+  .cta-box h2 { color: white; font-size: 1.25rem; margin-bottom: 14px; }
+  .cta-box p { color: rgba(255,255,255,.88); }
+  .cta-box ul { padding-left: 20px; margin-bottom: 18px; }
+  .cta-box li { color: rgba(255,255,255,.88) !important; margin-bottom: 8px; }
+  .cta-btn { display: inline-block; background: var(--gold); color: #111827; text-decoration: none; padding: 13px 26px; border-radius: 8px; font-weight: 800; font-size: 0.98rem; margin-top: 6px; }
+  .cta-link { color: #93c5fd; text-decoration: underline; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 16px 0; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); }
+  .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--brand); flex-shrink: 0; margin-left: 10px; }
+  .faq-q.open::after { content: '−'; }
+  .faq-a { display: none; padding: 0 0 14px; font-size: 0.95rem; color: #4b5563; line-height: 1.7; }
+  .faq-a.open { display: block; }
+  footer { background: #111827; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.88rem; }
+  footer p { color: #9ca3af; }
+  footer a { color: #d1d5db; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="flag">🇮🇪</span>
+  <h1>Irish Take-Home Pay Snapshot</h1>
+  <p>Enter your gross annual salary and get an instant estimate of your net pay after PAYE, USC and PRSI — free, no signup.</p>
+</header>
+
+<div class="container">
+<div class="tool-card">
+  <div class="form-grid">
+    <div class="form-group">
+      <label>Gross annual salary (€)</label>
+      <input type="number" id="gross" placeholder="e.g. 45000" min="0" value="">
+    </div>
+  </div>
+  <button class="calc-btn" onclick="snapshot()">Get take-home snapshot →</button>
+  <div class="result" id="result">
+    <div class="result-hero">
+      <div class="r-label">Estimated net annual pay</div>
+      <div class="r-amount" id="r-amount"></div>
+      <div class="r-sub" id="r-sub">Single person, standard tax credits, PRSI Class A</div>
+    </div>
+    <div class="breakdown">
+      <div>PAYE<b id="r-paye"></b></div>
+      <div>USC<b id="r-usc"></b></div>
+      <div>PRSI<b id="r-prsi"></b></div>
+      <div>Monthly net<b id="r-monthly"></b></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container content">
+
+  <h2 class="section-title">How this snapshot works — Formula &amp; Method</h2>
+  <div class="formula-box">
+    <div class="formula-source">Source: Revenue.ie, gov.ie — 2026 rates · Deterministic calculation — no AI, no guesswork</div>
+    <div class="formula-code">
+<span class="c">— PAYE (single person) —</span><br>
+<span class="v">first €44,000</span> → 20%<br>
+<span class="v">balance</span> → 40%<br>
+<span class="v">minus</span> personal credit €2,000 + PAYE credit €2,000<br>
+<span class="c">— USC —</span><br>
+<span class="v">0 – €12,012</span> → 0.5%<br>
+<span class="v">€12,013 – €28,700</span> → 2%<br>
+<span class="v">€28,701 – €70,044</span> → 3%<br>
+<span class="v">above €70,044</span> → 8%<br>
+<span class="c">— PRSI Class A (employee) —</span><br>
+<span class="v">4.20%</span> of gross (rises to 4.35% from 1 Oct 2026)
+    </div>
+  </div>
+  <p>This snapshot assumes a single person on the standard personal and PAYE tax credits, PRSI Class A, and uses the pre-October 2026 PRSI rate of 4.20%. It doesn't account for marital status, pension contributions, or other credits — for that, use a full calculator.</p>
+
+  <div class="cta-box">
+    <h2>This snapshot gives a rough single-person estimate. For an exact figure:</h2>
+    <p>This page only covers the simplest case — one salary figure, standard credits, PRSI Class A at the pre-October rate. In practice more variables change the real number on your payslip:</p>
+    <ul>
+      <li><strong>Pay date after 1 October 2026:</strong> PRSI Class A rises from 4.20% to 4.35% — a calculator that lets you pick the pay date applies the correct rate automatically instead of a single fixed number.</li>
+      <li><strong>Hourly or bonus pay:</strong> converting an hourly rate or a one-off bonus into an accurate net figure needs its own calculation path, not just the annual salary formula.</li>
+      <li><strong>Self-employed / Schedule D income:</strong> follows PRSI Class S (4.20% of net profit, minimum €650/year) instead of Class A — a completely different formula from employee PAYE.</li>
+      <li><strong>Redundancy payments:</strong> statutory redundancy is calculated and taxed separately from ordinary salary, with its own formula and exemptions.</li>
+      <li><strong>Married or with extra credits:</strong> joint assessment, dependent credits, or medical credits all shift the PAYE band and the final net figure.</li>
+    </ul>
+    <p><a class="cta-link" href="https://irishpaycalculator.com/" target="_blank" rel="noopener">Irish Pay Calculator</a> covers all of these: salary/take-home with hourly and bonus modes, statutory redundancy, and self-employed tax — each built on sourced 2026 Revenue.ie, gov.ie and WRC figures, with the PRSI rate change modelled automatically by pay date.</p>
+    <a class="cta-btn" href="https://irishpaycalculator.com/" target="_blank" rel="noopener">Use the full calculator →</a>
+  </div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div id="faq-list"></div>
+
+</div>
+
+<footer>
+  <p>Independent free tool. Not tax or financial advice.</p>
+</footer>
+
+<script>
+function calcPaye(gross) {
+  const band = Math.min(gross, 44000) * 0.20 + Math.max(0, gross - 44000) * 0.40;
+  const credits = 4000;
+  return Math.max(0, band - credits);
+}
+function calcUsc(gross) {
+  if (gross <= 13000) return 0;
+  let usc = 0;
+  const b1 = Math.min(gross, 12012);
+  usc += b1 * 0.005;
+  if (gross > 12012) usc += (Math.min(gross, 28700) - 12012) * 0.02;
+  if (gross > 28700) usc += (Math.min(gross, 70044) - 28700) * 0.03;
+  if (gross > 70044) usc += (gross - 70044) * 0.08;
+  return usc;
+}
+function calcPrsi(gross) {
+  if (gross < 18304) return 0; // below ~€352/week threshold annualized
+  return gross * 0.0420;
+}
+function eur(n) { return '€' + Math.round(n).toLocaleString('en-IE'); }
+function snapshot() {
+  const gross = parseFloat(document.getElementById('gross').value) || 0;
+  const paye = calcPaye(gross);
+  const usc = calcUsc(gross);
+  const prsi = calcPrsi(gross);
+  const net = gross - paye - usc - prsi;
+  document.getElementById('r-amount').textContent = eur(net);
+  document.getElementById('r-paye').textContent = eur(paye);
+  document.getElementById('r-usc').textContent = eur(usc);
+  document.getElementById('r-prsi').textContent = eur(prsi);
+  document.getElementById('r-monthly').textContent = eur(net / 12);
+  document.getElementById('result').style.display = 'block';
+}
+function toggleFaq(btn) {
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
+const FAQ_ITEMS = [
+  ["How accurate is this snapshot?", "It's a fast estimate for a single person on the standard tax credit, PAYE Class A PRSI. It doesn't account for marital status, tax credits beyond the standard personal/PAYE credit, pension contributions, or the mid-year PRSI rate change on 1 October 2026 — for those, use a full calculator."],
+  ["What is PRSI Class A?", "PRSI Class A applies to most employees in the private sector. The employee rate is 4.20% of gross pay up to 30 September 2026, rising to 4.35% from 1 October 2026, with no PRSI charged below €352/week."],
+  ["What is USC?", "Universal Social Charge is a separate tax on gross income, charged in four bands: 0.5% up to €12,012, 2% up to €28,700, 3% up to €70,044, and 8% above that, for 2026."],
+  ["Does this include tax credits?", "Yes, the standard single person's personal tax credit and PAYE tax credit are applied. Additional credits (e.g. married, dependent, medical) are not included in this quick snapshot."],
+  ["Why does the PRSI rate change matter?", "Ireland's employee PRSI rate rises from 4.20% to 4.35% on 1 October 2026. A payslip calculated in September will differ slightly from one calculated in November on the same gross salary — a full calculator that lets you set the pay date accounts for this automatically."],
+  ["Is this free and do I need an account?", "Yes, completely free, no signup, no email. The result appears instantly in your browser and nothing is stored or transmitted."]
+];
+document.getElementById('faq-list').innerHTML = FAQ_ITEMS.map(item =>
+  `<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">${item[0]}</button><div class="faq-a">${item[1]}</div></div>`
+).join('');
+</script>
+</body>
+</html>
