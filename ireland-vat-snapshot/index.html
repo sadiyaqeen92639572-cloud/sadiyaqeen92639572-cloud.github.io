@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ireland VAT Snapshot — Quick Add/Remove VAT Check (2026)</title>
+<meta name="description" content="Quick snapshot: add or remove VAT at Ireland's 23% standard rate. Free, instant, no signup — enter one amount, get net/VAT/gross in seconds.">
+<meta name="keywords" content="ireland vat snapshot, vat calculator ireland, add vat ireland, remove vat ireland, irish vat quick check, vat 23 percent ireland">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/ireland-vat-snapshot/">
+<meta property="og:title" content="Ireland VAT Snapshot — Quick Add/Remove VAT Check">
+<meta property="og:description" content="Add or remove VAT at Ireland's 23% standard rate. Free, instant.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/ireland-vat-snapshot/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Ireland VAT Snapshot",
+      "description": "Free instant snapshot to add or remove VAT at Ireland's standard 23% rate from a single amount.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the standard VAT rate in Ireland?", "acceptedAnswer": { "@type": "Answer", "text": "23%, applying to most goods and services. Reduced rates of 13.5% and 9% apply to specific categories like fuel, construction, and restaurant/catering food and hairdressing." } },
+        { "@type": "Question", "name": "How is VAT added to a price?", "acceptedAnswer": { "@type": "Answer", "text": "Multiply the net price by (1 + rate). At the standard 23% rate: net × 1.23 = gross price including VAT." } },
+        { "@type": "Question", "name": "How is VAT removed from a price?", "acceptedAnswer": { "@type": "Answer", "text": "Divide the gross (VAT-inclusive) price by (1 + rate). At the standard 23% rate: gross ÷ 1.23 = net price excluding VAT." } },
+        { "@type": "Question", "name": "Does this snapshot cover reduced VAT rates?", "acceptedAnswer": { "@type": "Answer", "text": "No, this quick snapshot only uses the 23% standard rate. For 13.5%, 9%, or the 4.8% livestock rate, use a full calculator with a rate selector." } },
+        { "@type": "Question", "name": "Is this free and do I need an account?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free, no signup. The result appears instantly in your browser and nothing is stored or transmitted." } },
+        { "@type": "Question", "name": "Is VAT the same as sales tax?", "acceptedAnswer": { "@type": "Answer", "text": "No. VAT is charged at each stage of the supply chain with input credits reclaimed by businesses, while US sales tax is charged once at final sale. Ireland uses VAT, not sales tax." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Ireland VAT Snapshot", "item": "https://sadiyaqeen92639572-cloud.github.io/ireland-vat-snapshot/" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to snapshot VAT on an Irish price",
+      "description": "Add or remove Irish VAT in 2 steps",
+      "totalTime": "PT1M",
+      "tool": [{ "@type": "HowToTool", "name": "Ireland VAT Snapshot" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter an amount", "text": "Type a net or gross euro amount." },
+        { "@type": "HowToStep", "position": 2, "name": "Pick add or remove", "text": "Choose whether to add VAT to a net price or remove it from a gross price." }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --brand: #0b6e4f; --brand-dark: #084d38; --brand-light: #dcfce7;
+    --gold: #f59e0b; --success: #16a34a; --success-light: #dcfce7;
+    --text: #111827; --muted: #6b7280; --border: #e5e7eb; --bg: #f8fafc; --radius: 12px;
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.65; }
+  header { background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%); color: white; padding: 48px 20px 40px; text-align: center; }
+  header .flag { font-size: 2rem; margin-bottom: 10px; display: block; }
+  header h1 { font-size: clamp(1.3rem, 4vw, 1.9rem); font-weight: 800; margin-bottom: 10px; }
+  header p { color: rgba(255,255,255,.9); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+  .container { max-width: 740px; margin: 0 auto; padding: 0 20px; }
+  .tool-card {
+    background: white; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    margin: -24px auto 40px; max-width: 700px; padding: 32px; position: relative; z-index: 10;
+  }
+  .tab-nav { display: flex; gap: 8px; margin-bottom: 18px; }
+  .tab-btn { flex: 1; padding: 10px 14px; border: 2px solid var(--border); background: #fff; border-radius: 8px; cursor: pointer; font-size: .92rem; font-weight: 700; color: var(--muted); }
+  .tab-btn.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .form-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  label { font-size: 0.9rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+  input[type=number] { border: 2px solid var(--border); border-radius: 8px; padding: 12px 14px; font-size: 1rem; width: 100%; }
+  input[type=number]:focus { outline: none; border-color: var(--brand); }
+  .calc-btn { width: 100%; margin-top: 20px; padding: 15px; background: var(--brand); color: white; border: none; border-radius: 10px; font-size: 1.02rem; font-weight: 700; cursor: pointer; }
+  .calc-btn:hover { background: var(--brand-dark); }
+  .result { margin-top: 22px; display: none; }
+  .result-hero { background: linear-gradient(135deg, #0b6e4f 0%, #14875f 100%); color: white; border-radius: 10px; padding: 22px; text-align: center; }
+  .result-hero .r-label { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; opacity: .8; margin-bottom: 4px; }
+  .result-hero .r-amount { font-size: 2.1rem; font-weight: 900; }
+  .breakdown { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .breakdown div { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; font-size: 0.85rem; }
+  .breakdown div b { display: block; font-size: 1rem; color: var(--brand-dark); }
+  .content { padding-bottom: 60px; }
+  h2.section-title { font-size: 1.25rem; font-weight: 800; margin: 44px 0 16px; color: var(--text); }
+  p { color: #374151; margin-bottom: 14px; }
+  a { color: var(--brand); }
+  .formula-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px 24px 16px; margin: 0 0 32px; }
+  .formula-source { color: #64748b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .5px; font-weight: 600; margin-bottom: 16px; }
+  .formula-code { background: #0d3b2c; color: #e2e8f0; border-radius: 8px; padding: 16px 18px; font-family: 'Courier New', monospace; font-size: 0.82rem; line-height: 2; overflow-x: auto; }
+  .formula-code .v { color: #7dd3fc; }
+  .formula-code .c { color: #94a3b8; }
+  .cta-box { background: #084d38; color: white; border-radius: var(--radius); padding: 34px 30px; margin: 48px 0; }
+  .cta-box h2 { color: white; font-size: 1.25rem; margin-bottom: 14px; }
+  .cta-box p { color: rgba(255,255,255,.88); }
+  .cta-box ul { padding-left: 20px; margin-bottom: 18px; }
+  .cta-box li { color: rgba(255,255,255,.88) !important; margin-bottom: 8px; }
+  .cta-btn { display: inline-block; background: var(--gold); color: #111827; text-decoration: none; padding: 13px 26px; border-radius: 8px; font-weight: 800; font-size: 0.98rem; margin-top: 6px; }
+  .cta-link { color: #93c5fd; text-decoration: underline; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 16px 0; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--text); }
+  .faq-q::after { content: '+'; font-size: 1.2rem; color: var(--brand); flex-shrink: 0; margin-left: 10px; }
+  .faq-q.open::after { content: '−'; }
+  .faq-a { display: none; padding: 0 0 14px; font-size: 0.95rem; color: #4b5563; line-height: 1.7; }
+  .faq-a.open { display: block; }
+  footer { background: #111827; color: #9ca3af; text-align: center; padding: 28px 20px; font-size: 0.88rem; }
+  footer p { color: #9ca3af; }
+  footer a { color: #d1d5db; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="flag">🇮🇪</span>
+  <h1>Ireland VAT Snapshot</h1>
+  <p>Enter one amount and get an instant VAT snapshot at Ireland's 23% standard rate — add or remove, free, no signup.</p>
+</header>
+
+<div class="container">
+<div class="tool-card">
+  <div class="tab-nav">
+    <button class="tab-btn active" id="tab-add-btn" onclick="switchTab('add')">➕ Add VAT</button>
+    <button class="tab-btn" id="tab-remove-btn" onclick="switchTab('remove')">➖ Remove VAT</button>
+  </div>
+  <div class="form-grid">
+    <div class="form-group">
+      <label id="amount-label">Net amount, excluding VAT (€)</label>
+      <input type="number" id="amount" placeholder="e.g. 100" min="0" step="0.01">
+    </div>
+  </div>
+  <button class="calc-btn" onclick="snapshot()">Get VAT snapshot →</button>
+  <div class="result" id="result">
+    <div class="result-hero">
+      <div class="r-label" id="r-label">Gross price, including VAT</div>
+      <div class="r-amount" id="r-amount"></div>
+    </div>
+    <div class="breakdown">
+      <div>Net<b id="r-net"></b></div>
+      <div>VAT (23%)<b id="r-vat"></b></div>
+      <div>Gross<b id="r-gross"></b></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container content">
+
+  <h2 class="section-title">How this snapshot works — Formula &amp; Method</h2>
+  <div class="formula-box">
+    <div class="formula-source">Source: Revenue.ie — 2026 rates · Deterministic calculation — no AI, no guesswork</div>
+    <div class="formula-code">
+<span class="c">— Add VAT (net → gross) —</span><br>
+<span class="v">gross</span> = net × 1.23<br>
+<span class="c">— Remove VAT (gross → net) —</span><br>
+<span class="v">net</span> = gross ÷ 1.23<br>
+<span class="v">vat_amount</span> = gross − net
+    </div>
+  </div>
+  <p>This snapshot only uses Ireland's 23% standard rate. Reduced rates (13.5%, 9%) and the 4.8% livestock rate apply to specific goods and services and aren't covered here — for those, use a full calculator with a rate selector.</p>
+
+  <div class="cta-box">
+    <h2>This snapshot only covers the 23% standard rate. For every Irish VAT rate:</h2>
+    <p>This page handles one case — a single amount at the standard rate. In practice VAT in Ireland has several rates and a registration threshold that matter for real transactions:</p>
+    <ul>
+      <li><strong>13.5% reduced rate:</strong> fuel (coal, home heating oil), construction, repair and maintenance services.</li>
+      <li><strong>9% second reduced rate:</strong> restaurant/catering food and hairdressing (moved from 13.5% on 1 July 2026).</li>
+      <li><strong>4.8% livestock/flat rate:</strong> agricultural supplies — a separate farmer addition, not a retail rate.</li>
+      <li><strong>VAT registration threshold:</strong> €85,000 for goods, €42,500 for services — whether your business needs to register at all.</li>
+      <li><strong>Cross-border rules:</strong> exports, EU intra-community supplies, and Northern Ireland/Windsor Framework treatment aren't modelled by a quick snapshot.</li>
+    </ul>
+    <p><a class="cta-link" href="https://irishvatcalc.com/" target="_blank" rel="noopener">Irish VAT Calc</a> covers all of these: a full add/remove calculator with every rate, plus a VAT registration threshold guide — both built on sourced, dated 2026 Revenue.ie figures.</p>
+    <a class="cta-btn" href="https://irishvatcalc.com/" target="_blank" rel="noopener">Use the full VAT calculator →</a>
+  </div>
+
+  <h2 class="section-title">Frequently asked questions</h2>
+  <div id="faq-list"></div>
+
+</div>
+
+<footer>
+  <p>Independent free tool. Not tax or legal advice.</p>
+</footer>
+
+<script>
+var mode = 'add';
+function switchTab(name) {
+  mode = name;
+  document.getElementById('tab-add-btn').classList.toggle('active', name === 'add');
+  document.getElementById('tab-remove-btn').classList.toggle('active', name === 'remove');
+  document.getElementById('amount-label').textContent = name === 'add' ? 'Net amount, excluding VAT (€)' : 'Gross amount, including VAT (€)';
+  document.getElementById('amount').value = '';
+  document.getElementById('result').style.display = 'none';
+}
+function eur(n) { return '€' + n.toLocaleString('en-IE', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function snapshot() {
+  var amount = parseFloat(document.getElementById('amount').value) || 0;
+  var net, vat, gross;
+  if (mode === 'add') {
+    net = amount;
+    vat = net * 0.23;
+    gross = net + vat;
+    document.getElementById('r-label').textContent = 'Gross price, including VAT';
+    document.getElementById('r-amount').textContent = eur(gross);
+  } else {
+    gross = amount;
+    net = gross / 1.23;
+    vat = gross - net;
+    document.getElementById('r-label').textContent = 'Net price, excluding VAT';
+    document.getElementById('r-amount').textContent = eur(net);
+  }
+  document.getElementById('r-net').textContent = eur(net);
+  document.getElementById('r-vat').textContent = eur(vat);
+  document.getElementById('r-gross').textContent = eur(gross);
+  document.getElementById('result').style.display = 'block';
+}
+function toggleFaq(btn) {
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
+const FAQ_ITEMS = [
+  ["What is the standard VAT rate in Ireland?", "23%, applying to most goods and services. Reduced rates of 13.5% and 9% apply to specific categories like fuel, construction, and restaurant/catering food and hairdressing."],
+  ["How is VAT added to a price?", "Multiply the net price by (1 + rate). At the standard 23% rate: net × 1.23 = gross price including VAT."],
+  ["How is VAT removed from a price?", "Divide the gross (VAT-inclusive) price by (1 + rate). At the standard 23% rate: gross ÷ 1.23 = net price excluding VAT."],
+  ["Does this snapshot cover reduced VAT rates?", "No, this quick snapshot only uses the 23% standard rate. For 13.5%, 9%, or the 4.8% livestock rate, use a full calculator with a rate selector."],
+  ["Is this free and do I need an account?", "Yes, completely free, no signup. The result appears instantly in your browser and nothing is stored or transmitted."],
+  ["Is VAT the same as sales tax?", "No. VAT is charged at each stage of the supply chain with input credits reclaimed by businesses, while US sales tax is charged once at final sale. Ireland uses VAT, not sales tax."]
+];
+document.getElementById('faq-list').innerHTML = FAQ_ITEMS.map(item =>
+  `<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">${item[0]}</button><div class="faq-a">${item[1]}</div></div>`
+).join('');
+</script>
+</body>
+</html>
