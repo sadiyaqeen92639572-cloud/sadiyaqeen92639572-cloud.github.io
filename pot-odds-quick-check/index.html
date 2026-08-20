@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pot Odds Quick Check — Call or Fold Calculator (2026)</title>
+<meta name="description" content="Enter pot size, bet to call, and your outs — get an instant call-or-fold answer using pot odds vs. hand equity. Free, no sign-up, works on any street.">
+<meta name="keywords" content="pot odds calculator, call or fold calculator, poker pot odds, rule of 4 and 2, drawing hand equity, poker outs calculator, should i call poker">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/pot-odds-quick-check/">
+<meta property="og:title" content="Pot Odds Quick Check — Call or Fold Calculator">
+<meta property="og:description" content="Enter pot size, bet to call, and your outs — get an instant call-or-fold answer using pot odds vs. hand equity.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/pot-odds-quick-check/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<style>
+:root {
+  --brand: #0f3d2e;
+  --brand-light: #dbeee4;
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --danger: #dc2626;
+  --danger-light: #fee2e2;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+  --gold: #c9922a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+header { background: var(--brand); color: white; padding: 48px 20px 40px; }
+header p { color: rgba(255,255,255,.9); }
+header h1 { margin: 0 0 12px; font-size: 1.9rem; }
+.tool-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin: -24px auto 40px;
+  max-width: 740px;
+  padding: 32px;
+  position: relative;
+  z-index: 10;
+}
+.tool-card label { display: block; font-weight: 600; font-size: 0.9rem; margin: 16px 0 6px; }
+.tool-card input, .tool-card select {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;
+}
+.tool-card button {
+  margin-top: 20px; width: 100%; padding: 14px; background: var(--gold); color: white; border: none;
+  border-radius: 8px; font-size: 1.05rem; font-weight: 700; cursor: pointer;
+}
+.tool-card button:hover { opacity: 0.92; }
+.result-block {
+  margin-top: 24px; padding: 20px; border-radius: 8px; border: 1px solid;
+}
+.result-block.call { background: var(--success-light); border-color: #86efac; }
+.result-block.fold { background: var(--danger-light); border-color: #fca5a5; }
+.result-total { font-size: 1.6rem; font-weight: 800; }
+.result-block.call .result-total { color: var(--success); }
+.result-block.fold .result-total { color: var(--danger); }
+.result-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 0.95rem; }
+.content { padding: 20px 0 60px; }
+.content h2 { margin-top: 40px; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+table th, table td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
+table th { background: var(--bg); font-weight: 700; }
+.cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; margin: 32px 0; }
+.cta-box p { color: white; }
+.cta-box li { color: rgba(255,255,255,0.88) !important; }
+.cta-box ul { color: white; }
+.cta-box a.btn { display: inline-block; margin-top: 12px; background: var(--gold); color: white; text-decoration: none;
+  padding: 12px 22px; border-radius: 8px; font-weight: 700; }
+.cta-box a { color: #93c5fd; }
+.faq-item { margin: 18px 0; }
+.faq-item h3 { margin: 0 0 6px; font-size: 1.02rem; }
+.formula-box {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px 28px 20px; margin: 24px 0 40px;
+}
+.formula-code {
+  background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 18px 20px;
+  font-family: 'Courier New', monospace; font-size: 0.83rem; line-height: 2; overflow-x: auto;
+}
+footer { background: var(--brand); color: #cfd8e3; padding: 30px 20px; margin-top: 40px; }
+footer p { color: #9ca3af; font-size: 0.85rem; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Pot Odds Quick Check",
+      "description": "Free calculator that compares pot odds to hand equity (via the rule of 4 and 2) to give an instant call-or-fold answer on a drawing hand.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What are pot odds in poker?", "acceptedAnswer": {"@type": "Answer", "text": "Pot odds are the ratio of the current bet you must call to the total size of the pot after that call. Expressed as a percentage, it's the minimum equity your hand needs to make calling break even in the long run."}},
+        {"@type": "Question", "name": "What is the rule of 4 and 2?", "acceptedAnswer": {"@type": "Answer", "text": "A quick way to estimate hand equity from outs without running full simulations: multiply your outs by 4 on the flop (two cards to come) or by 2 on the turn (one card to come) to get an approximate win percentage."}},
+        {"@type": "Question", "name": "How do I know whether to call or fold?", "acceptedAnswer": {"@type": "Answer", "text": "Compare your estimated equity to the pot odds percentage. If your equity is higher than the pot odds requirement, calling is profitable long-term. If it's lower, folding is correct — unless implied odds from future betting change the math."}},
+        {"@type": "Question", "name": "Does this account for implied odds?", "acceptedAnswer": {"@type": "Answer", "text": "No. This quick check only compares immediate pot odds to raw equity. It ignores money you might win on later streets if you hit your draw, which is what implied odds calculate. A full implied odds calculator is linked below."}},
+        {"@type": "Question", "name": "Is the rule of 4 and 2 exact?", "acceptedAnswer": {"@type": "Answer", "text": "It's a fast approximation, not exact math. It slightly overstates equity with a high outs count (12+), where professional players subtract 1 from the estimate. For precise equity across full ranges, use a dedicated equity calculator."}},
+        {"@type": "Question", "name": "What counts as an out?", "acceptedAnswer": {"@type": "Answer", "text": "An out is any remaining card in the deck that improves your hand to a likely winner. For example, a flush draw with two suited cards in hand and two on the board has 9 outs — the remaining cards of that suit."}},
+        {"@type": "Question", "name": "Should I always call when equity beats pot odds?", "acceptedAnswer": {"@type": "Answer", "text": "It's the correct baseline decision mathematically, but real hands also depend on opponent tendencies, stack depth, and position — factors a simple pot odds check doesn't model."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/"},
+        {"@type": "ListItem", "position": 2, "name": "Pot Odds Quick Check", "item": "https://sadiyaqeen92639572-cloud.github.io/pot-odds-quick-check/"}
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to check pot odds against your outs",
+      "description": "Compare pot odds to estimated hand equity using outs and the rule of 4 and 2 to decide whether to call a bet.",
+      "totalTime": "PT1M",
+      "tool": [{"@type": "HowToTool", "name": "Pot Odds Quick Check"}],
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Enter the pot size", "text": "Add the total pot before your call, including any bet already made this street."},
+        {"@type": "HowToStep", "position": 2, "name": "Enter the bet to call", "text": "Enter the amount you need to put in to continue in the hand."},
+        {"@type": "HowToStep", "position": 3, "name": "Enter your outs", "text": "Count the cards remaining in the deck that complete your draw."},
+        {"@type": "HowToStep", "position": 4, "name": "Pick the street", "text": "Choose flop (two cards to come) or turn (one card to come) to set the correct multiplier."},
+        {"@type": "HowToStep", "position": 5, "name": "Read the verdict", "text": "The tool compares your estimated equity to the pot odds percentage and shows call or fold."}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Pot Odds Quick Check</h1>
+    <p>Enter your pot, the bet to call, and your outs — get an instant call-or-fold verdict using pot odds vs. estimated equity. Free, no sign-up.</p>
+  </div>
+</header>
+
+<div class="tool-card">
+  <label for="pot">Pot size before your call ($)</label>
+  <input type="number" id="pot" min="0" step="1" placeholder="e.g. 100">
+  <label for="bet">Bet you need to call ($)</label>
+  <input type="number" id="bet" min="0" step="1" placeholder="e.g. 25">
+  <label for="outs">Your outs</label>
+  <input type="number" id="outs" min="1" max="20" step="1" placeholder="e.g. 9 (flush draw)">
+  <label for="street">Street</label>
+  <select id="street">
+    <option value="4" selected>Flop (two cards to come) — ×4</option>
+    <option value="2">Turn (one card to come) — ×2</option>
+  </select>
+  <button onclick="calcPotOdds()">Check Call or Fold</button>
+  <div class="result-block" id="result" style="display:none">
+    <div class="result-total" id="resultVerdict"></div>
+    <div class="result-row"><span>Pot odds required</span><span id="resultPotOdds"></span></div>
+    <div class="result-row"><span>Estimated equity</span><span id="resultEquity"></span></div>
+  </div>
+</div>
+
+<div class="container content">
+
+  <h2>Why pot odds decide the call before your cards do</h2>
+  <p>Every call in poker is a bet against the deck: you're risking a fixed amount to win a bigger pot, and the only question that matters mathematically is whether your <strong>chance of winning</strong> is higher than the <strong>price you're being offered</strong>. That price is pot odds — the ratio of the call to the total pot after it. Compare that percentage to your estimated equity from outs, and you get a clean, repeatable call-or-fold rule instead of a guess.</p>
+
+  <div class="formula-box">
+    <p style="color:#64748b;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;">
+      Method: pot odds vs. rule of 4 and 2 equity estimate · Deterministic calculation — no AI, no arbitrary estimate
+    </p>
+    <h3>Multipliers used</h3>
+    <table>
+      <tr><th>Street</th><th>Cards to come</th><th>Multiplier</th></tr>
+      <tr><td>Flop</td><td>Turn + river</td><td>outs × 4</td></tr>
+      <tr><td>Turn</td><td>River only</td><td>outs × 2</td></tr>
+    </table>
+    <h3>Formula</h3>
+    <div class="formula-code">
+      <span style="color:#86efac;">— Pot odds —</span><br>
+      <span style="color:#7dd3fc;">pot_odds_pct</span> = bet_to_call / (pot + bet_to_call) &times; 100<br><br>
+      <span style="color:#86efac;">— Estimated equity (rule of 4 and 2) —</span><br>
+      <span style="color:#7dd3fc;">equity_pct</span> = outs &times; multiplier<br><br>
+      <span style="color:#86efac;">— Verdict —</span><br>
+      <span style="color:#7dd3fc;">call</span> if equity_pct &gt; pot_odds_pct, else <span style="color:#7dd3fc;">fold</span>
+    </div>
+    <p style="font-size:0.78rem;color:#94a3b8;margin:0;">This quick check ignores implied odds (future betting) and opponent range. See the full calculator below for those.</p>
+  </div>
+
+  <div class="cta-box">
+    <p>This quick check answers one question: is calling <em>right now</em> profitable based on pot odds alone? But real decisions usually hinge on more — what you can win on later streets if you hit, how your specific hand performs against a range instead of one estimate, and whether your bankroll can handle the swings of playing draws correctly over thousands of hands.</p>
+    <p>For the full toolkit — implied odds, hand-vs-range equity, a visual range builder, and Kelly-criterion bankroll sizing — use <a href="https://pokerhelpercalculator.com/">Poker Helper Calculator</a>:</p>
+    <ul>
+      <li><strong>Before calling a big draw:</strong> run the <a href="https://pokerhelpercalculator.com/implied-odds-calculator/">Implied Odds Calculator</a> to see if future betting on later streets makes a currently-bad pot-odds call profitable anyway.</li>
+      <li><strong>Facing a range, not one hand:</strong> the <a href="https://pokerhelpercalculator.com/equity-calculator/">Equity Calculator</a> handles hand-vs-range and multi-way pots, where a flat outs count understates the real picture.</li>
+      <li><strong>Building or narrowing a read:</strong> the <a href="https://pokerhelpercalculator.com/range-vs-range-equity-calculator/">Range vs Range Calculator</a> uses a visual 13x13 grid to compute live equity as you adjust each side's range.</li>
+      <li><strong>Checking a common preflop spot:</strong> the <a href="https://pokerhelpercalculator.com/matchups/">Hand Matchup Odds</a> page has pre-calculated numbers for AA vs KK, AKs vs QQ, and other standard confrontations.</li>
+      <li><strong>Sizing your stakes:</strong> the <a href="https://pokerhelpercalculator.com/toolkit/bankroll-calculator/">Bankroll Calculator</a> uses Kelly-criterion math to size buy-ins so correct calls don't bust you on variance.</li>
+    </ul>
+    <a class="btn" href="https://pokerhelpercalculator.com/">Use the Full Poker Math Toolkit →</a>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><h3>What are pot odds in poker?</h3><p>Pot odds are the ratio of the current bet you must call to the total size of the pot after that call. Expressed as a percentage, it's the minimum equity your hand needs to make calling break even in the long run.</p></div>
+  <div class="faq-item"><h3>What is the rule of 4 and 2?</h3><p>A quick way to estimate hand equity from outs without running full simulations: multiply your outs by 4 on the flop (two cards to come) or by 2 on the turn (one card to come) to get an approximate win percentage.</p></div>
+  <div class="faq-item"><h3>How do I know whether to call or fold?</h3><p>Compare your estimated equity to the pot odds percentage. If your equity is higher than the pot odds requirement, calling is profitable long-term. If it's lower, folding is correct — unless implied odds from future betting change the math.</p></div>
+  <div class="faq-item"><h3>Does this account for implied odds?</h3><p>No. This quick check only compares immediate pot odds to raw equity. It ignores money you might win on later streets if you hit your draw, which is what implied odds calculate. A full implied odds calculator is linked above.</p></div>
+  <div class="faq-item"><h3>Is the rule of 4 and 2 exact?</h3><p>It's a fast approximation, not exact math. It slightly overstates equity with a high outs count (12+), where professional players subtract 1 from the estimate. For precise equity across full ranges, use a dedicated equity calculator.</p></div>
+  <div class="faq-item"><h3>What counts as an out?</h3><p>An out is any remaining card in the deck that improves your hand to a likely winner. For example, a flush draw with two suited cards in hand and two on the board has 9 outs — the remaining cards of that suit.</p></div>
+  <div class="faq-item"><h3>Should I always call when equity beats pot odds?</h3><p>It's the correct baseline decision mathematically, but real hands also depend on opponent tendencies, stack depth, and position — factors a simple pot odds check doesn't model.</p></div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>Pot Odds Quick Check is an independent educational tool. Not financial or gambling advice — poker involves risk.</p>
+  </div>
+</footer>
+
+<script>
+function calcPotOdds() {
+  var pot = parseFloat(document.getElementById('pot').value) || 0;
+  var bet = parseFloat(document.getElementById('bet').value) || 0;
+  var outs = parseFloat(document.getElementById('outs').value) || 0;
+  var mult = parseFloat(document.getElementById('street').value);
+  var potOdds = bet <= 0 ? 0 : (bet / (pot + bet)) * 100;
+  var equity = outs * mult;
+  var resultEl = document.getElementById('result');
+  var verdictEl = document.getElementById('resultVerdict');
+  var isCall = equity > potOdds;
+  resultEl.className = 'result-block ' + (isCall ? 'call' : 'fold');
+  verdictEl.textContent = isCall ? 'CALL — profitable' : 'FOLD — unprofitable';
+  document.getElementById('resultPotOdds').textContent = potOdds.toFixed(1) + '%';
+  document.getElementById('resultEquity').textContent = equity.toFixed(1) + '%';
+  resultEl.style.display = 'block';
+}
+</script>
+</body>
+</html>
