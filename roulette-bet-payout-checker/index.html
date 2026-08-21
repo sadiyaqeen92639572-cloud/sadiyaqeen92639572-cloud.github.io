@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roulette Bet Payout & House Edge Checker — American vs European (2026)</title>
+<meta name="description" content="Pick any roulette bet — straight up, split, street, corner, red/black, dozen, column — and see its exact payout ratio and house edge on American vs European wheels. Free.">
+<meta name="keywords" content="roulette payout calculator, roulette house edge by bet, american vs european roulette odds, roulette straight up payout, roulette dozen bet odds, roulette split bet payout">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/roulette-bet-payout-checker/">
+<meta property="og:title" content="Roulette Bet Payout & House Edge Checker">
+<meta property="og:description" content="See exact payout and house edge for any roulette bet, American vs European. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/roulette-bet-payout-checker/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Roulette Bet Payout & House Edge Checker",
+      "description": "Pick any roulette bet type and wheel variant to see exact payout ratio and house edge.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is the house edge on a straight-up roulette bet?", "acceptedAnswer": { "@type": "Answer", "text": "5.26% on an American wheel (38 pockets, pays 35:1) and 2.70% on a European wheel (37 pockets, pays 35:1). The payout ratio is identical on both wheels — the extra 00 pocket on the American wheel is what widens the house edge." } },
+        { "@type": "Question", "name": "Do all roulette bets have the same house edge?", "acceptedAnswer": { "@type": "Answer", "text": "On a European wheel, yes — every standard bet (straight, split, street, corner, red/black, dozen, column) carries the same 2.70% edge because all pay true odds against 37 pockets. On an American wheel every bet is 5.26% except one: the five-number bet (0-00-1-2-3), which pays 6:1 against 38 pockets for a 7.89% edge — the worst bet on the table." } },
+        { "@type": "Question", "name": "Why does the five-number bet have a worse house edge?", "acceptedAnswer": { "@type": "Answer", "text": "It pays 6:1 (as if there were 7 equally likely outcomes) but actually covers 5 of 38 pockets. True odds would require a 6.6:1 payout to match the 5.26% edge every other American bet carries — the 6:1 payout falls short, pushing the edge to 7.89%. It does not exist on European wheels." } },
+        { "@type": "Question", "name": "Is a dozen or column bet safer than a straight-up bet?", "acceptedAnswer": { "@type": "Answer", "text": "Not in terms of house edge — it's identical (5.26% American, 2.70% European). A dozen/column bet has a much higher probability of winning per spin (about 32%) but pays only 2:1, versus a straight-up bet's roughly 2.6% win probability paying 35:1. Both are mathematically equivalent in the long run; the difference is variance, not edge." } },
+        { "@type": "Question", "name": "Does combining bets (like odds bets in craps) lower the roulette house edge?", "acceptedAnswer": { "@type": "Answer", "text": "No. Unlike craps, roulette has no zero-edge side bet to blend in. Every bet on the layout carries the wheel's edge, so combining bets changes your variance and bankroll swings, not your expected loss rate." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Roulette Bet Payout & House Edge Checker", "item": "https://sadiyaqeen92639572-cloud.github.io/roulette-bet-payout-checker/" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to check a roulette bet's payout and house edge",
+      "description": "Pick the wheel type and bet type to see the exact payout ratio and house edge.",
+      "totalTime": "PT30S",
+      "tool": [{ "@type": "HowToTool", "name": "Roulette Bet Payout & House Edge Checker" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Pick the wheel", "text": "Choose American (0, 00 — 38 pockets) or European (single 0 — 37 pockets)." },
+        { "@type": "HowToStep", "position": 2, "name": "Pick the bet type", "text": "Choose straight up, split, street, corner, five-number (American only), or an outside bet like red/black, dozen, or column." },
+        { "@type": "HowToStep", "position": 3, "name": "Read payout and edge", "text": "The tool shows the exact payout ratio and house edge for that bet on that wheel." }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --brand: #166534;
+  --brand-light: #dcfce7;
+  --success: #16a34a;
+  --danger: #b91c1c;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+p { color: #374151; }
+header { background: var(--brand); color: white; padding: 48px 20px 40px; }
+header h1 { margin: 0 0 10px; font-size: 1.9rem; max-width: 760px; margin-left: auto; margin-right: auto; }
+header p { color: rgba(255,255,255,.9); max-width: 700px; margin: 0 auto; }
+.wrap { max-width: 780px; margin: 0 auto; padding: 0 20px 60px; }
+.tool-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin: -24px auto 40px;
+  max-width: 740px;
+  padding: 32px;
+  position: relative;
+  z-index: 10;
+}
+.tool-card h2 { margin-top: 0; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 14px; }
+@media (max-width: 480px) { .row { grid-template-columns: 1fr; } }
+label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: var(--muted); }
+select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; background: white; }
+.result { margin-top: 20px; padding: 20px; background: var(--brand-light); border-radius: 10px; text-align: center; }
+.result .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.result .edge { font-size: 2rem; font-weight: 800; color: var(--brand); }
+.result .label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+.content h2 { margin-top: 40px; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.92rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { color: var(--muted); font-size: 0.8rem; text-transform: uppercase; }
+.tbl-wrap { overflow-x: auto; }
+.formula-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px 28px 20px; margin: 0 0 40px; }
+.formula-box .source { color: #64748b; font-size: 0.82rem; text-transform: uppercase; letter-spacing: .5px; font-weight: 600; }
+.code-block { background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 18px 20px; font-family: 'Courier New', monospace; font-size: 0.83rem; line-height: 2; overflow-x: auto; }
+.code-block .g { color: #86efac; }
+.code-block .v { color: #7dd3fc; }
+.code-block .c { color: #94a3b8; }
+.cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; margin: 40px 0; }
+.cta-box p { color: white; }
+.cta-box li { color: rgba(255,255,255,0.88) !important; }
+.cta-box ul { color: white; padding-left: 20px; }
+.cta-box a.btn { display: inline-block; margin-top: 16px; background: var(--success); color: white; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; }
+.cta-box a.inline { color: #86efac; }
+.faq details { border-bottom: 1px solid var(--border); padding: 14px 0; }
+.faq summary { font-weight: 600; cursor: pointer; }
+footer { text-align: center; padding: 30px 20px; font-size: 0.85rem; }
+footer p { color: #9ca3af; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Roulette Bet Payout &amp; House Edge Checker</h1>
+  <p>Pick a bet — straight up, split, street, corner, five-number, red/black, dozen, column — and see its exact payout ratio and house edge, American vs European wheel.</p>
+</header>
+
+<div class="wrap">
+  <div class="tool-card">
+    <h2>Check a bet's payout and edge</h2>
+    <div class="row">
+      <div>
+        <label for="wheel">Wheel</label>
+        <select id="wheel">
+          <option value="american" selected>American (0, 00 — 38 pockets)</option>
+          <option value="european">European (single 0 — 37 pockets)</option>
+        </select>
+      </div>
+      <div>
+        <label for="bet">Bet type</label>
+        <select id="bet">
+          <option value="straight" selected>Straight up (1 number)</option>
+          <option value="split">Split (2 numbers)</option>
+          <option value="street">Street (3 numbers)</option>
+          <option value="corner">Corner (4 numbers)</option>
+          <option value="five">Five-number (0-00-1-2-3, American only)</option>
+          <option value="outside">Red/Black, Odd/Even, High/Low</option>
+          <option value="dozen">Dozen or Column</option>
+        </select>
+      </div>
+    </div>
+    <div class="result">
+      <div class="grid2">
+        <div>
+          <div class="edge" id="payoutOut">35:1</div>
+          <div class="label">Payout ratio</div>
+        </div>
+        <div>
+          <div class="edge" id="edgeOut">5.26%</div>
+          <div class="label">House edge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Why almost every roulette bet carries the exact same edge</h2>
+    <p>Roulette looks like it offers dozens of different bets, but the math behind nearly all of them is identical. Every standard bet — a single number, a split, a dozen, red/black — is priced to pay less than the true odds of hitting it, and the shortfall is always sized against the same wheel: 38 pockets on American tables, 37 on European. The result is that a $10 straight-up bet and a $10 red bet lose money at exactly the same long-run rate, even though one wins about 2.6% of the time and the other about 47%. This tool exists so you can check that in ten seconds instead of doing the arithmetic by hand — and to spot the one American-only bet that actually breaks the pattern.</p>
+
+    <h2>How this calculator works — Formulas &amp; Method</h2>
+    <div class="formula-box">
+      <p class="source">Source: standard published roulette payout tables (35:1 straight up, true-odds inside/outside bets) · Deterministic arithmetic — no AI, no estimation</p>
+      <h3>Constants used</h3>
+      <table>
+        <tr><th>Wheel</th><th>Pockets</th><th>Edge on all standard bets</th></tr>
+        <tr><td>American</td><td>38 (1-36, 0, 00)</td><td>5.26%</td></tr>
+        <tr><td>European</td><td>37 (1-36, 0)</td><td>2.70%</td></tr>
+        <tr><td>American five-number (0-00-1-2-3)</td><td>38, pays 6:1</td><td>7.89%</td></tr>
+      </table>
+      <h3>Formula</h3>
+      <div class="code-block">
+        <span class="g">— House edge per bet —</span><br>
+        <span class="v">pockets</span> = wheel == american ? 38 : 37<br>
+        <span class="v">win_prob</span> = numbers_covered / pockets<br>
+        <span class="v">expected_value</span> = win_prob &times; payout &minus; (1 &minus; win_prob) &times; 1<br>
+        <span class="v">house_edge</span> = &minus;expected_value &times; 100<br>
+        <span class="c">// straight up: 1/38 &times; 35 &minus; 37/38 &times; 1 = &minus;0.0526 → 5.26% (American)</span><br>
+        <span class="c">// five-number: 5/38 &times; 6 &minus; 33/38 &times; 1 = &minus;0.0789 → 7.89% (worst American bet)</span>
+      </div>
+      <p style="font-size:0.78rem;color:#94a3b8;margin-top:12px;">Deterministic composition of standard published payout tables. Every bet listed here is a true-odds-priced bet except the five-number bet, which is deliberately mispriced relative to true odds.</p>
+    </div>
+
+    <h2>Payout table by bet type</h2>
+    <div class="tbl-wrap">
+    <table>
+      <tr><th>Bet</th><th>Numbers covered</th><th>Payout</th><th>American edge</th><th>European edge</th></tr>
+      <tr><td>Straight up</td><td>1</td><td>35:1</td><td>5.26%</td><td>2.70%</td></tr>
+      <tr><td>Split</td><td>2</td><td>17:1</td><td>5.26%</td><td>2.70%</td></tr>
+      <tr><td>Street</td><td>3</td><td>11:1</td><td>5.26%</td><td>2.70%</td></tr>
+      <tr><td>Corner</td><td>4</td><td>8:1</td><td>5.26%</td><td>2.70%</td></tr>
+      <tr><td>Five-number (0-00-1-2-3)</td><td>5</td><td>6:1</td><td>7.89%</td><td>&mdash; (doesn't exist)</td></tr>
+      <tr><td>Red/Black, Odd/Even, High/Low</td><td>18</td><td>1:1</td><td>5.26%</td><td>2.70%</td></tr>
+      <tr><td>Dozen or Column</td><td>12</td><td>2:1</td><td>5.26%</td><td>2.70%</td></tr>
+    </table>
+    </div>
+
+    <div class="cta-box">
+      <p>This checker gives you the payout and edge for one bet at a time. But the real question most players actually have is what happens over hundreds or thousands of spins — does a Martingale progression on red/black actually change anything, does the realized edge really converge to 5.26%, and how fast does variance wash out on a small bankroll.</p>
+      <p>That's exactly what a full <a class="inline" href="https://wheelodds.com/">roulette wheel simulator</a> is built for — spin an American or European wheel thousands of times in your browser and watch the realized numbers land:</p>
+      <ul>
+        <li><strong>To test a betting system:</strong> the <a class="inline" href="https://wheelodds.com/martingale-roulette-simulator/">Martingale simulator</a> runs the progression across thousands of spins so you can see for yourself why no staking system changes the long-run edge.</li>
+        <li><strong>To compare wheels directly:</strong> the <a class="inline" href="https://wheelodds.com/european-roulette-simulator/">European roulette simulator</a> shows the 2.70% edge converging in real time, side by side with the American 5.26%.</li>
+        <li><strong>To see the exact payout math:</strong> the <a class="inline" href="https://wheelodds.com/roulette-payout-chart/">roulette payout chart</a> lists every bet type with its full payout table.</li>
+        <li><strong>To understand the raw probabilities:</strong> the <a class="inline" href="https://wheelodds.com/odds-of-winning-roulette/">odds of winning roulette</a> page breaks down win probability per bet type, not just the edge.</li>
+        <li><strong>To try a different table game:</strong> the site also runs a <a class="inline" href="https://wheelodds.com/craps-simulator/">craps simulator</a> and a <a class="inline" href="https://wheelodds.com/baccarat-simulator/">baccarat simulator</a> built on the same deterministic-math approach.</li>
+      </ul>
+      <p>Every simulator on the site is free, requires no signup, and uses real dollar amounts — no real-money wagering, just the actual math playing out spin by spin.</p>
+      <a class="btn" href="https://wheelodds.com/">Try the free Roulette Simulator →</a>
+    </div>
+
+    <h2 class="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>What is the house edge on a straight-up roulette bet?</summary><p>5.26% on an American wheel (38 pockets, pays 35:1) and 2.70% on a European wheel (37 pockets, same 35:1 payout). The payout is identical on both wheels — the extra 00 pocket is what widens the edge.</p></details>
+      <details><summary>Do all roulette bets have the same house edge?</summary><p>On a European wheel, yes — every standard bet carries 2.70%. On an American wheel every bet is 5.26% except the five-number bet (0-00-1-2-3), which pays 6:1 for a 7.89% edge — the worst bet on the table.</p></details>
+      <details><summary>Why does the five-number bet have a worse house edge?</summary><p>It pays 6:1 but covers 5 of 38 pockets — true odds would need 6.6:1 to match the standard 5.26% edge. The shortfall pushes it to 7.89%. It doesn't exist on European wheels.</p></details>
+      <details><summary>Is a dozen or column bet safer than a straight-up bet?</summary><p>Not in edge terms — identical (5.26% American, 2.70% European). A dozen bet wins about 32% of the time paying 2:1; a straight-up wins about 2.6% paying 35:1. Same long-run edge, different variance.</p></details>
+      <details><summary>Does combining bets lower the roulette house edge?</summary><p>No. Unlike craps' zero-edge odds bets, roulette has no side bet to blend in — every bet on the layout carries the wheel's edge, so combining bets changes variance, not expected loss rate.</p></details>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Educational estimator. Not affiliated with any casino. For informational use only.</p>
+</footer>
+
+<script>
+var PAYOUT = { straight: 35, split: 17, street: 11, corner: 8, five: 6, outside: 1, dozen: 2 };
+var COVERS = { straight: 1, split: 2, street: 3, corner: 4, five: 5, outside: 18, dozen: 12 };
+function calc() {
+  var wheel = document.getElementById('wheel').value;
+  var bet = document.getElementById('bet').value;
+  var pockets = wheel === 'american' ? 38 : 37;
+  if (bet === 'five' && wheel !== 'american') {
+    document.getElementById('payoutOut').textContent = 'N/A';
+    document.getElementById('edgeOut').textContent = 'European only';
+    return;
+  }
+  var payout = PAYOUT[bet];
+  var covers = COVERS[bet];
+  var winProb = covers / pockets;
+  var ev = winProb * payout - (1 - winProb) * 1;
+  var edge = -ev * 100;
+  document.getElementById('payoutOut').textContent = payout + ':1';
+  document.getElementById('edgeOut').textContent = edge.toFixed(2) + '%';
+}
+['wheel','bet'].forEach(function(id){
+  document.getElementById(id).addEventListener('change', calc);
+});
+calc();
+</script>
+
+</body>
+</html>
