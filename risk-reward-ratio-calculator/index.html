@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk/Reward Ratio Calculator — Quick Trade R:R Checker (2026)</title>
+<meta name="description" content="Free risk/reward ratio calculator for traders. Enter entry, stop, and target price to instantly get your R:R ratio and win-rate breakeven point.">
+<meta name="keywords" content="risk reward ratio calculator, r:r ratio calculator, trade risk reward calculator, win rate breakeven calculator, risk to reward trading">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/risk-reward-ratio-calculator/">
+<meta property="og:title" content="Risk/Reward Ratio Calculator — Quick Trade R:R Checker">
+<meta property="og:description" content="Enter entry, stop, and target price. Get your R:R ratio and the win rate you'd need to break even. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/risk-reward-ratio-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Risk/Reward Ratio Calculator",
+      "description": "Free calculator that converts entry, stop, and target price into a risk/reward ratio and the win rate needed to break even.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I calculate risk/reward ratio?", "acceptedAnswer": { "@type": "Answer", "text": "Divide your potential reward (target price minus entry) by your potential risk (entry minus stop price). A 1:3 ratio means you're risking $1 to make $3." } },
+        { "@type": "Question", "name": "What is a good risk/reward ratio for trading?", "acceptedAnswer": { "@type": "Answer", "text": "Most traders target at least 1:2 (risk $1 to make $2), which keeps the required win rate under 50% to stay profitable." } },
+        { "@type": "Question", "name": "How does risk/reward ratio relate to win rate?", "acceptedAnswer": { "@type": "Answer", "text": "Breakeven win rate = risk / (risk + reward). A 1:2 ratio needs only a 33% win rate to break even; a 1:1 ratio needs 50%." } },
+        { "@type": "Question", "name": "Does a good R:R ratio guarantee profit?", "acceptedAnswer": { "@type": "Answer", "text": "No — R:R only tells you the breakeven win rate. Your actual win rate over enough trades determines real profitability." } },
+        { "@type": "Question", "name": "Should I use risk/reward ratio for both long and short trades?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the same formula applies, just using stop-above-entry and target-below-entry for short positions." } },
+        { "@type": "Question", "name": "Does this calculator tell me how many shares or contracts to trade?", "acceptedAnswer": { "@type": "Answer", "text": "No — this tool checks the ratio only. For exact position size in shares, lots, or futures contracts based on your account risk, use the full calculator linked below." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Risk/Reward Ratio Calculator", "item": "https://sadiyaqeen92639572-cloud.github.io/risk-reward-ratio-calculator/" }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to check your trade's risk/reward ratio",
+      "description": "Enter entry, stop, and target price to get the R:R ratio and breakeven win rate.",
+      "totalTime": "PT1M",
+      "tool": [{ "@type": "HowToTool", "name": "Risk/Reward Ratio Calculator" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Enter entry price", "text": "The price you plan to enter the trade at." },
+        { "@type": "HowToStep", "position": 2, "name": "Enter stop price", "text": "The price that invalidates the trade." },
+        { "@type": "HowToStep", "position": 3, "name": "Enter target price", "text": "The price you plan to take profit at." },
+        { "@type": "HowToStep", "position": 4, "name": "Read your ratio", "text": "The calculator instantly shows your R:R ratio and required breakeven win rate." }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root {
+  --brand: #1d4ed8;
+  --brand-light: #dbeafe;
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, sans-serif; color: var(--text); margin: 0; background: #fff; line-height: 1.6; }
+header { background: var(--brand); color: white; padding: 48px 20px 40px; text-align: center; }
+header p { color: rgba(255,255,255,.9); max-width: 640px; margin: 8px auto 0; }
+header h1 { margin: 0; font-size: 1.9rem; }
+.wrap { max-width: 740px; margin: 0 auto; padding: 0 20px 60px; }
+.tool-card { background: white; border-radius: var(--radius); box-shadow: 0 4px 24px rgba(0,0,0,0.08); margin: -24px auto 40px; max-width: 740px; padding: 32px; position: relative; z-index: 10; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; font-weight: 600; margin-bottom: 14px; }
+input, select { padding: 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem; }
+button.submit-btn { background: var(--brand); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; }
+#result { display: none; margin-top: 18px; padding: 18px; background: var(--success-light); border-radius: var(--radius); text-align: center; }
+#result .ratio { font-size: 1.8rem; font-weight: 800; color: var(--success); }
+h2 { font-size: 1.35rem; margin-top: 40px; }
+h3 { font-size: 1.05rem; }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 12px 0; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+.formula-section { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 24px; }
+.formula-code { background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 16px 18px; font-family: 'Courier New', monospace; font-size: .82rem; line-height: 1.9; margin: 12px 0; }
+.cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; margin: 40px 0; }
+.cta-box p { color: white; }
+.cta-box li { color: rgba(255,255,255,0.88) !important; }
+.cta-box ul { color: white; }
+.cta-box a.btn { display: inline-block; background: var(--brand); color: white; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: 700; margin-top: 16px; }
+.cta-box a.inline { color: #93c5fd; font-weight: 600; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+.faq-item h3 { margin: 0 0 6px; }
+.faq-item p { margin: 0; color: var(--muted); }
+footer { text-align: center; color: var(--muted); font-size: .82rem; padding: 24px; border-top: 1px solid var(--border); }
+footer p { color: #9ca3af; }
+@media (max-width: 640px) {
+  header h1 { font-size: 1.4rem; }
+  .tool-card { margin: -18px 16px 32px; padding: 22px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Risk/Reward Ratio Calculator</h1>
+  <p>Enter entry, stop, and target price — get your R:R ratio and breakeven win rate instantly</p>
+</header>
+
+<div class="tool-card">
+  <label>Entry price
+    <input type="number" id="entry" step="any" placeholder="100.00" oninput="calc()">
+  </label>
+  <label>Stop price
+    <input type="number" id="stop" step="any" placeholder="98.00" oninput="calc()">
+  </label>
+  <label>Target price
+    <input type="number" id="target" step="any" placeholder="106.00" oninput="calc()">
+  </label>
+  <button class="submit-btn" onclick="calc()">Calculate Ratio</button>
+  <div id="result">
+    <div class="ratio" id="r-ratio"></div>
+    <div id="r-breakeven" style="color:var(--muted);font-size:.9rem;margin-top:4px;"></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<h2>How This Calculator Works</h2>
+<p>This tool answers the question every trader should ask before entering a position: "is this trade worth taking?" It compares your potential loss (entry to stop) against your potential gain (entry to target), and shows the win rate you'd need just to break even at that ratio.</p>
+
+<div class="formula-section">
+<p style="color:#64748b;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;">Calculation: deterministic arithmetic — no AI, no estimation</p>
+<h3>Formulas</h3>
+<div class="formula-code">
+risk = |entry − stop|<br>
+reward = |target − entry|<br>
+ratio = reward / risk<br>
+breakeven_win_rate = risk / (risk + reward)
+</div>
+<p style="font-size:.8rem;color:#94a3b8;">Works for both long and short setups — the calculator uses absolute price distance, not direction.</p>
+</div>
+
+<h2>Risk/Reward Quick Reference</h2>
+<table>
+<tr><th>Ratio</th><th>Breakeven win rate</th><th>Read</th></tr>
+<tr><td>1:1</td><td>50%</td><td>Needs a coin-flip win rate to break even — thin margin</td></tr>
+<tr><td>1:2</td><td>33%</td><td>Common minimum target for swing/day trading setups</td></tr>
+<tr><td>1:3</td><td>25%</td><td>Room to be wrong most of the time and still profit</td></tr>
+<tr><td>1:5</td><td>17%</td><td>Aggressive target, often means a wider stop or smaller size</td></tr>
+</table>
+
+<div class="cta-box">
+<h2 style="color:white;">Ready to Size the Trade, Not Just Check the Ratio?</h2>
+<p>A good R:R ratio only answers half the question. The other half — how many shares, lots, or contracts to actually put on so a losing trade doesn't blow past your account risk limit — is what <a class="inline" href="https://traderisktools.com/">TradeRiskTools.com</a> calculates directly.</p>
+<p>Concrete ways people use the full site beyond checking a ratio:</p>
+<ul>
+<li><strong>Position sizing by account risk:</strong> enter account size, risk %, entry, and stop to get the exact number of shares, forex lots, or futures contracts to trade — for stocks, forex, or futures.</li>
+<li><strong>Stop-loss placement from a target risk amount:</strong> work backward from a fixed dollar risk and position size to find the exact stop price.</li>
+<li><strong>Futures P&L before entering:</strong> run entry/exit price and contract count through the futures calculator to see exact dollar P&L per tick and per point.</li>
+<li><strong>Tick and point value lookup:</strong> check the exact per-contract dollar value for ES, MES, NQ, MNQ, YM, MYM, RTY, and M2K before sizing a futures trade.</li>
+<li><strong>Prop-firm account risk limits:</strong> use the risk % field to stay inside typical funded-account daily/max-drawdown rules before you place the trade.</li>
+</ul>
+<p>The site covers stocks, forex, and futures in one calculator, plus 8 per-contract futures reference pages — all free, no signup.</p>
+<a class="btn" href="https://traderisktools.com/">Open the Full Position Size Calculator →</a>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>How do I calculate risk/reward ratio?</h3><p>Divide your potential reward (target price minus entry) by your potential risk (entry minus stop price). A 1:3 ratio means you're risking $1 to make $3.</p></div>
+<div class="faq-item"><h3>What is a good risk/reward ratio for trading?</h3><p>Most traders target at least 1:2 (risk $1 to make $2), which keeps the required win rate under 50% to stay profitable.</p></div>
+<div class="faq-item"><h3>How does risk/reward ratio relate to win rate?</h3><p>Breakeven win rate = risk / (risk + reward). A 1:2 ratio needs only a 33% win rate to break even; a 1:1 ratio needs 50%.</p></div>
+<div class="faq-item"><h3>Does a good R:R ratio guarantee profit?</h3><p>No — R:R only tells you the breakeven win rate. Your actual win rate over enough trades determines real profitability.</p></div>
+<div class="faq-item"><h3>Should I use risk/reward ratio for both long and short trades?</h3><p>Yes — the same formula applies, just using stop-above-entry and target-below-entry for short positions.</p></div>
+<div class="faq-item"><h3>Does this calculator tell me how many shares or contracts to trade?</h3><p>No — this tool checks the ratio only. For exact position size in shares, lots, or futures contracts based on your account risk, use the full calculator linked below.</p></div>
+
+</div>
+
+<footer>
+<p>Free tool. Client-side calculation only — no data is stored or transmitted.</p>
+</footer>
+
+<script>
+function calc() {
+  const entry = parseFloat(document.getElementById('entry').value);
+  const stop = parseFloat(document.getElementById('stop').value);
+  const target = parseFloat(document.getElementById('target').value);
+  if (isNaN(entry) || isNaN(stop) || isNaN(target)) return;
+  const risk = Math.abs(entry - stop);
+  const reward = Math.abs(target - entry);
+  if (risk <= 0) return;
+  const ratio = reward / risk;
+  const breakeven = risk / (risk + reward);
+  document.getElementById('r-ratio').textContent = `1 : ${ratio.toFixed(2)}`;
+  document.getElementById('r-breakeven').textContent = `Breakeven win rate needed: ${(breakeven * 100).toFixed(1)}%`;
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
