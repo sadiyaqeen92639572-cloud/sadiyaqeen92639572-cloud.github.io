@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VA Combined Rating Quick Check — 2-Disability Estimator (2026)</title>
+<meta name="description" content="Instantly combine two VA disability ratings using the official whole-person formula (38 CFR §4.25) — not addition. Free, no sign-up, instant result.">
+<meta name="keywords" content="va combined rating calculator, va disability calculator, combine va disability ratings, va math table, 38 cfr 4.25, va disability rating calculator">
+<link rel="canonical" href="https://sadiyaqeen92639572-cloud.github.io/va-combined-rating-quick-check/">
+<meta property="og:title" content="VA Combined Rating Quick Check — 2-Disability Estimator">
+<meta property="og:description" content="Instantly combine two VA disability ratings using the official whole-person formula (38 CFR §4.25) — not addition.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sadiyaqeen92639572-cloud.github.io/va-combined-rating-quick-check/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="google-site-verification" content="76BtuPWapEs7YKz4n_-PAXK_31eyF1SGsayZYBetFMg" />
+<style>
+:root {
+  --brand: #1e3a5f;
+  --brand-light: #dbeafe;
+  --success: #16a34a;
+  --success-light: #dcfce7;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --radius: 12px;
+  --gold: #b8862b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+header { background: var(--brand); color: white; padding: 48px 20px 40px; }
+header p { color: rgba(255,255,255,.9); }
+header h1 { margin: 0 0 12px; font-size: 1.9rem; }
+.tool-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  margin: -24px auto 40px;
+  max-width: 740px;
+  padding: 32px;
+  position: relative;
+  z-index: 10;
+}
+.tool-card label { display: block; font-weight: 600; font-size: 0.9rem; margin: 16px 0 6px; }
+.tool-card input, .tool-card select {
+  width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 1rem;
+}
+.tool-card button {
+  margin-top: 20px; width: 100%; padding: 14px; background: var(--gold); color: white; border: none;
+  border-radius: 8px; font-size: 1.05rem; font-weight: 700; cursor: pointer;
+}
+.tool-card button:hover { opacity: 0.92; }
+.result-block {
+  margin-top: 24px; padding: 20px; background: var(--success-light); border: 1px solid #86efac; border-radius: 8px;
+}
+.result-total { font-size: 1.8rem; font-weight: 800; color: var(--success); }
+.result-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 0.95rem; }
+.content { padding: 20px 0 60px; }
+.content h2 { margin-top: 40px; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+table th, table td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
+table th { background: var(--bg); font-weight: 700; }
+.cta-box { background: #111827; color: white; border-radius: var(--radius); padding: 32px; margin: 32px 0; }
+.cta-box p { color: white; }
+.cta-box li { color: rgba(255,255,255,0.88) !important; }
+.cta-box ul { color: white; }
+.cta-box a.btn { display: inline-block; margin-top: 12px; background: var(--gold); color: white; text-decoration: none;
+  padding: 12px 22px; border-radius: 8px; font-weight: 700; }
+.cta-box a { color: #93c5fd; }
+.faq-item { margin: 18px 0; }
+.faq-item h3 { margin: 0 0 6px; font-size: 1.02rem; }
+.formula-box {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px 28px 20px; margin: 24px 0 40px;
+}
+.formula-code {
+  background: #1e3a5f; color: #e2e8f0; border-radius: 8px; padding: 18px 20px;
+  font-family: 'Courier New', monospace; font-size: 0.83rem; line-height: 2; overflow-x: auto;
+}
+footer { background: var(--brand); color: #cfd8e3; padding: 30px 20px; margin-top: 40px; }
+footer p { color: #9ca3af; font-size: 0.85rem; }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "VA Combined Rating Quick Check",
+      "description": "Free calculator that combines two VA disability ratings using the official whole-person formula from 38 CFR §4.25 — not simple addition.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Why don't VA disability ratings just add up?", "acceptedAnswer": {"@type": "Answer", "text": "VA rates the whole person, not the sum of parts. Under 38 CFR §4.25, each additional rating is applied to your remaining, non-disabled percentage rather than added directly — two 50% ratings combine to 75%, not 100%."}},
+        {"@type": "Question", "name": "What is the VA combined ratings formula?", "acceptedAnswer": {"@type": "Answer", "text": "Combined = combined + (100 - combined) x (next rating / 100), applied one rating at a time from highest to lowest, then rounded to the nearest 10 at the very end (values ending in .5 round up)."}},
+        {"@type": "Question", "name": "Do I round after every step or only at the end?", "acceptedAnswer": {"@type": "Answer", "text": "Only at the end. A common mistake is rounding the running total after each disability is combined — VA's official Combined Ratings Table only rounds the final result."}},
+        {"@type": "Question", "name": "What is the bilateral factor?", "acceptedAnswer": {"@type": "Answer", "text": "Under 38 CFR §4.26, disabilities affecting paired limbs (both arms or both legs) are combined together first, then that sub-total gets a 10% bump before being combined with your other ratings. This quick check does not apply the bilateral factor — use the full calculator for that."}},
+        {"@type": "Question", "name": "Does a higher combined rating always mean more monthly pay?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but the dollar amount isn't a simple percentage of a base rate — VA publishes fixed monthly payment tables per rating percentage and dependent status. The rating percentage alone doesn't tell you the payment amount."}},
+        {"@type": "Question", "name": "Is this quick check accurate for 3 or more disabilities?", "acceptedAnswer": {"@type": "Answer", "text": "This quick check only combines two ratings. For three or more disabilities, plus the bilateral factor and monthly pay lookup, use the full calculator linked below."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sadiyaqeen92639572-cloud.github.io/"},
+        {"@type": "ListItem", "position": 2, "name": "VA Combined Rating Quick Check", "item": "https://sadiyaqeen92639572-cloud.github.io/va-combined-rating-quick-check/"}
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to combine two VA disability ratings",
+      "description": "Combine two VA disability ratings using the official whole-person formula from 38 CFR §4.25.",
+      "totalTime": "PT1M",
+      "tool": [{"@type": "HowToTool", "name": "VA Combined Rating Quick Check"}],
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "Enter your first rating", "text": "Enter your higher disability rating percentage."},
+        {"@type": "HowToStep", "position": 2, "name": "Enter your second rating", "text": "Enter your second disability rating percentage."},
+        {"@type": "HowToStep", "position": 3, "name": "Read your combined rating", "text": "The tool applies VA's whole-person formula and rounds to the nearest 10, per the official Combined Ratings Table."}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>VA Combined Rating Quick Check</h1>
+    <p>Combine two VA disability ratings in seconds using the same whole-person formula VA uses — not simple addition. Free, no sign-up.</p>
+  </div>
+</header>
+
+<div class="tool-card">
+  <label for="rating1">First disability rating (%)</label>
+  <input type="number" id="rating1" min="0" max="100" step="10" placeholder="e.g. 50">
+  <label for="rating2">Second disability rating (%)</label>
+  <input type="number" id="rating2" min="0" max="100" step="10" placeholder="e.g. 30">
+  <button onclick="calcCombined()">Calculate Combined Rating</button>
+  <div class="result-block" id="result" style="display:none">
+    <div class="result-total" id="resultTotal"></div>
+    <div class="result-row"><span>Before rounding</span><span id="resultRaw"></span></div>
+  </div>
+</div>
+
+<div class="container content">
+
+  <h2>Why VA disability ratings don't just add up</h2>
+  <p>It's the single most common mistake veterans make estimating their own rating: adding two ratings together like <strong>50% + 30% = 80%</strong>. VA doesn't work that way. Under <strong>38 CFR §4.25</strong>, VA rates the whole person — each new disability is combined against your <em>remaining</em> non-disabled percentage, not your full percentage. Two 50% ratings combine to <strong>75%</strong>, not 100%.</p>
+
+  <div class="formula-box">
+    <p style="color:#64748b;font-size:0.82rem;text-transform:uppercase;letter-spacing:.5px;font-weight:600;">
+      Method: VA's official Combined Ratings Table formula (38 CFR §4.25) · Deterministic calculation
+    </p>
+    <h3>Formula</h3>
+    <div class="formula-code">
+      <span style="color:#86efac;">— VA combined rating —</span><br>
+      <span style="color:#7dd3fc;">combined</span> = higher_rating<br>
+      <span style="color:#7dd3fc;">combined</span> = combined + (100 &minus; combined) &times; (next_rating / 100)<br>
+      <span style="color:#7dd3fc;">final</span> = round combined to nearest 10 (.5 rounds up)
+    </div>
+    <table>
+      <tr><th>Rating 1</th><th>Rating 2</th><th>Combined (rounded)</th></tr>
+      <tr><td>50%</td><td>30%</td><td>65% → 70%</td></tr>
+      <tr><td>70%</td><td>40%</td><td>82% → 80%</td></tr>
+      <tr><td>90%</td><td>10%</td><td>91% → 90%</td></tr>
+    </table>
+    <p style="font-size:0.78rem;color:#94a3b8;margin:0;">This quick check combines two ratings only and does not apply the bilateral factor. See the full calculator below for 3+ disabilities, bilateral factor, monthly pay, and back pay.</p>
+  </div>
+
+  <div class="cta-box">
+    <p>This quick check handles two ratings — useful for a fast gut-check, but most real claims involve more moving parts: <strong>three or more disabilities</strong>, a <strong>bilateral factor</strong> for paired-limb conditions, and turning your final percentage into an actual <strong>monthly payment amount</strong>.</p>
+    <p>For the full combined-rating calculator — plus dedicated monthly pay, compensation-with-dependents, and back-pay calculators — use <a href="https://combinedratingcalc.com">Combined Rating Calc</a>:</p>
+    <ul>
+      <li><strong>3 or more disabilities:</strong> add every rating with an unlimited repeater, not just two.</li>
+      <li><strong>Paired-limb disabilities:</strong> apply the 38 CFR §4.26 bilateral factor bump before final combination.</li>
+      <li><strong>What it pays monthly:</strong> look up your actual dollar amount by rating percentage and dependent status.</li>
+      <li><strong>Back pay:</strong> calculate what you're owed across a claim period, using the historically correct COLA rate for each month — not a flat current-year rate.</li>
+    </ul>
+    <a class="btn" href="https://combinedratingcalc.com">Use the Full VA Combined Rating Calculator →</a>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><h3>Why don't VA disability ratings just add up?</h3><p>VA rates the whole person, not the sum of parts. Under 38 CFR §4.25, each additional rating is applied to your remaining, non-disabled percentage rather than added directly — two 50% ratings combine to 75%, not 100%.</p></div>
+  <div class="faq-item"><h3>What is the VA combined ratings formula?</h3><p>Combined = combined + (100 - combined) x (next rating / 100), applied one rating at a time from highest to lowest, then rounded to the nearest 10 at the very end (values ending in .5 round up).</p></div>
+  <div class="faq-item"><h3>Do I round after every step or only at the end?</h3><p>Only at the end. A common mistake is rounding the running total after each disability is combined — VA's official Combined Ratings Table only rounds the final result.</p></div>
+  <div class="faq-item"><h3>What is the bilateral factor?</h3><p>Under 38 CFR §4.26, disabilities affecting paired limbs (both arms or both legs) are combined together first, then that sub-total gets a 10% bump before being combined with your other ratings. This quick check does not apply the bilateral factor — use the full calculator above for that.</p></div>
+  <div class="faq-item"><h3>Does a higher combined rating always mean more monthly pay?</h3><p>Yes, but the dollar amount isn't a simple percentage of a base rate — VA publishes fixed monthly payment tables per rating percentage and dependent status. The rating percentage alone doesn't tell you the payment amount.</p></div>
+  <div class="faq-item"><h3>Is this quick check accurate for 3 or more disabilities?</h3><p>This quick check only combines two ratings. For three or more disabilities, plus the bilateral factor and monthly pay lookup, use the full calculator above.</p></div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>VA Combined Rating Quick Check is an independent educational tool. Not affiliated with the U.S. Department of Veterans Affairs, not a VSO, not a law firm.</p>
+  </div>
+</footer>
+
+<script>
+function calcCombined() {
+  var r1 = parseFloat(document.getElementById('rating1').value) || 0;
+  var r2 = parseFloat(document.getElementById('rating2').value) || 0;
+  var ratings = [r1, r2].filter(function(r) { return r > 0; }).sort(function(a, b) { return b - a; });
+  var combined = 0;
+  if (ratings.length > 0) {
+    combined = ratings[0];
+    for (var i = 1; i < ratings.length; i++) {
+      combined = combined + (100 - combined) * (ratings[i] / 100);
+    }
+  }
+  var remainder = combined % 10;
+  var rounded = remainder >= 5 ? combined - remainder + 10 : combined - remainder;
+  document.getElementById('resultTotal').textContent = rounded + '%';
+  document.getElementById('resultRaw').textContent = combined.toFixed(1) + '%';
+  document.getElementById('result').style.display = 'block';
+}
+</script>
+</body>
+</html>
