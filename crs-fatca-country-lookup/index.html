@@ -344,6 +344,22 @@
 const CRS_API = 'https://fatcacrscheck.com/api/data/crs-jurisdictions';
 const FATCA_API = 'https://fatcacrscheck.com/api/data/fatca-iga';
 
+// The OECD CRS list and the US Treasury FATCA list spell 9 jurisdictions differently, which
+// would otherwise show duplicate dropdown options and half-populated results. Keep in sync with
+// the copy in fatcacrscheck.com's generate-jurisdictions-table.js / jurisdictions page / tool.js.
+const NAME_ALIASES = {
+  'Czechia': 'Czech Republic',
+  'Korea': 'South Korea',
+  'Türkiye': 'Turkey',
+  'Viet Nam': 'Vietnam',
+  'Hong Kong (China)': 'Hong Kong',
+  'Macau (China)': 'Macao',
+  'St. Kitts and Nevis': 'Saint Kitts and Nevis',
+  'St. Lucia': 'Saint Lucia',
+  'St. Vincent and the Grenadines': 'Saint Vincent and the Grenadines'
+};
+const canon = (name) => NAME_ALIASES[name] || name;
+
 let crsData = [];
 let fatcaData = [];
 
@@ -357,8 +373,8 @@ async function loadData() {
     fatcaData = fatca.jurisdictions;
 
     const names = new Set();
-    crsData.forEach(j => names.add(j.jurisdiction));
-    fatcaData.forEach(j => names.add(j.jurisdiction));
+    crsData.forEach(j => names.add(canon(j.jurisdiction)));
+    fatcaData.forEach(j => names.add(canon(j.jurisdiction)));
     const sorted = Array.from(names).sort((a, b) => a.localeCompare(b));
 
     select.innerHTML = '<option value="">Select a country…</option>';
@@ -375,8 +391,8 @@ async function loadData() {
 }
 
 function lookup(country) {
-  const crsEntry = crsData.find(j => j.jurisdiction === country);
-  const fatcaEntry = fatcaData.find(j => j.jurisdiction === country);
+  const crsEntry = crsData.find(j => canon(j.jurisdiction) === country);
+  const fatcaEntry = fatcaData.find(j => canon(j.jurisdiction) === country);
 
   const crsVal = document.getElementById('r-crs');
   const crsSub = document.getElementById('r-crs-sub');
